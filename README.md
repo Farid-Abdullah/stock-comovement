@@ -33,6 +33,9 @@ Then choose *Run All*. The first run downloads prices from Yahoo Finance and sav
 | `MIN_SUPPORT`, `MIN_CONFIDENCE`, `MIN_LIFT`, `MAX_LEN` | 0.05, 0.5, 1.5, 3 | Mining thresholds |
 | `SPLIT_YEAR` | 2023 | Year used to label rules as stable, emerged or disappeared |
 
+## Reading list
+
+See [docs/reading_list.md](docs/reading_list.md). It has finance basics for beginners, an AI timeline, the market events behind each year's results, and academic papers for the Related Work section.
 
 
 ## Acknowledgement
