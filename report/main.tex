@@ -1,0 +1,219 @@
+% DSAI4102 final report. Compile on Overleaf (IEEEtran is built in): upload this folder, then Recompile.
+% Every number in this report comes from outputs/final/key_numbers.json, written by final_project.ipynb.
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{figures/}}
+
+\begin{document}
+
+\title{Which Stock Co-Movements Can You Trust?\\ Mining, Testing and Forecasting Co-Movement Rules\\ in the AI Era (2016--2026)}
+
+\author{
+\IEEEauthorblockN{Farid Abdul Rehman (60304642), Muzayyan Parkar (60305825), Mohamad Zain (60306080)}
+\IEEEauthorblockA{DSAI4102 Applied Data Mining, Department of Data Science and AI\\
+University of Doha for Science and Technology, Doha, Qatar\\
+Instructor: Moshiur Rahman Farazi}
+}
+
+\maketitle
+
+\begin{abstract}
+Association rules mined on daily stock moves mostly rediscover the market: on a crash day every stock falls. We mine co-movement rules for 40 US stocks (AI chip makers, Big Tech, traditional software and a non-tech control group) on 2,733 daily baskets from 2016 to November 2026, after removing each stock's market component with a rolling market model. FP-Growth is run on 120 rolling one-year windows. Removing the market cuts the median rule count from 3,905 to 118 per window and weakens the link between rule count and market volatility (Spearman 0.71 to 0.37); shuffled baskets produce only 0.3\% as many rules. We then ask three questions. First, did ChatGPT's release break the co-movement structure? Against 107 placebo break dates, ChatGPT ranks above only 21--62\% of them, so the claim is falsified; with raw returns it would have ranked at the 91st percentile, a market artefact. Second, which stocks does the market treat as ``AI stocks''? Oracle and Caterpillar joined the chip-stock cluster, while 14 stocks, mostly software, left it, and software--AI co-movement fell below chance. Third, which rules last? A rule's age and whether it stays inside one group predict survival over the next six months far better than its lift (ROC-AUC 0.66 for a random forest against 0.58 for lift), although most of that skill is already in the rule's age. An Isolation Forest confirms that the market reacted to Nvidia's May 2023 guidance and to DeepSeek, not to ChatGPT's launch day.
+\end{abstract}
+
+\begin{IEEEkeywords}
+association rules, FP-Growth, change mining, stock co-movement, placebo test, clustering, anomaly detection
+\end{IEEEkeywords}
+
+\section{Introduction}
+Investors diversify by holding assets that do not move together. Knowing \emph{which} stocks co-move, and whether that pattern will hold, therefore matters to anyone building a portfolio. Association rule mining~\cite{agrawal1993} is attractive here because it finds combinations of stocks that make large moves on the same day, not only pairwise correlations. Our proposal planned to compare rules mined before and after ChatGPT's release (30 November 2022). The feedback raised three problems: (i) a before/after split cannot separate ChatGPT from everything else that happened in late 2022, especially the market as a whole; (ii) the hand-picked stock groups might decide the result; and (iii) the project should be harder and include a useful prediction.
+
+This report answers each point. The data mining rationale is \emph{pattern discovery} (rules, clusters and unusual days) together with \emph{analysis of the method}: how the rule sets react to the definition of a move, the thresholds and the algorithm. Prediction is used in service of the patterns: its target is a mined rule.
+
+Our contributions are:
+\begin{enumerate}
+\item A rolling-window rule-mining pipeline on \emph{market-model residual} moves, with evidence that raw-return rules mostly track market volatility.
+\item A placebo break-date test with a non-tech control group, which falsifies the hypothesis that ChatGPT's release re-wired co-movement.
+\item A data-driven map of the market's ``AI category'': stocks that joined or left the chip-stock cluster beyond bootstrap noise.
+\item A rule-survival model showing that a rule's history and scope, not its lift, predict whether it holds in the next six months.
+\end{enumerate}
+
+\section{Related Work}
+\textbf{Association rules on markets.} Kartal et al.~\cite{kartal2022} apply Apriori to up/down days of 11 world indices (2001--2019) as one pooled dataset and report that US indices appear in the highest-confidence rules. Dai et al.~\cite{dai2024} compare Apriori, FP-Growth and Eclat on rises and falls of foreign indices and Taiwan's top 50 stocks, using next-day lags to find markets that lead Taiwan. Chen et al.~\cite{chen2022} mine weighted inter-transaction rules with an evolutionary algorithm to predict stock direction. All three treat the rule set as fixed over their sample and use raw up/down labels, so a market-wide day counts as co-movement. We differ in three ways: we remove the market first, we mine many windows to study \emph{change}, and our prediction target is a rule's survival, not a price.
+
+\textbf{Co-movement and market structure.} Mantegna~\cite{mantegna1999} clusters stocks into a hierarchical tree from return correlations, and Onnela et al.~\cite{onnela2003} track how such trees shrink and reorganise over time, especially in crashes. Forbes and Rigobon~\cite{forbes2002} warn that correlations rise mechanically when volatility rises, so crisis co-movement is partly an artefact; our raw-versus-residual comparison is a data mining version of that warning. Barberis, Shleifer and Wurgler~\cite{barberis2005} show that stocks added to the S\&P~500 start moving with the index although their fundamentals do not change, which they call \emph{category-based} co-movement. Our AI-affinity analysis asks whether ``AI'' has become such a category.
+
+\textbf{Change mining and significance.} Emerging patterns~\cite{dong1999} are itemsets whose support grows sharply between two datasets, and B\"ottcher et al.~\cite{bottcher2008} survey \emph{change mining}, which treats the evolution of patterns over time as the object of study. Our rule-survival task is a predictive form of change mining. Webb~\cite{webb2007} shows that rule miners produce many spurious rules and recommends statistical tests with correction for the full search space; we follow this with Fisher tests and Benjamini--Hochberg control~\cite{benjamini1995} over all possible rules.
+
+\section{Methodology}
+All code is one notebook that runs top to bottom in about three minutes~\cite{repo}; settings are in its first cell.
+
+\subsection{Data}
+Daily adjusted closing prices for 40 stocks and the SPY ETF come from Yahoo Finance via \texttt{yfinance}~\cite{yfinance}, 2 June 2014 to 13 November 2026 (3,134 trading days, no missing values). The stocks form four groups: AI enablers (NVDA, AMD, AVGO, TSM, MU, QCOM, INTC, AMAT, LRCX, ASML), Big Tech (AAPL, MSFT, GOOGL, AMZN, META, ORCL, NFLX, TSLA), traditional software (ADBE, CRM, IBM, CSCO, CHGG, INTU, SAP, ACN, NOW, WDAY, ADSK, CTSH) and a non-tech control group (JPM, XOM, JNJ, PG, KO, WMT, UNH, CAT, HD, PFE). Adjusted prices absorb splits and dividends. Data from 2014--2015 is used only to estimate betas and volatilities; baskets start on 4 January 2016, giving 2,733 baskets.
+
+\subsection{Preprocessing}
+\textbf{Removing the market.} For stock $i$ on day $t$ the residual return is $e_{i,t} = r_{i,t} - \beta_{i,t}\, r_{m,t}$, where $r_m$ is SPY's return and $\beta_{i,t}$ is the slope of $r_i$ on $r_m$ over days $t-252$ to $t-1$, the market model of event studies~\cite{mackinlay1997}. Simple excess returns ($r_i-r_m$) are also run for comparison; they leave market exposure in high-beta stocks such as NVDA (beta 1.18 at the start of 2016).
+
+\textbf{Major moves.} $z_{i,t} = e_{i,t}/\sigma_{i,t}$, where $\sigma_{i,t}$ is the standard deviation of $e_i$ over the previous 60 days. Day $t$'s basket contains \texttt{NVDA\_UP} if $z \geq 1$ and \texttt{NVDA\_DOWN} if $z \leq -1$. Scaling by each stock's own volatility treats quiet and volatile stocks alike, and shifting both $\beta$ and $\sigma$ by one day avoids look-ahead. Baskets hold 9.6 items on average (out of 80); only 126 days have 20 or more items, against 336 under raw returns.
+
+\subsection{Rolling rule mining}
+Rules are mined with FP-Growth~\cite{han2000} (\texttt{mlxtend}~\cite{raschka2018}) on rolling windows of 252 baskets moved forward 21 days at a time (120 windows). Thresholds are minimum support 0.04 (about 10 days per window), confidence 0.4, lift 1.5 and at most three items. The proposal's 0.05/0.5 left only about 25 residual rules per year, too few to compare windows, so support and confidence were lowered one step each. To check whether rules are real we use (a) a shuffle test, in which each item column is permuted independently, keeping each item's support but destroying links between items, and (b) a one-sided Fisher exact (hypergeometric) test per rule with Benjamini--Hochberg control at 5\% over \emph{all} 480,480 rules of two or three items that the miner could have returned~\cite{webb2007}.
+
+\subsection{Placebo break test}
+For every first trading day $d$ of a month from January 2017 to November 2025 (107 dates), we compare the 252 baskets before $d$ with the 252 after it using four measures: rule turnover (Jaccard distance between the two rule sets); the mean absolute change in $\log_2$ pair lift among tech pairs minus that among control pairs; the change in mean AI--AI pair lift minus the change in control--control lift; and the change in AI--software lift. Pair lift is the lift of ``both stocks moved in the same direction on the same day''. ChatGPT's date is 1 December 2022, the first trading day after the release. Before running the test we stated that a ChatGPT break requires a rank in the top 10\% of dates. Overlapping windows make neighbouring dates dependent, so the ranks are descriptive, not exact p-values.
+
+\subsection{AI affinity and clustering}
+A stock's \emph{AI affinity} in a window is its mean pair lift with the ten AI enablers (excluding itself). We compare the two years before ChatGPT with the latest two years and build 95\% intervals for the change with a moving-block bootstrap~\cite{kunsch1989} (10-day blocks, 500 resamples), followed by Benjamini--Hochberg control across the 40 stocks. As a cross-check, each window's stocks are clustered into four groups on the Jaccard distance between their move records, using hierarchical clustering with average linkage and spectral clustering~\cite{luxburg2007}; agreement with our groups is measured by the Adjusted Rand Index (ARI)~\cite{hubert1985}.
+
+\subsection{Rule survival prediction}
+A rule mined from the window ending on day $t$ \emph{survives} if it passes the same three thresholds in the next 126 baskets, which never overlap its own window. Features known on day $t$ are the rule's support, confidence, lift, leverage, conviction and Fisher $-\log_{10} p$; its number of items and of groups spanned; whether it involves the control or the AI group; its direction; its \emph{age} (consecutive earlier windows containing it) and count in the last 12 windows; the share of its joint days in the window's last quarter; its \emph{burstiness} (largest share of its joint days in any 21-day block); its share of joint days that were shock days (basket size above the previous year's 95th percentile); and the window's market volatility and average basket size. Logistic regression, random forest and histogram gradient boosting (scikit-learn~\cite{pedregosa2011}) are trained on windows whose future period ends before ChatGPT (8,202 rules) and tested on windows ending after it (5,215 rules). Baselines rank rules by a single feature. Metrics are ROC-AUC, average precision and precision among the top 20\% of rules. A rolling-origin test retrains each year on all earlier labelled windows.
+
+\subsection{Shock days}
+An Isolation Forest~\cite{liu2008} (300 trees, contamination 1\%) scores every day from its 40 residual $z$-scores (clipped at $\pm 10$). It is compared with the simplest detector, the basket size, and five dated AI events are located in its score distribution.
+
+\section{Results and Discussion}
+
+\subsection{Removing the market changes what is found}
+Fig.~\ref{fig:rules} shows rules per window. Under raw returns the count reaches 51,138 in 2020 and follows market volatility closely (Spearman 0.71); the median is 3,905. Under residual returns the median is 118 and the correlation 0.37. Raw-return rules therefore mostly restate that the market moved. On residual moves the shuffled baskets yield 67 rules in total against 24,585 real ones (a ratio of 0.3\%), and 82\% of real rules survive the Fisher test corrected for all possible rules. The rules are not chance; whether they are \emph{interesting} is the subject of the next sections. FP-Growth and Apriori returned identical itemsets in every check. Contrary to the textbook expectation, Apriori was faster at our setting of at most three items (8.5 ms against 25.7 ms on the busiest residual window); FP-Growth was faster only when itemsets of up to five items were allowed on the raw 2020 window (3.9 s against 13.1 s for 301,323 itemsets).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{4_1_rules_per_window_by_mode.png}
+\caption{Rules per one-year window under three return definitions (log scale), with SPY volatility below. Removing the market removes the crisis spikes.}
+\label{fig:rules}
+\end{figure}
+
+\subsection{ChatGPT is not an unusual break date}
+Fig.~\ref{fig:placebo} shows two of the four measures across all 107 candidate dates. ChatGPT ranks above 62\% of dates on rule turnover, 29\% on tech-minus-control change, 36\% on the AI--AI difference and 21\% on the AI--software change. Our stated bar of 90\% is not met, so the data cannot attribute a structural change to ChatGPT's release. Table~\ref{tab:robust} repeats the test under other settings. The conclusion holds in five of seven. The two exceptions are informative: with raw returns ChatGPT ranks at the 91st percentile on tech change, which is exactly the market artefact the feedback warned about, and with a stricter threshold ($z \geq 1.5$) baskets become small and the measure noisy. Taking Nvidia's guidance (June 2023) as the break instead does not help (30\% on tech change). The largest tech changes occur for break dates in August--November 2025, comparing late 2024--2025 with 2026.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{placebo.png}
+\caption{Placebo test. Each point compares the year before and the year after a candidate break date; the red point is ChatGPT.}
+\label{fig:placebo}
+\end{figure}
+
+\begin{table}[t]
+\caption{Percentile of the ChatGPT date among 107 placebo dates}
+\label{tab:robust}
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+Setting & Turnover & Tech$-$ctrl & AI$-$ctrl & AI--SW \\
+\midrule
+Main (residual, $z{=}1$, sup 0.04) & 62 & 29 & 36 & 21 \\
+Raw returns & 94 & 91 & 2 & 42 \\
+Excess returns & 81 & 30 & 28 & 19 \\
+$z = 1.5$ (sup 0.02) & 10 & 95 & 35 & 47 \\
+Support 0.03 & 80 & 29 & 36 & 21 \\
+Support 0.05 & 55 & 29 & 36 & 21 \\
+Half-year windows & 43 & 29 & 86 & 14 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The market redrew the AI category, gradually}
+Fig.~\ref{fig:groups} tracks mean pair lift inside and between groups. The large change is recent: software--software lift rose from 1.47 (year to November 2022) to 2.77 (year to November 2026), while AI--software lift fell from 1.23 to 0.58, below chance. In 2026, software stocks trade as their own block, separate from chip stocks. Clusters also match our four groups better after ChatGPT (spectral ARI 0.35 before, 0.54 from December 2023; hierarchical 0.23 to 0.38), and spectral clustering agrees with our labels more than hierarchical clustering in almost every window.
+
+At the stock level (Fig.~\ref{fig:affinity}) two stocks significantly joined the AI cluster: Oracle (affinity 0.59 to 1.65) and Caterpillar (0.98 to 1.80). Fourteen left it, led by software (ADBE, ADSK, NOW, WDAY, INTU), Qualcomm and Big Tech consumer names (NFLX, AAPL, META, GOOGL). Neither riser is in our AI group, which shows why the groups had to be tested rather than assumed. Both have plausible business reasons (Oracle's AI cloud contracts; Caterpillar's generators for data centres), but our data shows only that the market trades them with chip stocks, which is what category-based co-movement~\cite{barberis2005} predicts. Spectral clustering tells the same story: Oracle sat in Nvidia's cluster in 7\% of windows before ChatGPT and 49\% from December 2023, while Intel fell from 61\% to 3\%. For an investor, a portfolio of chip stocks, Oracle and Caterpillar is a single AI bet rather than a diversified one.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{groups.png}
+\caption{Mean pair lift within and between groups over rolling one-year windows (1 = chance).}
+\label{fig:groups}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{affinity.png}
+\caption{Stocks whose AI affinity changed significantly between the two years before ChatGPT and the latest two years (95\% block-bootstrap intervals, FDR 5\%). Colours are our groups.}
+\label{fig:affinity}
+\end{figure}
+
+\subsection{What makes a rule last}
+Of 14,339 labelled rules, 29\% survive the next half-year. Fig.~\ref{fig:survival} shows the two strongest patterns. Survival rises with age, from 21\% for new rules to 58\% for rules already seen in 12 or more earlier windows, and rules inside one group survive 37\% of the time against 10\% for rules linking groups. Rules concentrated in one burst of days survive less (19\% when 35--50\% of their days fall in one month, against 33\% when spread out).
+
+Table~\ref{tab:models} compares models trained before ChatGPT and tested after it. Ranking by lift, the usual way to sort rules, gives ROC-AUC 0.58. The random forest reaches 0.66 and logistic regression 0.65; the top 20\% of rules chosen by logistic regression survive 64\% of the time against a 36\% base rate. The honest reading is that ranking by age alone already reaches 0.63, so most of the skill is a rule's history. In the rolling-origin test the models beat the lift baseline in every year from 2020 to 2026 (ROC-AUC 0.64--0.80) but not in 2019, when little training data existed. Permutation importance ranks the number of groups a rule spans first. Rule strength measured inside a window says little about its future; history and scope say more.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{7_1_survival_by_feature.png}
+\caption{Share of rules mined again from the next 126 baskets, by age, burstiness and whether the rule links groups. Dotted line: overall rate.}
+\label{fig:survival}
+\end{figure*}
+
+\begin{table}[t]
+\caption{Rule survival on post-ChatGPT windows (5,215 rules)}
+\label{tab:models}
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+Method & ROC-AUC & PR-AUC & Prec@20\% \\
+\midrule
+Logistic regression & 0.65 & 0.58 & 0.64 \\
+Random forest & \textbf{0.66} & 0.58 & 0.62 \\
+Gradient boosting & 0.64 & 0.56 & 0.58 \\
+\midrule
+Rank by age & 0.63 & 0.57 & 0.62 \\
+Rank by support & 0.61 & 0.49 & 0.52 \\
+Rank by lift & 0.58 & 0.40 & 0.39 \\
+Rank by confidence & 0.56 & 0.39 & 0.35 \\
+All rules survive & 0.50 & 0.36 & 0.36 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Shock days}
+The Isolation Forest's top 1\% of days overlap the largest baskets with Jaccard 0.50. Table~\ref{tab:events} places five AI events in its score distribution (Fig.~\ref{fig:anomaly}). The DeepSeek sell-off and Nvidia's guidance day are in the top 1\%, Oracle's backlog day in the top 3\%, while ChatGPT's launch and GPT-4's announcement are ordinary days for these stocks. ChatGPT's launch day was dominated by a Federal Reserve speech that lifted the whole market, which our residuals remove. The most anomalous days overall are sector rotations hidden in raw returns, such as the 2016 and 2024 US election days and the November 2020 vaccine announcement.
+
+\begin{table}[t]
+\caption{AI events in the anomaly-score distribution}
+\label{tab:events}
+\centering
+\small
+\begin{tabular}{llcc}
+\toprule
+Date & Event & Percentile & Items \\
+\midrule
+2022-11-30 & ChatGPT released & 68.4 & 13 \\
+2023-03-14 & GPT-4 announced & 48.5 & 10 \\
+2023-05-25 & Nvidia AI guidance & 99.3 & 24 \\
+2025-01-27 & DeepSeek sell-off & 99.6 & 29 \\
+2025-09-10 & Oracle cloud backlog & 97.0 & 18 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{8_1_anomaly_timeline.png}
+\caption{Isolation Forest anomaly score per day on residual moves, five-day average in blue; dotted line marks the top 1\%.}
+\label{fig:anomaly}
+\end{figure*}
+
+\subsection{Questioning the results}
+\emph{Chance:} the shuffle and corrected Fisher tests show the rules are not search artefacts, but overlapping windows mean the placebo ranks, the survival samples and the clustering series are not independent observations. \emph{Triviality:} AMAT--LRCX rules (two equipment makers) are the most durable in the latest window and are obvious; the non-obvious findings are the Oracle and Caterpillar affinity, the software block and the weakness of lift as a guide to durability. \emph{Robustness:} the ChatGPT conclusion holds in five of seven settings, and the two failures have mechanical explanations. \emph{What would falsify the AI-category finding:} if Oracle's and Caterpillar's affinity rose because of a few huge days, it would vanish under resampling; the block bootstrap keeps both intervals above zero, and because items count days rather than return size, one extreme day counts only once.
+
+\section{Conclusion}
+Removing the market before mining is essential: without it, rules track volatility and would have produced a false ChatGPT break. With it, ChatGPT's release is an ordinary date, but the market's AI category was redrawn over the following three years. Oracle and Caterpillar joined the chip-stock cluster, software split away, and by 2026 software and chip stocks co-move less than chance. Rules that last are old and stay within one group; lift is a weak guide to durability.
+
+\textbf{Limitations.} The 40 stocks were chosen by us and all exist today (survivorship bias), and the AI group has only ten members. The market model removes one factor, so sector and style effects remain in the residuals. Overlapping windows prevent exact p-values. The 1$\sigma$ threshold is one choice of ``major move'', and 2026 is a partial year.
+
+\textbf{Future work.} Extend to all S\&P~500 constituents to map the AI category at scale; remove Fama--French and sector factors before mining to separate sector from category effects; link shock days to news text (for example GDELT) to explain them; and turn rule-survival scores into a diversification check that flags durable co-movement inside a portfolio.
+
+\section*{Code, Data and Acknowledgement}
+Code, the price file (\texttt{data/prices.csv}), every figure and table, and \texttt{key\_numbers.json} are at~\cite{repo}; the notebook \texttt{final\_project.ipynb} runs top to bottom. Prices were downloaded with \texttt{yfinance}~\cite{yfinance}. Code and text were drafted with the help of an AI assistant (Claude, Anthropic) and reviewed by the authors.
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}

@@ -1,43 +1,52 @@
-# Stock co-movement by year: association rule mining (DSAI4102 project, step 1)
+# Which stock co-movements can you trust? (DSAI4102 final project)
 
-Mines association rules on the daily major moves of 40 stocks, separately for each year from 2015 to 2026, and compares the yearly rule sets.
+Association rule mining on the daily major moves of 40 US stocks (AI chip makers, Big Tech, traditional software and a non-tech control group), 2016 to November 2026, with the market removed first. We ask:
 
-- **Basket** = one trading day. **Item** = a stock that made a major move that day, with its direction (`NVDA_UP`, `IBM_DOWN`).
-- **One rule set per year** (about 250 baskets each), mined with FP-Growth and checked against Apriori.
+1. Did ChatGPT's release change how these stocks move together? (placebo break-date test with a control group)
+2. Which stocks does the market treat as "AI stocks"? (AI affinity with bootstrap intervals, hierarchical vs spectral clustering)
+3. Which mined rules last? (predicting whether a rule is mined again in the next six months)
+4. Which days are unusual once the market is removed? (Isolation Forest)
+
+Group: Farid Abdul Rehman (60304642), Muzayyan Parkar (60305825), Mohamad Zain (60306080). Instructor: Moshiur Rahman Farazi.
 
 ## How to run
 
 ```bash
 pip install -r requirements.txt
-jupyter notebook comovement_association_rules.ipynb
+jupyter notebook final_project.ipynb      # Run All, about 3 minutes
+python make_slide_figures.py              # optional: bigger-font figures for the slides
 ```
 
-Then choose *Run All*. The first run downloads prices from Yahoo Finance and saves them to `data/prices.csv`. Later runs read that file, so everyone in the group works from the same data. Delete the file to download again.
+The notebook reads `data/prices.csv` and writes every figure and table to `outputs/final/`, including `key_numbers.json`, which holds every number quoted in the slides and the report.
 
 ## Files
 
 | File | What it is |
 |---|---|
-| `comovement_association_rules.ipynb` | The whole analysis, top to bottom |
-| `requirements.txt` | Python packages needed |
-| `data/prices.csv` | Created on first run: adjusted closing prices (submit this with the report) |
-| `outputs/` | Created on each run: every figure as PNG and every table as CSV |
+| `final_project.ipynb` | **The final analysis**, top to bottom (sections 1–9) |
+| `make_slide_figures.py` | Redraws four figures with larger fonts for the slides (no new analysis) |
+| `comovement_association_rules.ipynb` | Step 1: yearly rules on raw returns (kept for reference; superseded) |
+| `data/prices.csv` | Adjusted closing prices, 2 Jun 2014 to 13 Nov 2026, 40 stocks + SPY, from Yahoo Finance via `yfinance` (`auto_adjust=True`). Built by the step 1 notebook's `load_prices` |
+| `outputs/final/` | All figures (PNG) and tables (CSV) from the final notebook |
+| `report/` | IEEE two-column report source (`main.tex`, `refs.bib`, `figures/`). Upload the folder to Overleaf and compile |
+| `docs/STUDY_GUIDE.md` | Walkthrough of every concept, function and figure, plus likely oral-exam questions |
+| `docs/reading_list.md` | Background reading and papers |
 
-## Settings (first code cell of the notebook)
+## Main settings (first code cell)
 
-| Setting | Default | Meaning |
+| Setting | Value | Meaning |
 |---|---|---|
-| `GROUPS` | 40 tickers in 4 groups | Which stocks, and which group each belongs to |
-| `RETURN_MODE` | `"raw"` | `"excess"` subtracts the S&P 500 return first, so market-wide days stop counting as co-movement |
-| `MOVE_METHOD`, `Z_K` | `"zscore"`, `1.0` | A move is major when it is at least `Z_K` times the stock's own 60-day volatility. `"fixed"` uses a flat ±2% instead |
-| `MIN_SUPPORT`, `MIN_CONFIDENCE`, `MIN_LIFT`, `MAX_LEN` | 0.05, 0.5, 1.5, 3 | Mining thresholds |
-| `SPLIT_YEAR` | 2023 | Year used to label rules as stable, emerged or disappeared |
+| `MAIN_MODE` | `residual` | return minus beta × SPY return (beta from the previous 252 days) |
+| `Z_K`, `VOL_WINDOW` | 1.0, 60 | a major move is at least 1 × the stock's own 60-day residual volatility |
+| `WINDOW`, `STEP` | 252, 21 | one-year rolling windows moved one month at a time (120 windows) |
+| `MIN_SUPPORT`, `MIN_CONFIDENCE`, `MIN_LIFT`, `MAX_LEN` | 0.04, 0.4, 1.5, 3 | mining thresholds |
+| `CHATGPT_DATE` | 2022-12-01 | first trading day after ChatGPT's release |
+| `FUTURE_DAYS` | 126 | a rule "survives" if it is mined again from the next 126 baskets |
 
-## Reading list
+## Data source
 
-See [docs/reading_list.md](docs/reading_list.md). It has finance basics for beginners, an AI timeline, the market events behind each year's results, and academic papers for the Related Work section.
-
+Prices: Yahoo Finance through the open-source [`yfinance`](https://github.com/ranaroussi/yfinance) library, downloaded once and saved to `data/prices.csv` so everyone works from the same data. To rebuild it, delete the file and run the step 1 notebook's data cell.
 
 ## Acknowledgement
 
-The code in this folder was created with an AI assistant (Claude, Anthropic).
+The code and drafts in this repository were written with the help of an AI assistant (Claude, Anthropic) and reviewed by the group.
