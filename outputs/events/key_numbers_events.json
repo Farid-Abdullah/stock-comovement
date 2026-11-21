@@ -4,7 +4,7 @@
   "FOMC": 88,
   "NFP": 130,
   "SHOCK": 19,
-  "earnings_file": false
+  "earnings_file": true
  },
  "h1c": {
   "n_top_days": 27,
@@ -158,6 +158,63 @@
   "rules": 2,
   "significant": 0,
   "rules_on_shifted_calendars_mean": 0.05
+ },
+ "h1a": {
+  "earnings_rules": 573,
+  "significant": 5,
+  "significant_beating_ordinary_days": 5,
+  "spillover_earn": {
+   "AI enablers": {
+    "AI enablers": 1.79,
+    "Big Tech": 0.97,
+    "Traditional software": 1.04,
+    "Non-tech baseline": 0.94
+   },
+   "Big Tech": {
+    "AI enablers": 1.09,
+    "Big Tech": 1.49,
+    "Traditional software": 1.12,
+    "Non-tech baseline": 0.9
+   },
+   "Traditional software": {
+    "AI enablers": 1.15,
+    "Big Tech": 1.14,
+    "Traditional software": 1.37,
+    "Non-tech baseline": 0.98
+   },
+   "Non-tech baseline": {
+    "AI enablers": 0.89,
+    "Big Tech": 0.87,
+    "Traditional software": 1.04,
+    "Non-tech baseline": 1.0
+   }
+  },
+  "spillover_plain": {
+   "AI enablers": {
+    "AI enablers": 2.41,
+    "Big Tech": 1.41,
+    "Traditional software": 1.25,
+    "Non-tech baseline": 0.82
+   },
+   "Big Tech": {
+    "AI enablers": 1.4,
+    "Big Tech": 1.75,
+    "Traditional software": 1.47,
+    "Non-tech baseline": 0.86
+   },
+   "Traditional software": {
+    "AI enablers": 1.24,
+    "Big Tech": 1.48,
+    "Traditional software": 1.94,
+    "Non-tech baseline": 1.03
+   },
+   "Non-tech baseline": {
+    "AI enablers": 0.82,
+    "Big Tech": 0.87,
+    "Traditional software": 1.04,
+    "Non-tech baseline": 1.51
+   }
+  }
  },
  "break_peaks": [
   {
