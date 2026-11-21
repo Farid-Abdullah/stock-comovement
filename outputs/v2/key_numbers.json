@@ -1,0 +1,804 @@
+{
+ "sanity": {
+  "^N225": {
+   "follower cc": 0.44,
+   "follower oc": 0.137,
+   "same calendar day cc": 0.187,
+   "stocks cc (mean)": 0.282,
+   "stocks oc (mean)": -0.105,
+   "stocks gap close->open (mean)": 0.488
+  },
+  "^KS11": {
+   "follower cc": 0.311,
+   "follower oc": -0.057,
+   "same calendar day cc": 0.17,
+   "stocks cc (mean)": 0.208,
+   "stocks oc (mean)": -0.115,
+   "stocks gap close->open (mean)": 0.48
+  },
+  "^TWII": {
+   "follower cc": 0.421,
+   "follower oc": 0.206,
+   "same calendar day cc": 0.165,
+   "stocks cc (mean)": 0.244,
+   "stocks oc (mean)": -0.068,
+   "stocks gap close->open (mean)": 0.438
+  }
+ },
+ "data": {
+  "baskets": 2269,
+  "first_basket": "2016-04-05",
+  "last_basket": "2026-11-19",
+  "last_price_date": "2026-11-20"
+ },
+ "main_comparison": {
+  "groups": {
+   "(a) US AI -> US AI (next US day)": {
+    "direction right (real)": 0.5,
+    "direction right (null)": 0.4593,
+    "excess": 0.0407,
+    "median test lift (real)": 0.96,
+    "median test lift (null)": 1.0345,
+    "lift excess": -0.0744,
+    "scored rules (real)": 160,
+    "scored rules (null, per copy)": 61.4,
+    "excess 95% CI": [
+     -0.0264,
+     0.1078
+    ],
+    "lift excess 95% CI": [
+     -0.2064,
+     0.0575
+    ],
+    "excess percentile CI (biased, reference only)": [
+     -0.0851,
+     0.0475
+    ]
+   },
+   "(b) US AI -> Asian AI": {
+    "direction right (real)": 0.7229,
+    "direction right (null)": 0.4938,
+    "excess": 0.229,
+    "median test lift (real)": 1.3947,
+    "median test lift (null)": 1.0858,
+    "lift excess": 0.3089,
+    "scored rules (real)": 700,
+    "scored rules (null, per copy)": 194.8,
+    "excess 95% CI": [
+     0.1658,
+     0.2922
+    ],
+    "lift excess 95% CI": [
+     0.19,
+     0.4279
+    ],
+    "excess percentile CI (biased, reference only)": [
+     0.1223,
+     0.2428
+    ]
+   },
+   "(c) US non-AI -> Asian non-AI": {
+    "direction right (real)": 0.6984,
+    "direction right (null)": 0.4764,
+    "excess": 0.222,
+    "median test lift (real)": 1.3307,
+    "median test lift (null)": 1.0312,
+    "lift excess": 0.2995,
+    "scored rules (real)": 126,
+    "scored rules (null, per copy)": 46.6,
+    "excess 95% CI": [
+     0.1376,
+     0.3064
+    ],
+    "lift excess 95% CI": [
+     0.1366,
+     0.4624
+    ],
+    "excess percentile CI (biased, reference only)": [
+     0.093,
+     0.254
+    ]
+   },
+   "(d) US AI -> Asian non-AI": {
+    "direction right (real)": 0.6087,
+    "direction right (null)": 0.4568,
+    "excess": 0.1519,
+    "median test lift (real)": 1.1739,
+    "median test lift (null)": 1.0036,
+    "lift excess": 0.1703,
+    "scored rules (real)": 138,
+    "scored rules (null, per copy)": 74.0,
+    "excess 95% CI": [
+     0.0709,
+     0.233
+    ],
+    "lift excess 95% CI": [
+     0.024,
+     0.3165
+    ],
+    "excess percentile CI (biased, reference only)": [
+     0.0307,
+     0.1898
+    ]
+   },
+   "(e) US AI -> US AI infrastructure (next US day)": {
+    "direction right (real)": 0.4412,
+    "direction right (null)": 0.3975,
+    "excess": 0.0437,
+    "median test lift (real)": 1.0231,
+    "median test lift (null)": 0.979,
+    "lift excess": 0.044,
+    "scored rules (real)": 68,
+    "scored rules (null, per copy)": 32.2,
+    "excess 95% CI": [
+     -0.0604,
+     0.1477
+    ],
+    "lift excess 95% CI": [
+     -0.1627,
+     0.2507
+    ],
+    "excess percentile CI (biased, reference only)": [
+     -0.0733,
+     0.1358
+    ]
+   },
+   "(f) US non-AI -> Asian AI": {
+    "direction right (real)": 0.6425,
+    "direction right (null)": 0.4348,
+    "excess": 0.2077,
+    "median test lift (real)": 1.2621,
+    "median test lift (null)": 1.0742,
+    "lift excess": 0.1879,
+    "scored rules (real)": 386,
+    "scored rules (null, per copy)": 115.0,
+    "excess 95% CI": [
+     0.1292,
+     0.2862
+    ],
+    "lift excess 95% CI": [
+     0.0421,
+     0.3337
+    ],
+    "excess percentile CI (biased, reference only)": [
+     0.0718,
+     0.2258
+    ]
+   }
+  },
+  "differences": {
+   "excess(b) - excess(c)": {
+    "estimate": 0.007,
+    "95% CI": [
+     -0.0961,
+     0.1101
+    ],
+    "percentile CI (reference only)": [
+     -0.0883,
+     0.1151
+    ]
+   },
+   "excess(b) - excess(d)": {
+    "estimate": 0.0771,
+    "95% CI": [
+     -0.0213,
+     0.1754
+    ],
+    "percentile CI (reference only)": [
+     -0.0211,
+     0.1718
+    ]
+   }
+  }
+ },
+ "decision": {
+  "1: excess(b) > 0": true,
+  "2: b beats c": false,
+  "3: b beats d": false,
+  "verdict": "market-wide transmission (not AI-specific)"
+ },
+ "direction_vs_volatility": {
+  "(a) US AI -> US AI (next US day) | real": {
+   "scored": 160,
+   "direction": 0.35,
+   "volatility only": 0.1188,
+   "fails": 0.5312
+  },
+  "(a) US AI -> US AI (next US day) | chance (time-shifted)": {
+   "scored": 307,
+   "direction": 0.3844,
+   "volatility only": 0.1498,
+   "fails": 0.4658
+  },
+  "(b) US AI -> Asian AI | real": {
+   "scored": 700,
+   "direction": 0.6414,
+   "volatility only": 0.08,
+   "fails": 0.2786
+  },
+  "(b) US AI -> Asian AI | chance (time-shifted)": {
+   "scored": 974,
+   "direction": 0.4333,
+   "volatility only": 0.1253,
+   "fails": 0.4415
+  },
+  "(c) US non-AI -> Asian non-AI | real": {
+   "scored": 126,
+   "direction": 0.6111,
+   "volatility only": 0.0952,
+   "fails": 0.2937
+  },
+  "(c) US non-AI -> Asian non-AI | chance (time-shifted)": {
+   "scored": 233,
+   "direction": 0.4034,
+   "volatility only": 0.1202,
+   "fails": 0.4764
+  },
+  "(d) US AI -> Asian non-AI | real": {
+   "scored": 138,
+   "direction": 0.5072,
+   "volatility only": 0.0652,
+   "fails": 0.4275
+  },
+  "(d) US AI -> Asian non-AI | chance (time-shifted)": {
+   "scored": 370,
+   "direction": 0.3568,
+   "volatility only": 0.1459,
+   "fails": 0.4973
+  },
+  "(e) US AI -> US AI infrastructure (next US day) | real": {
+   "scored": 68,
+   "direction": 0.3235,
+   "volatility only": 0.1765,
+   "fails": 0.5
+  },
+  "(e) US AI -> US AI infrastructure (next US day) | chance (time-shifted)": {
+   "scored": 161,
+   "direction": 0.3416,
+   "volatility only": 0.1304,
+   "fails": 0.528
+  },
+  "(f) US non-AI -> Asian AI | real": {
+   "scored": 386,
+   "direction": 0.5881,
+   "volatility only": 0.0829,
+   "fails": 0.329
+  },
+  "(f) US non-AI -> Asian AI | chance (time-shifted)": {
+   "scored": 575,
+   "direction": 0.3826,
+   "volatility only": 0.1548,
+   "fails": 0.4626
+  }
+ },
+ "pair_vs_single": {
+  "(a) US AI -> US AI (next US day)": {
+   "two_item_rules": 5,
+   "pair_wins": 0.2
+  },
+  "(b) US AI -> Asian AI": {
+   "two_item_rules": 37,
+   "pair_wins": 0.4324
+  },
+  "(c) US non-AI -> Asian non-AI": {
+   "two_item_rules": 1,
+   "pair_wins": 1.0
+  },
+  "(d) US AI -> Asian non-AI": {
+   "two_item_rules": 1,
+   "pair_wins": 0.0
+  },
+  "(e) US AI -> US AI infrastructure (next US day)": {
+   "two_item_rules": 1,
+   "pair_wins": 1.0
+  },
+  "(f) US non-AI -> Asian AI": {
+   "two_item_rules": 17,
+   "pair_wins": 0.1765
+  }
+ },
+ "robustness": {
+  "main: Z 1.0, sup 0.02, conf 0.20, raw": {
+   "scored rules b / c / d": "700 / 126 / 138",
+   "excess b": 0.229,
+   "excess b CI": "[+0.167, +0.291]",
+   "excess c": 0.222,
+   "excess d": 0.1519,
+   "b - c": 0.007,
+   "b - c CI": "[-0.094, +0.108]",
+   "b - d": 0.0771,
+   "b - d CI": "[-0.019, +0.173]",
+   "verdict": "market-wide transmission (not AI-specific)"
+  },
+  "Z 1.0, sup 0.03, conf 0.20": {
+   "scored rules b / c / d": "250 / 54 / 28",
+   "excess b": 0.2136,
+   "excess b CI": "[+0.120, +0.307]",
+   "excess c": 0.2907,
+   "excess d": 0.2857,
+   "b - c": -0.0771,
+   "b - c CI": "[-0.236, +0.081]",
+   "b - d": -0.0721,
+   "b - d CI": "[-0.277, +0.133]",
+   "verdict": "market-wide transmission (not AI-specific)"
+  },
+  "Z 1.0, sup 0.015, conf 0.15": {
+   "scored rules b / c / d": "1388 / 301 / 384",
+   "excess b": 0.1685,
+   "excess b CI": "[+0.121, +0.216]",
+   "excess c": 0.1188,
+   "excess d": 0.135,
+   "b - c": 0.0498,
+   "b - c CI": "[-0.017, +0.117]",
+   "b - d": 0.0335,
+   "b - d CI": "[-0.038, +0.105]",
+   "verdict": "market-wide transmission (not AI-specific)"
+  },
+  "Z 1.5, sup 0.008, conf 0.12": {
+   "scored rules b / c / d": "400 / 125 / 93",
+   "excess b": 0.1206,
+   "excess b CI": "[+0.075, +0.166]",
+   "excess c": 0.1476,
+   "excess d": 0.025,
+   "b - c": -0.0269,
+   "b - c CI": "[-0.118, +0.064]",
+   "b - d": 0.0957,
+   "b - d CI": "[-0.003, +0.194]",
+   "verdict": "market-wide transmission (not AI-specific)"
+  },
+  "Z 1.5, sup 0.005, conf 0.10": {
+   "scored rules b / c / d": "1208 / 313 / 365",
+   "excess b": 0.0864,
+   "excess b CI": "[+0.054, +0.119]",
+   "excess c": 0.0717,
+   "excess d": 0.0285,
+   "b - c": 0.0146,
+   "b - c CI": "[-0.030, +0.059]",
+   "b - d": 0.0579,
+   "b - d CI": "[+0.013, +0.103]",
+   "verdict": "market-wide transmission (not AI-specific)"
+  },
+  "ex-stock home-index residual followers": {
+   "scored rules b / c / d": "375 / 103 / 143",
+   "excess b": 0.2405,
+   "excess b CI": "[+0.189, +0.292]",
+   "excess c": 0.2857,
+   "excess d": 0.1655,
+   "b - c": -0.0451,
+   "b - c CI": "[-0.158, +0.068]",
+   "b - d": 0.075,
+   "b - d CI": "[-0.030, +0.180]",
+   "verdict": "market-wide transmission (not AI-specific)"
+  }
+ },
+ "edges_b": {
+  "null_hold_rate": 0.432,
+  "n_edges_scored": 162,
+  "n_kept": 45,
+  "kept": [
+   {
+    "leader": "AMD",
+    "follower": "8035.T",
+    "relation": "same",
+    "years_held": 8,
+    "years_scored": 8,
+    "mean_test_lift": 2.122,
+    "known link": "sector: chip-equipment maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "MU",
+    "follower": "000660.KS",
+    "relation": "same",
+    "years_held": 8,
+    "years_scored": 8,
+    "mean_test_lift": 1.966,
+    "known link": "memory peer (DRAM/HBM)"
+   },
+   {
+    "leader": "MU",
+    "follower": "8035.T",
+    "relation": "same",
+    "years_held": 8,
+    "years_scored": 8,
+    "mean_test_lift": 1.921,
+    "known link": "sector: chip-equipment maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "NVDA",
+    "follower": "6857.T",
+    "relation": "same",
+    "years_held": 8,
+    "years_scored": 8,
+    "mean_test_lift": 1.788,
+    "known link": "Advantest supplies GPU/HBM test equipment"
+   },
+   {
+    "leader": "MU",
+    "follower": "6146.T",
+    "relation": "same",
+    "years_held": 8,
+    "years_scored": 8,
+    "mean_test_lift": 1.777,
+    "known link": "sector: wafer dicing/grinding tool maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "NVDA",
+    "follower": "6146.T",
+    "relation": "same",
+    "years_held": 8,
+    "years_scored": 8,
+    "mean_test_lift": 1.685,
+    "known link": "sector: wafer dicing/grinding tool maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "AVGO",
+    "follower": "6857.T",
+    "relation": "same",
+    "years_held": 8,
+    "years_scored": 8,
+    "mean_test_lift": 1.622,
+    "known link": "sector: chip-test equipment maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "MU",
+    "follower": "2330.TW",
+    "relation": "same",
+    "years_held": 7,
+    "years_scored": 7,
+    "mean_test_lift": 1.979,
+    "known link": "semiconductor sector peer"
+   },
+   {
+    "leader": "AMD",
+    "follower": "6146.T",
+    "relation": "same",
+    "years_held": 7,
+    "years_scored": 8,
+    "mean_test_lift": 1.921,
+    "known link": "sector: wafer dicing/grinding tool maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "AMD",
+    "follower": "6857.T",
+    "relation": "same",
+    "years_held": 7,
+    "years_scored": 8,
+    "mean_test_lift": 1.855,
+    "known link": "sector: chip-test equipment maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "MU",
+    "follower": "6920.T",
+    "relation": "same",
+    "years_held": 7,
+    "years_scored": 7,
+    "mean_test_lift": 1.607,
+    "known link": "sector: mask-inspection equipment maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "AVGO",
+    "follower": "6146.T",
+    "relation": "same",
+    "years_held": 7,
+    "years_scored": 7,
+    "mean_test_lift": 1.607,
+    "known link": "sector: wafer dicing/grinding tool maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "MU",
+    "follower": "6857.T",
+    "relation": "same",
+    "years_held": 7,
+    "years_scored": 8,
+    "mean_test_lift": 1.569,
+    "known link": "sector: chip-test equipment maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "NVDA",
+    "follower": "8035.T",
+    "relation": "same",
+    "years_held": 7,
+    "years_scored": 8,
+    "mean_test_lift": 1.535,
+    "known link": "sector: chip-equipment maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "AMD",
+    "follower": "6920.T",
+    "relation": "same",
+    "years_held": 6,
+    "years_scored": 6,
+    "mean_test_lift": 1.891,
+    "known link": "sector: mask-inspection equipment maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "AVGO",
+    "follower": "6920.T",
+    "relation": "same",
+    "years_held": 6,
+    "years_scored": 7,
+    "mean_test_lift": 1.772,
+    "known link": "sector: mask-inspection equipment maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "AMD",
+    "follower": "2330.TW",
+    "relation": "same",
+    "years_held": 6,
+    "years_scored": 6,
+    "mean_test_lift": 1.768,
+    "known link": "TSMC manufactures AMD's chips"
+   },
+   {
+    "leader": "MU",
+    "follower": "005930.KS",
+    "relation": "same",
+    "years_held": 6,
+    "years_scored": 7,
+    "mean_test_lift": 1.735,
+    "known link": "memory peer (DRAM/HBM)"
+   },
+   {
+    "leader": "AVGO",
+    "follower": "8035.T",
+    "relation": "same",
+    "years_held": 6,
+    "years_scored": 7,
+    "mean_test_lift": 1.481,
+    "known link": "sector: chip-equipment maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "AVGO",
+    "follower": "2330.TW",
+    "relation": "same",
+    "years_held": 6,
+    "years_scored": 7,
+    "mean_test_lift": 1.377,
+    "known link": "TSMC manufactures Broadcom's custom AI chips"
+   },
+   {
+    "leader": "GOOGL",
+    "follower": "6857.T",
+    "relation": "same",
+    "years_held": 5,
+    "years_scored": 8,
+    "mean_test_lift": 1.436,
+    "known link": "sector: chip-test equipment maker, demand follows AI capex"
+   },
+   {
+    "leader": "NVDA",
+    "follower": "6920.T",
+    "relation": "same",
+    "years_held": 5,
+    "years_scored": 7,
+    "mean_test_lift": 1.43,
+    "known link": "sector: mask-inspection equipment maker, demand follows chipmakers' spending"
+   },
+   {
+    "leader": "GOOGL",
+    "follower": "6920.T",
+    "relation": "same",
+    "years_held": 5,
+    "years_scored": 7,
+    "mean_test_lift": 1.43,
+    "known link": "sector: mask-inspection equipment maker, demand follows AI capex"
+   },
+   {
+    "leader": "GOOGL",
+    "follower": "8035.T",
+    "relation": "same",
+    "years_held": 5,
+    "years_scored": 7,
+    "mean_test_lift": 1.355,
+    "known link": "sector: chip-equipment maker, demand follows AI capex"
+   },
+   {
+    "leader": "AMD",
+    "follower": "3711.TW",
+    "relation": "same",
+    "years_held": 4,
+    "years_scored": 4,
+    "mean_test_lift": 2.142,
+    "known link": "semiconductor sector peer"
+   },
+   {
+    "leader": "MU",
+    "follower": "6669.TW",
+    "relation": "same",
+    "years_held": 4,
+    "years_scored": 4,
+    "mean_test_lift": 1.647,
+    "known link": "no specific link known"
+   },
+   {
+    "leader": "AMD",
+    "follower": "6669.TW",
+    "relation": "same",
+    "years_held": 4,
+    "years_scored": 5,
+    "mean_test_lift": 1.595,
+    "known link": "no specific link known"
+   },
+   {
+    "leader": "NVDA",
+    "follower": "2330.TW",
+    "relation": "same",
+    "years_held": 4,
+    "years_scored": 5,
+    "mean_test_lift": 1.527,
+    "known link": "TSMC manufactures Nvidia's GPUs"
+   },
+   {
+    "leader": "AVGO",
+    "follower": "2454.TW",
+    "relation": "same",
+    "years_held": 4,
+    "years_scored": 5,
+    "mean_test_lift": 1.435,
+    "known link": "chip-design peer"
+   },
+   {
+    "leader": "AMD",
+    "follower": "2454.TW",
+    "relation": "same",
+    "years_held": 4,
+    "years_scored": 6,
+    "mean_test_lift": 1.404,
+    "known link": "chip-design peer"
+   },
+   {
+    "leader": "AMD",
+    "follower": "9984.T",
+    "relation": "same",
+    "years_held": 4,
+    "years_scored": 5,
+    "mean_test_lift": 1.4,
+    "known link": "no specific link known"
+   },
+   {
+    "leader": "GOOGL",
+    "follower": "6146.T",
+    "relation": "same",
+    "years_held": 4,
+    "years_scored": 6,
+    "mean_test_lift": 1.364,
+    "known link": "sector: wafer dicing/grinding tool maker, demand follows AI capex"
+   },
+   {
+    "leader": "GOOGL",
+    "follower": "2330.TW",
+    "relation": "same",
+    "years_held": 4,
+    "years_scored": 6,
+    "mean_test_lift": 1.274,
+    "known link": "no specific link known"
+   },
+   {
+    "leader": "META",
+    "follower": "6146.T",
+    "relation": "same",
+    "years_held": 4,
+    "years_scored": 6,
+    "mean_test_lift": 1.16,
+    "known link": "sector: wafer dicing/grinding tool maker, demand follows AI capex"
+   },
+   {
+    "leader": "GOOGL",
+    "follower": "2317.TW",
+    "relation": "same",
+    "years_held": 3,
+    "years_scored": 3,
+    "mean_test_lift": 2.026,
+    "known link": "no specific link known"
+   },
+   {
+    "leader": "MU",
+    "follower": "042700.KS",
+    "relation": "same",
+    "years_held": 3,
+    "years_scored": 4,
+    "mean_test_lift": 1.695,
+    "known link": "no specific link known"
+   },
+   {
+    "leader": "GOOGL",
+    "follower": "9984.T",
+    "relation": "same",
+    "years_held": 3,
+    "years_scored": 4,
+    "mean_test_lift": 1.455,
+    "known link": "no specific link known"
+   },
+   {
+    "leader": "AMZN",
+    "follower": "2330.TW",
+    "relation": "opposite",
+    "years_held": 3,
+    "years_scored": 5,
+    "mean_test_lift": 1.45,
+    "known link": "no specific link known"
+   },
+   {
+    "leader": "AMZN",
+    "follower": "6920.T",
+    "relation": "same",
+    "years_held": 3,
+    "years_scored": 5,
+    "mean_test_lift": 1.387,
+    "known link": "sector: mask-inspection equipment maker, demand follows AI capex"
+   },
+   {
+    "leader": "GOOGL",
+    "follower": "000660.KS",
+    "relation": "same",
+    "years_held": 3,
+    "years_scored": 4,
+    "mean_test_lift": 1.351,
+    "known link": "no specific link known"
+   },
+   {
+    "leader": "ORCL",
+    "follower": "6857.T",
+    "relation": "opposite",
+    "years_held": 3,
+    "years_scored": 4,
+    "mean_test_lift": 1.301,
+    "known link": "sector: chip-test equipment maker, demand follows AI capex"
+   },
+   {
+    "leader": "NVDA",
+    "follower": "6669.TW",
+    "relation": "same",
+    "years_held": 3,
+    "years_scored": 4,
+    "mean_test_lift": 1.217,
+    "known link": "Wiwynn builds AI servers"
+   },
+   {
+    "leader": "META",
+    "follower": "9984.T",
+    "relation": "same",
+    "years_held": 3,
+    "years_scored": 5,
+    "mean_test_lift": 1.173,
+    "known link": "no specific link known"
+   },
+   {
+    "leader": "MSFT",
+    "follower": "8035.T",
+    "relation": "same",
+    "years_held": 3,
+    "years_scored": 6,
+    "mean_test_lift": 1.131,
+    "known link": "sector: chip-equipment maker, demand follows AI capex"
+   },
+   {
+    "leader": "META",
+    "follower": "8035.T",
+    "relation": "same",
+    "years_held": 3,
+    "years_scored": 6,
+    "mean_test_lift": 1.058,
+    "known link": "sector: chip-equipment maker, demand follows AI capex"
+   }
+  ]
+ },
+ "settings": {
+  "STUDY_START": "2016-04-01",
+  "Z_K": 1.0,
+  "BETA_WINDOW": 252,
+  "VOL_WINDOW": 60,
+  "MINE_YEARS": 3,
+  "MIN_SUPPORT": 0.02,
+  "MIN_CONFIDENCE": 0.2,
+  "MIN_LIFT": 1.3,
+  "MAX_LEN": 3,
+  "MIN_FIRED_TEST": 5,
+  "FDR_Q": 0.05,
+  "N_NULL": 5,
+  "N_BOOT": 1000,
+  "BOOT_BLOCK": 21,
+  "SEED": 42
+ },
+ "runtime_seconds": 351
+}

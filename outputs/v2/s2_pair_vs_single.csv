@@ -1,0 +1,7 @@
+,two_item_rules,pair_wins
+(a) US AI -> US AI (next US day),5,0.2
+(b) US AI -> Asian AI,37,0.43243243243243246
+(c) US non-AI -> Asian non-AI,1,1.0
+(d) US AI -> Asian non-AI,1,0.0
+(e) US AI -> US AI infrastructure (next US day),1,1.0
+(f) US non-AI -> Asian AI,17,0.17647058823529413

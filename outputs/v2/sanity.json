@@ -11,11 +11,19 @@
     "dropped_clash": 150,
     "dropped_no_follower": 1
    },
+   "oc_check": {
+    "signed_used": true,
+    "abs_dropped": true
+   },
    "stocks": {
     "mean_corr_cc": 0.282,
     "mean_corr_oc": -0.1047,
     "mean_corr_overnight_gap": 0.4881,
-    "n_stocks": 8.0
+    "n_stocks": 8.0,
+    "oc_check": {
+     "signed_used": true,
+     "abs_dropped": true
+    }
    }
   },
   "^KS11": {
@@ -29,11 +37,19 @@
     "dropped_clash": 125,
     "dropped_no_follower": 1
    },
+   "oc_check": {
+    "signed_used": true,
+    "abs_dropped": true
+   },
    "stocks": {
     "mean_corr_cc": 0.2075,
     "mean_corr_oc": -0.1148,
     "mean_corr_overnight_gap": 0.4799,
-    "n_stocks": 4.0
+    "n_stocks": 4.0,
+    "oc_check": {
+     "signed_used": true,
+     "abs_dropped": false
+    }
    }
   },
   "^TWII": {
@@ -47,11 +63,19 @@
     "dropped_clash": 100,
     "dropped_no_follower": 1
    },
+   "oc_check": {
+    "signed_used": true,
+    "abs_dropped": true
+   },
    "stocks": {
     "mean_corr_cc": 0.2441,
     "mean_corr_oc": -0.0676,
     "mean_corr_overnight_gap": 0.4383,
-    "n_stocks": 10.0
+    "n_stocks": 10.0,
+    "oc_check": {
+     "signed_used": true,
+     "abs_dropped": true
+    }
    }
   }
  },

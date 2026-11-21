@@ -11,3 +11,6 @@ CLAUDE.md
 venv/
 env/
 .env
+
+# cached intermediate results (rebuilt by the notebooks)
+outputs/v2/cache/

@@ -140,6 +140,12 @@ def clean(raw, universe):
 
 # ---- sanity checks ---------------------------------------------------------------------------------------------
 
+def oc_checks(corr_oc, corr_cc):
+    # Both versions of check 2 are recorded. The abs version was the first draft; it was dropped because it fails
+    # when oc is clearly NEGATIVE (a partial reversal of the opening gap), which is not a sign of misalignment.
+    return {"signed_used": bool(corr_oc < 0.5 * corr_cc), "abs_dropped": bool(abs(corr_oc) < 0.5 * corr_cc)}
+
+
 def sanity_checks(prices, calendars):
     """If the calendar alignment is right, SPY on US date t must predict the Asian index on the follower date.
 
@@ -165,6 +171,7 @@ def sanity_checks(prices, calendars):
         r = {"corr_follower_cc": spy.corr(f_cc), "corr_follower_oc": spy.corr(f_oc),
              "corr_same_calendar_day_cc": spy.corr(same_day), "pairs": counts}
         results[idx] = {k: (round(float(v), 4) if not isinstance(v, dict) else v) for k, v in r.items()}
+        results[idx]["oc_check"] = oc_checks(r["corr_follower_oc"], r["corr_follower_cc"])
         if not r["corr_follower_cc"] > 0.2:
             problems.append(f"{idx}: follower cc correlation {r['corr_follower_cc']:.3f} is not clearly positive")
         if not r["corr_follower_oc"] < 0.5 * r["corr_follower_cc"]:
@@ -183,6 +190,7 @@ def sanity_checks(prices, calendars):
         stock = {"mean_corr_cc": s_cc.corrwith(spy_t).mean(), "mean_corr_oc": s_oc.corrwith(spy_t).mean(),
                  "mean_corr_overnight_gap": s_gap.corrwith(spy_t).mean(), "n_stocks": len(stocks)}
         results[idx]["stocks"] = {k: round(float(v), 4) for k, v in stock.items()}
+        results[idx]["stocks"]["oc_check"] = oc_checks(stock["mean_corr_oc"], stock["mean_corr_cc"])
         if not stock["mean_corr_oc"] < 0.5 * stock["mean_corr_cc"]:
             problems.append(f"{market} stocks: oc correlation {stock['mean_corr_oc']:.3f} not much smaller than cc")
     return results, problems

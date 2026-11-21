@@ -1,0 +1,163 @@
+leader,follower,relation,years_scored,years_held,mean_test_lift,hold rate,kept,leader name,follower name,known link
+AMD,8035.T,same,8,8,2.121997938447432,1.0,True,AMD,Tokyo Electron,"sector: chip-equipment maker, demand follows chipmakers' spending"
+MU,000660.KS,same,8,8,1.965753557244152,1.0,True,Micron,SK hynix,memory peer (DRAM/HBM)
+MU,8035.T,same,8,8,1.9210801238500361,1.0,True,Micron,Tokyo Electron,"sector: chip-equipment maker, demand follows chipmakers' spending"
+NVDA,6857.T,same,8,8,1.7876071044941977,1.0,True,Nvidia,Advantest,Advantest supplies GPU/HBM test equipment
+MU,6146.T,same,8,8,1.7773267909792314,1.0,True,Micron,Disco,"sector: wafer dicing/grinding tool maker, demand follows chipmakers' spending"
+NVDA,6146.T,same,8,8,1.6849263652907605,1.0,True,Nvidia,Disco,"sector: wafer dicing/grinding tool maker, demand follows chipmakers' spending"
+AVGO,6857.T,same,8,8,1.6216746437709764,1.0,True,Broadcom,Advantest,"sector: chip-test equipment maker, demand follows chipmakers' spending"
+MU,2330.TW,same,7,7,1.9790277128925229,1.0,True,Micron,TSMC,semiconductor sector peer
+AMD,6146.T,same,8,7,1.9205968347252331,0.875,True,AMD,Disco,"sector: wafer dicing/grinding tool maker, demand follows chipmakers' spending"
+AMD,6857.T,same,8,7,1.8551976800717043,0.875,True,AMD,Advantest,"sector: chip-test equipment maker, demand follows chipmakers' spending"
+MU,6920.T,same,7,7,1.607445768728809,1.0,True,Micron,Lasertec,"sector: mask-inspection equipment maker, demand follows chipmakers' spending"
+AVGO,6146.T,same,7,7,1.6072168867478251,1.0,True,Broadcom,Disco,"sector: wafer dicing/grinding tool maker, demand follows chipmakers' spending"
+MU,6857.T,same,8,7,1.5689645954233897,0.875,True,Micron,Advantest,"sector: chip-test equipment maker, demand follows chipmakers' spending"
+NVDA,8035.T,same,8,7,1.535088381363361,0.875,True,Nvidia,Tokyo Electron,"sector: chip-equipment maker, demand follows chipmakers' spending"
+AMD,6920.T,same,6,6,1.891258202221973,1.0,True,AMD,Lasertec,"sector: mask-inspection equipment maker, demand follows chipmakers' spending"
+AVGO,6920.T,same,7,6,1.7723305211201887,0.8571428571428571,True,Broadcom,Lasertec,"sector: mask-inspection equipment maker, demand follows chipmakers' spending"
+AMD,2330.TW,same,6,6,1.7677077229720728,1.0,True,AMD,TSMC,TSMC manufactures AMD's chips
+MU,005930.KS,same,7,6,1.734949133615446,0.8571428571428571,True,Micron,Samsung Electronics,memory peer (DRAM/HBM)
+AVGO,8035.T,same,7,6,1.4807414626948192,0.8571428571428571,True,Broadcom,Tokyo Electron,"sector: chip-equipment maker, demand follows chipmakers' spending"
+AVGO,2330.TW,same,7,6,1.3767779557209159,0.8571428571428571,True,Broadcom,TSMC,TSMC manufactures Broadcom's custom AI chips
+GOOGL,6857.T,same,8,5,1.4358618014230011,0.625,True,Alphabet,Advantest,"sector: chip-test equipment maker, demand follows AI capex"
+NVDA,6920.T,same,7,5,1.4298099343406256,0.7142857142857143,True,Nvidia,Lasertec,"sector: mask-inspection equipment maker, demand follows chipmakers' spending"
+GOOGL,6920.T,same,7,5,1.429512632359797,0.7142857142857143,True,Alphabet,Lasertec,"sector: mask-inspection equipment maker, demand follows AI capex"
+GOOGL,8035.T,same,7,5,1.3552676864713702,0.7142857142857143,True,Alphabet,Tokyo Electron,"sector: chip-equipment maker, demand follows AI capex"
+AMD,3711.TW,same,4,4,2.141953725287059,1.0,True,AMD,ASE Technology,semiconductor sector peer
+MU,6669.TW,same,4,4,1.647277705011963,1.0,True,Micron,Wiwynn,no specific link known
+AMD,6669.TW,same,5,4,1.5951195452728555,0.8,True,AMD,Wiwynn,no specific link known
+NVDA,2330.TW,same,5,4,1.527217901450638,0.8,True,Nvidia,TSMC,TSMC manufactures Nvidia's GPUs
+AVGO,2454.TW,same,5,4,1.4348387959211435,0.8,True,Broadcom,MediaTek,chip-design peer
+AMD,2454.TW,same,6,4,1.403701691415759,0.6666666666666666,True,AMD,MediaTek,chip-design peer
+AMD,9984.T,same,5,4,1.3997252757461736,0.8,True,AMD,SoftBank Group,no specific link known
+GOOGL,6146.T,same,6,4,1.3640483498220073,0.6666666666666666,True,Alphabet,Disco,"sector: wafer dicing/grinding tool maker, demand follows AI capex"
+GOOGL,2330.TW,same,6,4,1.2739766688223833,0.6666666666666666,True,Alphabet,TSMC,no specific link known
+META,6146.T,same,6,4,1.1595172126474271,0.6666666666666666,True,Meta,Disco,"sector: wafer dicing/grinding tool maker, demand follows AI capex"
+GOOGL,2317.TW,same,3,3,2.0255925548931217,1.0,True,Alphabet,Hon Hai (Foxconn),no specific link known
+MU,042700.KS,same,4,3,1.6952648046398047,0.75,True,Micron,Hanmi Semiconductor,no specific link known
+GOOGL,9984.T,same,4,3,1.4547109941783585,0.75,True,Alphabet,SoftBank Group,no specific link known
+AMZN,2330.TW,opposite,5,3,1.4499828383274902,0.6,True,Amazon,TSMC,no specific link known
+AMZN,6920.T,same,5,3,1.3869141790185096,0.6,True,Amazon,Lasertec,"sector: mask-inspection equipment maker, demand follows AI capex"
+GOOGL,000660.KS,same,4,3,1.350950850950851,0.75,True,Alphabet,SK hynix,no specific link known
+ORCL,6857.T,opposite,4,3,1.3007101040189277,0.75,True,Oracle,Advantest,"sector: chip-test equipment maker, demand follows AI capex"
+NVDA,6669.TW,same,4,3,1.2170514499134841,0.75,True,Nvidia,Wiwynn,Wiwynn builds AI servers
+META,9984.T,same,5,3,1.1730252464145388,0.6,True,Meta,SoftBank Group,no specific link known
+MSFT,8035.T,same,6,3,1.1308402417057464,0.5,True,Microsoft,Tokyo Electron,"sector: chip-equipment maker, demand follows AI capex"
+META,8035.T,same,6,3,1.058217493349176,0.5,True,Meta,Tokyo Electron,"sector: chip-equipment maker, demand follows AI capex"
+MU,3711.TW,same,2,2,1.7397298534798535,1.0,False,Micron,ASE Technology,semiconductor sector peer
+AMD,2382.TW,same,2,2,1.7192460317460319,1.0,False,AMD,Quanta,no specific link known
+ORCL,2454.TW,opposite,3,2,1.6999508978675646,0.6666666666666666,False,Oracle,MediaTek,no specific link known
+AMD,000660.KS,same,2,2,1.6977372867653002,1.0,False,AMD,SK hynix,semiconductor sector peer
+AVGO,2382.TW,same,3,2,1.689286422059906,0.6666666666666666,False,Broadcom,Quanta,no specific link known
+MSFT,2308.TW,opposite,2,2,1.6436467586099424,1.0,False,Microsoft,Delta Electronics,no specific link known
+MU,2382.TW,same,2,2,1.6271408948194663,1.0,False,Micron,Quanta,no specific link known
+NVDA,000660.KS,same,3,2,1.4931984279810369,0.6666666666666666,False,Nvidia,SK hynix,SK hynix supplies HBM memory for Nvidia GPUs
+AMZN,2308.TW,opposite,2,2,1.457130376344086,1.0,False,Amazon,Delta Electronics,no specific link known
+GOOGL,6669.TW,same,5,2,1.43525778707867,0.4,False,Alphabet,Wiwynn,no specific link known
+NVDA,2454.TW,same,2,2,1.3851284584980235,1.0,False,Nvidia,MediaTek,semiconductor sector peer
+AMD,2308.TW,same,3,2,1.369536287299445,0.6666666666666666,False,AMD,Delta Electronics,no specific link known
+AVGO,3711.TW,same,3,2,1.3172171826189685,0.6666666666666666,False,Broadcom,ASE Technology,semiconductor sector peer
+MSFT,2330.TW,opposite,4,2,1.3106991148146903,0.5,False,Microsoft,TSMC,no specific link known
+MSFT,3711.TW,opposite,3,2,1.3019480519480517,0.6666666666666666,False,Microsoft,ASE Technology,no specific link known
+AMZN,9984.T,same,4,2,1.2759246412956102,0.5,False,Amazon,SoftBank Group,no specific link known
+META,6857.T,same,2,2,1.235042735042735,1.0,False,Meta,Advantest,"sector: chip-test equipment maker, demand follows AI capex"
+MSFT,000660.KS,same,3,2,1.169500632927743,0.6666666666666666,False,Microsoft,SK hynix,no specific link known
+ORCL,6146.T,opposite,2,2,1.094967654581014,1.0,False,Oracle,Disco,"sector: wafer dicing/grinding tool maker, demand follows AI capex"
+NVDA,9984.T,same,3,2,1.0413528054031354,0.6666666666666666,False,Nvidia,SoftBank Group,no specific link known
+AMD,3231.TW,same,3,2,1.0339994303824889,0.6666666666666666,False,AMD,Wistron,no specific link known
+AMD,005930.KS,same,3,2,0.9293064128812033,0.6666666666666666,False,AMD,Samsung Electronics,semiconductor sector peer
+META,6146.T,opposite,3,2,0.8269768624459699,0.6666666666666666,False,Meta,Disco,"sector: wafer dicing/grinding tool maker, demand follows AI capex"
+ORCL,2382.TW,same,1,1,2.3374999999999995,1.0,False,Oracle,Quanta,no specific link known
+ORCL,3231.TW,same,1,1,1.8699999999999999,1.0,False,Oracle,Wistron,no specific link known
+MSFT,2382.TW,same,1,1,1.8577777777777778,1.0,False,Microsoft,Quanta,Quanta builds servers for hyperscalers
+GOOGL,6669.TW,opposite,1,1,1.703804347826087,1.0,False,Alphabet,Wiwynn,no specific link known
+AMZN,6146.T,opposite,2,1,1.5630252100840334,0.5,False,Amazon,Disco,"sector: wafer dicing/grinding tool maker, demand follows AI capex"
+AVGO,000660.KS,same,2,1,1.4864718614718615,0.5,False,Broadcom,SK hynix,semiconductor sector peer
+GOOGL,2454.TW,same,2,1,1.3711793257247802,0.5,False,Alphabet,MediaTek,no specific link known
+AMZN,000660.KS,same,2,1,1.3630072349795532,0.5,False,Amazon,SK hynix,no specific link known
+NVDA,005930.KS,same,1,1,1.3478260869565217,1.0,False,Nvidia,Samsung Electronics,semiconductor sector peer
+NVDA,005930.KS,opposite,1,1,1.3397435897435896,1.0,False,Nvidia,Samsung Electronics,semiconductor sector peer
+AMZN,2454.TW,opposite,2,1,1.296025641025641,0.5,False,Amazon,MediaTek,no specific link known
+MU,3231.TW,same,2,1,1.2949832775919732,0.5,False,Micron,Wistron,no specific link known
+MSFT,6146.T,opposite,2,1,1.2696969696969695,0.5,False,Microsoft,Disco,"sector: wafer dicing/grinding tool maker, demand follows AI capex"
+AMZN,005930.KS,opposite,2,1,1.2513253645168156,0.5,False,Amazon,Samsung Electronics,no specific link known
+ORCL,3711.TW,same,4,1,1.199609898307149,0.25,False,Oracle,ASE Technology,no specific link known
+AMZN,8035.T,same,2,1,1.193138279345176,0.5,False,Amazon,Tokyo Electron,"sector: chip-equipment maker, demand follows AI capex"
+MSFT,2308.TW,same,1,1,1.1923076923076923,1.0,False,Microsoft,Delta Electronics,no specific link known
+AMZN,000660.KS,opposite,1,1,1.1805555555555556,1.0,False,Amazon,SK hynix,no specific link known
+AVGO,6669.TW,same,1,1,1.1611111111111112,1.0,False,Broadcom,Wiwynn,no specific link known
+AVGO,005930.KS,same,2,1,1.1578863346104726,0.5,False,Broadcom,Samsung Electronics,semiconductor sector peer
+MSFT,9984.T,opposite,1,1,1.1454545454545453,1.0,False,Microsoft,SoftBank Group,no specific link known
+AMZN,2308.TW,same,2,1,1.137347027972028,0.5,False,Amazon,Delta Electronics,no specific link known
+AVGO,2308.TW,same,3,1,1.126465803213115,0.3333333333333333,False,Broadcom,Delta Electronics,no specific link known
+AVGO,3231.TW,same,2,1,1.122778640441684,0.5,False,Broadcom,Wistron,no specific link known
+MSFT,9984.T,same,2,1,1.1089048520083002,0.5,False,Microsoft,SoftBank Group,no specific link known
+META,2330.TW,same,3,1,1.076615972475947,0.3333333333333333,False,Meta,TSMC,no specific link known
+NVDA,2317.TW,opposite,3,1,1.0649873475960432,0.3333333333333333,False,Nvidia,Hon Hai (Foxconn),Foxconn assembles Nvidia AI servers
+AVGO,9984.T,same,2,1,1.0626941876941878,0.5,False,Broadcom,SoftBank Group,no specific link known
+MSFT,6669.TW,same,2,1,1.0404301075268818,0.5,False,Microsoft,Wiwynn,Wiwynn builds servers for hyperscalers
+MSFT,3231.TW,opposite,2,1,1.0400461538461538,0.5,False,Microsoft,Wistron,no specific link known
+AMZN,2317.TW,opposite,2,1,0.9919484702093397,0.5,False,Amazon,Hon Hai (Foxconn),no specific link known
+AMZN,3711.TW,opposite,3,1,0.9915870171246515,0.3333333333333333,False,Amazon,ASE Technology,no specific link known
+MU,2454.TW,same,2,1,0.9855588428665352,0.5,False,Micron,MediaTek,semiconductor sector peer
+MSFT,6920.T,same,2,1,0.9697368421052632,0.5,False,Microsoft,Lasertec,"sector: mask-inspection equipment maker, demand follows AI capex"
+META,2454.TW,same,3,1,0.9553697898525485,0.3333333333333333,False,Meta,MediaTek,no specific link known
+NVDA,2317.TW,same,2,1,0.9545454545454545,0.5,False,Nvidia,Hon Hai (Foxconn),Foxconn assembles Nvidia AI servers
+MSFT,6146.T,same,4,1,0.9458038311936693,0.25,False,Microsoft,Disco,"sector: wafer dicing/grinding tool maker, demand follows AI capex"
+AMZN,6146.T,same,4,1,0.9240466547326734,0.25,False,Amazon,Disco,"sector: wafer dicing/grinding tool maker, demand follows AI capex"
+META,000660.KS,same,3,1,0.892156862745098,0.3333333333333333,False,Meta,SK hynix,no specific link known
+META,8035.T,opposite,2,1,0.85562829910656,0.5,False,Meta,Tokyo Electron,"sector: chip-equipment maker, demand follows AI capex"
+MSFT,2330.TW,same,2,1,0.8128396739130435,0.5,False,Microsoft,TSMC,no specific link known
+AMZN,3231.TW,same,3,1,0.810487277728657,0.3333333333333333,False,Amazon,Wistron,no specific link known
+MSFT,6857.T,same,5,1,0.7847610693400167,0.2,False,Microsoft,Advantest,"sector: chip-test equipment maker, demand follows AI capex"
+META,6669.TW,same,3,1,0.7641561163862512,0.3333333333333333,False,Meta,Wiwynn,Wiwynn builds servers for hyperscalers
+ORCL,2330.TW,opposite,3,1,0.7623953582135744,0.3333333333333333,False,Oracle,TSMC,no specific link known
+META,6920.T,same,4,1,0.622209583179978,0.25,False,Meta,Lasertec,"sector: mask-inspection equipment maker, demand follows AI capex"
+MSFT,2454.TW,same,2,1,0.5729003396029257,0.5,False,Microsoft,MediaTek,no specific link known
+NVDA,3231.TW,same,2,0,1.163768115942029,0.0,False,Nvidia,Wistron,Wistron makes Nvidia GPU boards
+MSFT,6857.T,opposite,2,0,1.067158187599364,0.0,False,Microsoft,Advantest,"sector: chip-test equipment maker, demand follows AI capex"
+ORCL,8035.T,same,3,0,1.0640020110608346,0.0,False,Oracle,Tokyo Electron,"sector: chip-equipment maker, demand follows AI capex"
+ORCL,2317.TW,opposite,1,0,1.0635451505016722,0.0,False,Oracle,Hon Hai (Foxconn),no specific link known
+MSFT,6920.T,opposite,1,0,1.0232558139534884,0.0,False,Microsoft,Lasertec,"sector: mask-inspection equipment maker, demand follows AI capex"
+AMZN,6857.T,same,3,0,1.0145553080716418,0.0,False,Amazon,Advantest,"sector: chip-test equipment maker, demand follows AI capex"
+META,3711.TW,opposite,1,0,1.0047846889952152,0.0,False,Meta,ASE Technology,no specific link known
+META,6857.T,opposite,1,0,1.0047846889952152,0.0,False,Meta,Advantest,"sector: chip-test equipment maker, demand follows AI capex"
+AMZN,8035.T,opposite,1,0,0.9590235396687009,0.0,False,Amazon,Tokyo Electron,"sector: chip-equipment maker, demand follows AI capex"
+GOOGL,3711.TW,same,1,0,0.9500000000000001,0.0,False,Alphabet,ASE Technology,no specific link known
+AVGO,042700.KS,same,1,0,0.9290540540540542,0.0,False,Broadcom,Hanmi Semiconductor,no specific link known
+AMZN,6669.TW,same,2,0,0.9264146772767463,0.0,False,Amazon,Wiwynn,no specific link known
+ORCL,9984.T,opposite,3,0,0.911829065652595,0.0,False,Oracle,SoftBank Group,no specific link known
+ORCL,000660.KS,opposite,2,0,0.9008727845044981,0.0,False,Oracle,SK hynix,no specific link known
+AMD,2317.TW,same,1,0,0.8931623931623932,0.0,False,AMD,Hon Hai (Foxconn),no specific link known
+MSFT,2317.TW,same,1,0,0.875,0.0,False,Microsoft,Hon Hai (Foxconn),no specific link known
+AMZN,2330.TW,same,1,0,0.8559782608695652,0.0,False,Amazon,TSMC,no specific link known
+ORCL,000660.KS,same,1,0,0.8499999999999999,0.0,False,Oracle,SK hynix,no specific link known
+AMZN,6857.T,opposite,1,0,0.8060344827586207,0.0,False,Amazon,Advantest,"sector: chip-test equipment maker, demand follows AI capex"
+AMZN,9984.T,opposite,1,0,0.8060344827586207,0.0,False,Amazon,SoftBank Group,no specific link known
+ORCL,8035.T,opposite,2,0,0.802678531711583,0.0,False,Oracle,Tokyo Electron,"sector: chip-equipment maker, demand follows AI capex"
+AMZN,2382.TW,same,3,0,0.7960628980381603,0.0,False,Amazon,Quanta,Quanta builds servers for hyperscalers
+ORCL,6857.T,same,1,0,0.7791666666666667,0.0,False,Oracle,Advantest,"sector: chip-test equipment maker, demand follows AI capex"
+ORCL,6146.T,same,3,0,0.7748639320323907,0.0,False,Oracle,Disco,"sector: wafer dicing/grinding tool maker, demand follows AI capex"
+NVDA,2382.TW,same,3,0,0.7743937825459565,0.0,False,Nvidia,Quanta,Quanta assembles Nvidia AI servers
+ORCL,2454.TW,same,1,0,0.762250453720508,0.0,False,Oracle,MediaTek,no specific link known
+ORCL,005930.KS,opposite,3,0,0.7595441194512403,0.0,False,Oracle,Samsung Electronics,no specific link known
+META,3231.TW,same,1,0,0.7572463768115941,0.0,False,Meta,Wistron,no specific link known
+AMZN,2454.TW,same,1,0,0.7291666666666666,0.0,False,Amazon,MediaTek,no specific link known
+MU,2308.TW,same,1,0,0.7252478632478632,0.0,False,Micron,Delta Electronics,no specific link known
+ORCL,6920.T,same,1,0,0.6875,0.0,False,Oracle,Lasertec,"sector: mask-inspection equipment maker, demand follows AI capex"
+MU,2317.TW,same,1,0,0.6555811965811966,0.0,False,Micron,Hon Hai (Foxconn),no specific link known
+NVDA,3711.TW,same,1,0,0.6290922619047619,0.0,False,Nvidia,ASE Technology,ASE packages and tests chips
+ORCL,3231.TW,opposite,1,0,0.6267806267806267,0.0,False,Oracle,Wistron,no specific link known
+MU,3231.TW,opposite,1,0,0.5936507936507937,0.0,False,Micron,Wistron,no specific link known
+ORCL,2308.TW,opposite,1,0,0.5725806451612904,0.0,False,Oracle,Delta Electronics,no specific link known
+GOOGL,2308.TW,opposite,1,0,0.5555555555555556,0.0,False,Alphabet,Delta Electronics,no specific link known
+GOOGL,2308.TW,same,2,0,0.5359225061742224,0.0,False,Alphabet,Delta Electronics,no specific link known
+AVGO,2317.TW,same,1,0,0.5277777777777778,0.0,False,Broadcom,Hon Hai (Foxconn),no specific link known
+ORCL,6920.T,opposite,1,0,0.4851258581235698,0.0,False,Oracle,Lasertec,"sector: mask-inspection equipment maker, demand follows AI capex"
+META,6920.T,opposite,2,0,0.4320987654320988,0.0,False,Meta,Lasertec,"sector: mask-inspection equipment maker, demand follows AI capex"
+MSFT,005930.KS,opposite,1,0,0.3666666666666667,0.0,False,Microsoft,Samsung Electronics,no specific link known
+ORCL,3711.TW,opposite,1,0,0.29120879120879123,0.0,False,Oracle,ASE Technology,no specific link known
+ORCL,005930.KS,same,1,0,0.29085872576177285,0.0,False,Oracle,Samsung Electronics,no specific link known
+MU,6669.TW,opposite,1,0,0.27827380952380953,0.0,False,Micron,Wiwynn,no specific link known
+ORCL,2330.TW,same,1,0,0.25925925925925924,0.0,False,Oracle,TSMC,no specific link known
+ORCL,2382.TW,opposite,2,0,0.2586206896551724,0.0,False,Oracle,Quanta,no specific link known
