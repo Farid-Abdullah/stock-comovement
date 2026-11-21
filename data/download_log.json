@@ -10,6 +10,8 @@
   "DELL": "2016-08-17",
   "6669.TW": "2017-11-13"
  },
+ "hourly_failed": [],
+ "hourly_first": "2023-11-17 09:00:00",
  "alignment": {
   "JP": {
    "us_dates": 2990,

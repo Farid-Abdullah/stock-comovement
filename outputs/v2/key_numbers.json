@@ -1515,6 +1515,78 @@
    "2026": 0.4903,
    "pooled": 0.4903
   },
+  "cc_raw | boosting | A": {
+   "2021": 0.4803,
+   "2022": 0.5037,
+   "2023": 0.5168,
+   "2024": 0.5033,
+   "2025": 0.5162,
+   "2026": 0.5248,
+   "pooled": 0.5041
+  },
+  "cc_raw | boosting | A+US": {
+   "2021": 0.5833,
+   "2022": 0.6882,
+   "2023": 0.6317,
+   "2024": 0.6806,
+   "2025": 0.6328,
+   "2026": 0.6531,
+   "pooled": 0.6462
+  },
+  "cc_raw | boosting | B": {
+   "2021": 0.591,
+   "2022": 0.6832,
+   "2023": 0.6273,
+   "2024": 0.6802,
+   "2025": 0.6348,
+   "2026": 0.6463,
+   "pooled": 0.645
+  },
+  "cc_raw | logistic | A": {
+   "2021": 0.497,
+   "2022": 0.5099,
+   "2023": 0.5246,
+   "2024": 0.499,
+   "2025": 0.5018,
+   "2026": 0.4951,
+   "pooled": 0.499
+  },
+  "cc_raw | logistic | A+US": {
+   "2021": 0.6003,
+   "2022": 0.7003,
+   "2023": 0.661,
+   "2024": 0.6648,
+   "2025": 0.6426,
+   "2026": 0.6612,
+   "pooled": 0.6551
+  },
+  "cc_raw | logistic | B": {
+   "2021": 0.6025,
+   "2022": 0.6958,
+   "2023": 0.6627,
+   "2024": 0.6675,
+   "2025": 0.6437,
+   "2026": 0.6615,
+   "pooled": 0.6552
+  },
+  "cc_raw | rule benchmark | drift": {
+   "2021": 0.5486,
+   "2022": 0.5292,
+   "2023": 0.555,
+   "2024": 0.5356,
+   "2025": 0.5374,
+   "2026": 0.5797,
+   "pooled": 0.5487
+  },
+  "cc_raw | rule benchmark | fade": {
+   "2021": 0.4785,
+   "2022": 0.4586,
+   "2023": 0.4884,
+   "2024": 0.4631,
+   "2025": 0.4629,
+   "2026": 0.4498,
+   "pooled": 0.4669
+  },
   "oc | boosting | A": {
    "2021": 0.4984,
    "2022": 0.5146,
@@ -1586,6 +1658,78 @@
    "2025": 0.4968,
    "2026": 0.5033,
    "pooled": 0.5005
+  },
+  "oc_raw | boosting | A": {
+   "2021": 0.52,
+   "2022": 0.5311,
+   "2023": 0.5573,
+   "2024": 0.5203,
+   "2025": 0.5039,
+   "2026": 0.5436,
+   "pooled": 0.5282
+  },
+  "oc_raw | boosting | A+US": {
+   "2021": 0.5184,
+   "2022": 0.5302,
+   "2023": 0.553,
+   "2024": 0.5128,
+   "2025": 0.4961,
+   "2026": 0.5464,
+   "pooled": 0.5257
+  },
+  "oc_raw | boosting | B": {
+   "2021": 0.5182,
+   "2022": 0.5408,
+   "2023": 0.5439,
+   "2024": 0.5117,
+   "2025": 0.5017,
+   "2026": 0.5476,
+   "pooled": 0.5267
+  },
+  "oc_raw | logistic | A": {
+   "2021": 0.5303,
+   "2022": 0.5077,
+   "2023": 0.545,
+   "2024": 0.517,
+   "2025": 0.5089,
+   "2026": 0.5254,
+   "pooled": 0.5212
+  },
+  "oc_raw | logistic | A+US": {
+   "2021": 0.5253,
+   "2022": 0.5292,
+   "2023": 0.5525,
+   "2024": 0.4962,
+   "2025": 0.5119,
+   "2026": 0.5559,
+   "pooled": 0.5268
+  },
+  "oc_raw | logistic | B": {
+   "2021": 0.5317,
+   "2022": 0.5315,
+   "2023": 0.5538,
+   "2024": 0.5033,
+   "2025": 0.5187,
+   "2026": 0.5531,
+   "pooled": 0.5299
+  },
+  "oc_raw | rule benchmark | drift": {
+   "2021": 0.5092,
+   "2022": 0.4971,
+   "2023": 0.5217,
+   "2024": 0.4864,
+   "2025": 0.4983,
+   "2026": 0.5018,
+   "pooled": 0.5027
+  },
+  "oc_raw | rule benchmark | fade": {
+   "2021": 0.5112,
+   "2022": 0.5188,
+   "2023": 0.504,
+   "2024": 0.4965,
+   "2025": 0.5141,
+   "2026": 0.5182,
+   "pooled": 0.5103
   }
  },
  "model_comparisons": [
@@ -1696,8 +1840,244 @@
    "95% CI": "[-0.001, +0.019]",
    "years better": 4,
    "of years": 6
+  },
+  {
+   "target": "oc_raw",
+   "model": "logistic",
+   "comparison": "A+US - A",
+   "AUC difference": 0.0057,
+   "95% CI": "[-0.007, +0.018]",
+   "years better": 4,
+   "of years": 6
+  },
+  {
+   "target": "oc_raw",
+   "model": "logistic",
+   "comparison": "B - A+US",
+   "AUC difference": 0.0031,
+   "95% CI": "[-0.000, +0.006]",
+   "years better": 5,
+   "of years": 6
+  },
+  {
+   "target": "oc_raw",
+   "model": "logistic",
+   "comparison": "B - drift benchmark",
+   "AUC difference": 0.0272,
+   "95% CI": "[+0.015, +0.039]",
+   "years better": 6,
+   "of years": 6
+  },
+  {
+   "target": "oc_raw",
+   "model": "boosting",
+   "comparison": "A+US - A",
+   "AUC difference": -0.0025,
+   "95% CI": "[-0.015, +0.010]",
+   "years better": 1,
+   "of years": 6
+  },
+  {
+   "target": "oc_raw",
+   "model": "boosting",
+   "comparison": "B - A+US",
+   "AUC difference": 0.0011,
+   "95% CI": "[-0.005, +0.007]",
+   "years better": 3,
+   "of years": 6
+  },
+  {
+   "target": "oc_raw",
+   "model": "boosting",
+   "comparison": "B - drift benchmark",
+   "AUC difference": 0.024,
+   "95% CI": "[+0.011, +0.037]",
+   "years better": 6,
+   "of years": 6
+  },
+  {
+   "target": "cc_raw",
+   "model": "logistic",
+   "comparison": "A+US - A",
+   "AUC difference": 0.1561,
+   "95% CI": "[+0.135, +0.177]",
+   "years better": 6,
+   "of years": 6
+  },
+  {
+   "target": "cc_raw",
+   "model": "logistic",
+   "comparison": "B - A+US",
+   "AUC difference": 0.0001,
+   "95% CI": "[-0.002, +0.002]",
+   "years better": 5,
+   "of years": 6
+  },
+  {
+   "target": "cc_raw",
+   "model": "logistic",
+   "comparison": "B - drift benchmark",
+   "AUC difference": 0.1065,
+   "95% CI": "[+0.088, +0.125]",
+   "years better": 6,
+   "of years": 6
+  },
+  {
+   "target": "cc_raw",
+   "model": "boosting",
+   "comparison": "A+US - A",
+   "AUC difference": 0.1421,
+   "95% CI": "[+0.122, +0.162]",
+   "years better": 6,
+   "of years": 6
+  },
+  {
+   "target": "cc_raw",
+   "model": "boosting",
+   "comparison": "B - A+US",
+   "AUC difference": -0.0012,
+   "95% CI": "[-0.005, +0.002]",
+   "years better": 2,
+   "of years": 6
+  },
+  {
+   "target": "cc_raw",
+   "model": "boosting",
+   "comparison": "B - drift benchmark",
+   "AUC difference": 0.0962,
+   "95% CI": "[+0.079, +0.114]",
+   "years better": 6,
+   "of years": 6
   }
  ],
+ "target_robustness": {
+  "pooled_auc": {
+   "boosting | A": {
+    "oc residual": 0.5213,
+    "oc raw": 0.5282,
+    "cc residual": 0.5026,
+    "cc raw": 0.5041
+   },
+   "boosting | A+US": {
+    "oc residual": 0.5233,
+    "oc raw": 0.5257,
+    "cc residual": 0.5435,
+    "cc raw": 0.6462
+   },
+   "boosting | B": {
+    "oc residual": 0.5263,
+    "oc raw": 0.5267,
+    "cc residual": 0.542,
+    "cc raw": 0.645
+   },
+   "logistic | A": {
+    "oc residual": 0.5267,
+    "oc raw": 0.5212,
+    "cc residual": 0.5135,
+    "cc raw": 0.499
+   },
+   "logistic | A+US": {
+    "oc residual": 0.5238,
+    "oc raw": 0.5268,
+    "cc residual": 0.5411,
+    "cc raw": 0.6551
+   },
+   "logistic | B": {
+    "oc residual": 0.5256,
+    "oc raw": 0.5299,
+    "cc residual": 0.5464,
+    "cc raw": 0.6552
+   },
+   "rule benchmark | drift": {
+    "oc residual": 0.5028,
+    "oc raw": 0.5027,
+    "cc residual": 0.5331,
+    "cc raw": 0.5487
+   },
+   "rule benchmark | fade": {
+    "oc residual": 0.5005,
+    "oc raw": 0.5103,
+    "cc residual": 0.4903,
+    "cc raw": 0.4669
+   }
+  },
+  "open-to-close": {
+   "logistic | A+US - A": {
+    "residual: AUC diff": -0.0029,
+    "residual: 95% CI": "[-0.007, +0.001]",
+    "raw: AUC diff": 0.0057,
+    "raw: 95% CI": "[-0.007, +0.018]"
+   },
+   "logistic | B - A+US": {
+    "residual: AUC diff": 0.0018,
+    "residual: 95% CI": "[-0.001, +0.005]",
+    "raw: AUC diff": 0.0031,
+    "raw: 95% CI": "[-0.000, +0.006]"
+   },
+   "logistic | B - drift benchmark": {
+    "residual: AUC diff": 0.0227,
+    "residual: 95% CI": "[+0.014, +0.032]",
+    "raw: AUC diff": 0.0272,
+    "raw: 95% CI": "[+0.015, +0.039]"
+   },
+   "boosting | A+US - A": {
+    "residual: AUC diff": 0.002,
+    "residual: 95% CI": "[-0.003, +0.007]",
+    "raw: AUC diff": -0.0025,
+    "raw: 95% CI": "[-0.015, +0.010]"
+   },
+   "boosting | B - A+US": {
+    "residual: AUC diff": 0.0029,
+    "residual: 95% CI": "[-0.002, +0.008]",
+    "raw: AUC diff": 0.0011,
+    "raw: 95% CI": "[-0.005, +0.007]"
+   },
+   "boosting | B - drift benchmark": {
+    "residual: AUC diff": 0.0235,
+    "residual: 95% CI": "[+0.012, +0.034]",
+    "raw: AUC diff": 0.024,
+    "raw: 95% CI": "[+0.011, +0.037]"
+   }
+  },
+  "close-to-close": {
+   "logistic | A+US - A": {
+    "residual: AUC diff": 0.0276,
+    "residual: 95% CI": "[+0.019, +0.036]",
+    "raw: AUC diff": 0.1561,
+    "raw: 95% CI": "[+0.135, +0.177]"
+   },
+   "logistic | B - A+US": {
+    "residual: AUC diff": 0.0053,
+    "residual: 95% CI": "[+0.002, +0.009]",
+    "raw: AUC diff": 0.0001,
+    "raw: 95% CI": "[-0.002, +0.002]"
+   },
+   "logistic | B - drift benchmark": {
+    "residual: AUC diff": 0.0134,
+    "residual: 95% CI": "[+0.007, +0.020]",
+    "raw: AUC diff": 0.1065,
+    "raw: 95% CI": "[+0.088, +0.125]"
+   },
+   "boosting | A+US - A": {
+    "residual: AUC diff": 0.041,
+    "residual: 95% CI": "[+0.031, +0.051]",
+    "raw: AUC diff": 0.1421,
+    "raw: 95% CI": "[+0.122, +0.162]"
+   },
+   "boosting | B - A+US": {
+    "residual: AUC diff": -0.0016,
+    "residual: 95% CI": "[-0.007, +0.004]",
+    "raw: AUC diff": -0.0012,
+    "raw: 95% CI": "[-0.005, +0.002]"
+   },
+   "boosting | B - drift benchmark": {
+    "residual: AUC diff": 0.0089,
+    "residual: 95% CI": "[-0.001, +0.019]",
+    "raw: AUC diff": 0.0962,
+    "raw: 95% CI": "[+0.079, +0.114]"
+   }
+  }
+ },
  "trading": {
   "logistic, A": {
    "trading days": 1251,
@@ -1879,6 +2259,490 @@
    "of years": 6
   }
  },
+ "bounce_check": {
+  "1.0 | JP": {
+   "event days": 175,
+   "open -> close (daily file) (bps)": 34.971,
+   "open -> close (daily file) 95% CI": "[+12.3, +62.6]",
+   "open -> close (hourly bars) (bps)": 32.09,
+   "open -> close (hourly bars) 95% CI": "[+12.9, +56.6]",
+   "first-hour close -> close (hourly bars) (bps)": 13.197,
+   "first-hour close -> close (hourly bars) 95% CI": "[-10.0, +34.6]",
+   "share kept after the first hour": 0.411
+  },
+  "1.0 | KR": {
+   "event days": 175,
+   "open -> close (daily file) (bps)": 42.371,
+   "open -> close (daily file) 95% CI": "[+8.5, +77.8]",
+   "open -> close (hourly bars) (bps)": 44.007,
+   "open -> close (hourly bars) 95% CI": "[+16.5, +76.1]",
+   "first-hour close -> close (hourly bars) (bps)": 1.691,
+   "first-hour close -> close (hourly bars) 95% CI": "[-21.4, +21.8]",
+   "share kept after the first hour": 0.038
+  },
+  "1.0 | TW": {
+   "event days": 175,
+   "open -> close (daily file) (bps)": 13.241,
+   "open -> close (daily file) 95% CI": "[-11.6, +38.8]",
+   "open -> close (hourly bars) (bps)": 15.418,
+   "open -> close (hourly bars) 95% CI": "[-8.0, +41.4]",
+   "first-hour close -> close (hourly bars) (bps)": 11.386,
+   "first-hour close -> close (hourly bars) 95% CI": "[-7.5, +35.5]",
+   "share kept after the first hour": 0.739
+  },
+  "1.0 | all": {
+   "event days": 175,
+   "open -> close (daily file) (bps)": 25.494,
+   "open -> close (daily file) 95% CI": "[+5.2, +45.7]",
+   "open -> close (hourly bars) (bps)": 25.988,
+   "open -> close (hourly bars) 95% CI": "[+7.0, +46.3]",
+   "first-hour close -> close (hourly bars) (bps)": 10.134,
+   "first-hour close -> close (hourly bars) 95% CI": "[-2.5, +26.2]",
+   "share kept after the first hour": 0.39
+  },
+  "2.0 | JP": {
+   "event days": 41,
+   "open -> close (daily file) (bps)": 113.147,
+   "open -> close (daily file) 95% CI": "[+79.3, +148.6]",
+   "open -> close (hourly bars) (bps)": 108.125,
+   "open -> close (hourly bars) 95% CI": "[+79.9, +137.8]",
+   "first-hour close -> close (hourly bars) (bps)": 35.372,
+   "first-hour close -> close (hourly bars) 95% CI": "[-5.3, +78.1]",
+   "share kept after the first hour": 0.327
+  },
+  "2.0 | KR": {
+   "event days": 41,
+   "open -> close (daily file) (bps)": 73.413,
+   "open -> close (daily file) 95% CI": "[+6.1, +144.1]",
+   "open -> close (hourly bars) (bps)": 84.02,
+   "open -> close (hourly bars) 95% CI": "[+5.1, +166.9]",
+   "first-hour close -> close (hourly bars) (bps)": 8.012,
+   "first-hour close -> close (hourly bars) 95% CI": "[-36.0, +54.2]",
+   "share kept after the first hour": 0.095
+  },
+  "2.0 | TW": {
+   "event days": 41,
+   "open -> close (daily file) (bps)": 78.833,
+   "open -> close (daily file) 95% CI": "[+57.4, +101.3]",
+   "open -> close (hourly bars) (bps)": 83.495,
+   "open -> close (hourly bars) 95% CI": "[+57.2, +111.1]",
+   "first-hour close -> close (hourly bars) (bps)": 46.638,
+   "first-hour close -> close (hourly bars) 95% CI": "[+25.2, +69.1]",
+   "share kept after the first hour": 0.559
+  },
+  "2.0 | all": {
+   "event days": 41,
+   "open -> close (daily file) (bps)": 88.54,
+   "open -> close (daily file) 95% CI": "[+54.6, +124.1]",
+   "open -> close (hourly bars) (bps)": 91.29,
+   "open -> close (hourly bars) 95% CI": "[+54.5, +129.9]",
+   "first-hour close -> close (hourly bars) (bps)": 35.875,
+   "first-hour close -> close (hourly bars) 95% CI": "[+4.2, +69.1]",
+   "share kept after the first hour": 0.393
+  }
+ },
+ "semi_split": {
+  "edges": [
+   "AMD|6146.T|same",
+   "AMD|6857.T|same",
+   "AMD|8035.T|same",
+   "AMD|9984.T|same",
+   "AVGO|2330.TW|same",
+   "AVGO|6146.T|same",
+   "AVGO|6857.T|same",
+   "AVGO|6920.T|same",
+   "AVGO|8035.T|same",
+   "MU|000660.KS|same",
+   "MU|005930.KS|same",
+   "MU|2330.TW|same",
+   "MU|6146.T|same",
+   "MU|6857.T|same",
+   "MU|6920.T|same",
+   "MU|8035.T|same",
+   "NVDA|2330.TW|same",
+   "NVDA|6146.T|same",
+   "NVDA|6857.T|same",
+   "NVDA|6920.T|same",
+   "NVDA|8035.T|same"
+  ],
+  "table": {
+   "semi": {
+    "direction right (real)": 0.879,
+    "direction right (null)": 0.4866,
+    "excess": 0.3924,
+    "median test lift (real)": 1.6203,
+    "median test lift (null)": 1.0718,
+    "lift excess": 0.5485,
+    "scored rules (real)": 124,
+    "scored rules (null, per copy)": 111.8,
+    "excess 95% CI": [
+     0.2616,
+     0.5233
+    ],
+    "lift excess 95% CI": [
+     0.2606,
+     0.8363
+    ],
+    "excess percentile CI (biased, reference only)": [
+     0.1961,
+     0.4434
+    ],
+    "direction right (real) 95% CI": [
+     0.7665,
+     0.9916
+    ]
+   },
+   "other": {
+    "direction right (real)": 0.6379,
+    "direction right (null)": 0.4866,
+    "excess": 0.1513,
+    "median test lift (real)": 1.1931,
+    "median test lift (null)": 1.0718,
+    "lift excess": 0.1213,
+    "scored rules (real)": 232,
+    "scored rules (null, per copy)": 111.8,
+    "excess 95% CI": [
+     0.0604,
+     0.2423
+    ],
+    "lift excess 95% CI": [
+     -0.0378,
+     0.2804
+    ],
+    "excess percentile CI (biased, reference only)": [
+     0.0355,
+     0.2145
+    ],
+    "direction right (real) 95% CI": [
+     0.5619,
+     0.714
+    ]
+   },
+   "control": {
+    "direction right (real)": 0.7302,
+    "direction right (null)": 0.4628,
+    "excess": 0.2673,
+    "median test lift (real)": 1.4133,
+    "median test lift (null)": 0.9815,
+    "lift excess": 0.4319,
+    "scored rules (real)": 63,
+    "scored rules (null, per copy)": 24.2,
+    "excess 95% CI": [
+     0.1486,
+     0.3861
+    ],
+    "lift excess 95% CI": [
+     0.211,
+     0.6527
+    ],
+    "excess percentile CI (biased, reference only)": [
+     0.0887,
+     0.3322
+    ],
+    "direction right (real) 95% CI": [
+     0.6369,
+     0.8234
+    ]
+   }
+  },
+  "differences": {
+   "excess(semi) - excess(other)": {
+    "estimate": 0.2411,
+    "95% CI": [
+     0.1545,
+     0.3277
+    ],
+    "percentile CI (reference only)": [
+     0.1175,
+     0.2919
+    ]
+   },
+   "excess(semi) - excess(control)": {
+    "estimate": 0.1251,
+    "95% CI": [
+     -0.0528,
+     0.303
+    ],
+    "percentile CI (reference only)": [
+     -0.063,
+     0.2898
+    ]
+   }
+  },
+  "passes": false,
+  "first_version_invalid": {
+   "table": {
+    "semi": {
+     "direction right (real)": 0.879,
+     "direction right (null)": 0.9149,
+     "excess": -0.0359,
+     "median test lift (real)": 1.6203,
+     "median test lift (null)": 1.7863,
+     "lift excess": -0.1661,
+     "scored rules (real)": 124,
+     "scored rules (null, per copy)": 9.4,
+     "excess 95% CI": [
+      -0.1253,
+      0.0536
+     ],
+     "lift excess 95% CI": [
+      -0.4068,
+      0.0747
+     ],
+     "excess percentile CI (biased, reference only)": [
+      -0.1223,
+      0.0537
+     ],
+     "direction right (real) 95% CI": [
+      0.7665,
+      0.9916
+     ]
+    },
+    "other": {
+     "direction right (real)": 0.6379,
+     "direction right (null)": 0.4473,
+     "excess": 0.1907,
+     "median test lift (real)": 1.1931,
+     "median test lift (null)": 1.0345,
+     "lift excess": 0.1586,
+     "scored rules (real)": 232,
+     "scored rules (null, per copy)": 102.4,
+     "excess 95% CI": [
+      0.0935,
+      0.2878
+     ],
+     "lift excess 95% CI": [
+      -0.0094,
+      0.3267
+     ],
+     "excess percentile CI (biased, reference only)": [
+      0.0641,
+      0.2537
+     ],
+     "direction right (real) 95% CI": [
+      0.5619,
+      0.714
+     ]
+    },
+    "control": {
+     "direction right (real)": 0.7302,
+     "direction right (null)": 0.4628,
+     "excess": 0.2673,
+     "median test lift (real)": 1.4133,
+     "median test lift (null)": 0.9815,
+     "lift excess": 0.4319,
+     "scored rules (real)": 63,
+     "scored rules (null, per copy)": 24.2,
+     "excess 95% CI": [
+      0.1486,
+      0.3861
+     ],
+     "lift excess 95% CI": [
+      0.211,
+      0.6527
+     ],
+     "excess percentile CI (biased, reference only)": [
+      0.0887,
+      0.3322
+     ],
+     "direction right (real) 95% CI": [
+      0.6369,
+      0.8234
+     ]
+    }
+   },
+   "differences": {
+    "excess(semi) - excess(other)": {
+     "estimate": -0.2265,
+     "95% CI": [
+      -0.3336,
+      -0.1194
+     ],
+     "percentile CI (reference only)": [
+      -0.2961,
+      -0.0832
+     ]
+    },
+    "excess(semi) - excess(control)": {
+     "estimate": -0.3032,
+     "95% CI": [
+      -0.4501,
+      -0.1563
+     ],
+     "percentile CI (reference only)": [
+      -0.3864,
+      -0.0946
+     ]
+    }
+   }
+  }
+ },
+ "threshold_split": {
+  "table": {
+   "all AI followers | 1.0": {
+    "early event days": 398,
+    "early net % per year": 1.668,
+    "early net per trade day (bps)": 2.934,
+    "late event days": 238,
+    "late net per trade day (bps)": 5.531,
+    "late 95% CI": "[-8.7, +23.2]",
+    "late net % per year": 4.055,
+    "chosen on 2016-2022": false
+   },
+   "all AI followers | 1.25": {
+    "early event days": 294,
+    "early net % per year": 5.583,
+    "early net per trade day (bps)": 13.294,
+    "late event days": 164,
+    "late net per trade day (bps)": 25.368,
+    "late 95% CI": "[+5.9, +43.3]",
+    "late net % per year": 12.817,
+    "chosen on 2016-2022": false
+   },
+   "all AI followers | 1.5": {
+    "early event days": 209,
+    "early net % per year": 5.427,
+    "early net per trade day (bps)": 18.177,
+    "late event days": 116,
+    "late net per trade day (bps)": 33.848,
+    "late 95% CI": "[+14.6, +57.8]",
+    "late net % per year": 12.096,
+    "chosen on 2016-2022": false
+   },
+   "all AI followers | 1.75": {
+    "early event days": 143,
+    "early net % per year": 7.459,
+    "early net per trade day (bps)": 36.513,
+    "late event days": 75,
+    "late net per trade day (bps)": 57.387,
+    "late 95% CI": "[+41.2, +83.8]",
+    "late net % per year": 13.259,
+    "chosen on 2016-2022": false
+   },
+   "all AI followers | 2.0": {
+    "early event days": 98,
+    "early net % per year": 7.562,
+    "early net per trade day (bps)": 54.014,
+    "late event days": 47,
+    "late net per trade day (bps)": 67.978,
+    "late 95% CI": "[+19.3, +161.0]",
+    "late net % per year": 9.843,
+    "chosen on 2016-2022": true
+   },
+   "all AI followers | 2.5": {
+    "early event days": 51,
+    "early net % per year": 5.86,
+    "early net per trade day (bps)": 80.43,
+    "late event days": 21,
+    "late net per trade day (bps)": 102.856,
+    "late 95% CI": "n/a (too few days)",
+    "late net % per year": 6.654,
+    "chosen on 2016-2022": false
+   },
+   "all AI followers | 3.0": {
+    "early event days": 34,
+    "early net % per year": 4.964,
+    "early net per trade day (bps)": 102.208,
+    "late event days": 8,
+    "late net per trade day (bps)": 147.898,
+    "late 95% CI": "n/a (too few days)",
+    "late net % per year": 3.645,
+    "chosen on 2016-2022": false
+   },
+   "Japan AI followers | 1.0": {
+    "early event days": 397,
+    "early net % per year": 15.852,
+    "early net per trade day (bps)": 27.95,
+    "late event days": 238,
+    "late net per trade day (bps)": 14.985,
+    "late 95% CI": "[-3.1, +37.8]",
+    "late net % per year": 10.987,
+    "chosen on 2016-2022": false
+   },
+   "Japan AI followers | 1.25": {
+    "early event days": 293,
+    "early net % per year": 16.775,
+    "early net per trade day (bps)": 40.076,
+    "late event days": 164,
+    "late net per trade day (bps)": 30.458,
+    "late 95% CI": "[-1.8, +67.2]",
+    "late net % per year": 15.389,
+    "chosen on 2016-2022": true
+   },
+   "Japan AI followers | 1.5": {
+    "early event days": 208,
+    "early net % per year": 14.324,
+    "early net per trade day (bps)": 48.207,
+    "late event days": 116,
+    "late net per trade day (bps)": 37.953,
+    "late 95% CI": "[+3.2, +76.0]",
+    "late net % per year": 13.563,
+    "chosen on 2016-2022": false
+   },
+   "Japan AI followers | 1.75": {
+    "early event days": 142,
+    "early net % per year": 14.449,
+    "early net per trade day (bps)": 71.228,
+    "late event days": 75,
+    "late net per trade day (bps)": 76.376,
+    "late 95% CI": "[+29.4, +121.6]",
+    "late net % per year": 17.647,
+    "chosen on 2016-2022": false
+   },
+   "Japan AI followers | 2.0": {
+    "early event days": 98,
+    "early net % per year": 13.744,
+    "early net per trade day (bps)": 98.169,
+    "late event days": 47,
+    "late net per trade day (bps)": 91.362,
+    "late 95% CI": "[+23.4, +237.8]",
+    "late net % per year": 13.228,
+    "chosen on 2016-2022": false
+   },
+   "Japan AI followers | 2.5": {
+    "early event days": 51,
+    "early net % per year": 9.696,
+    "early net per trade day (bps)": 133.085,
+    "late event days": 21,
+    "late net per trade day (bps)": 179.471,
+    "late 95% CI": "n/a (too few days)",
+    "late net % per year": 11.611,
+    "chosen on 2016-2022": false
+   },
+   "Japan AI followers | 3.0": {
+    "early event days": 34,
+    "early net % per year": 8.192,
+    "early net per trade day (bps)": 168.653,
+    "late event days": 8,
+    "late net per trade day (bps)": 298.954,
+    "late 95% CI": "n/a (too few days)",
+    "late net % per year": 7.368,
+    "chosen on 2016-2022": false
+   }
+  },
+  "result": {
+   "all AI followers": {
+    "threshold": 2.0,
+    "late event days": 47,
+    "late net per trade day (bps)": 67.9776,
+    "late 95% CI": [
+     19.3284,
+     160.9825
+    ],
+    "passes": true
+   },
+   "Japan AI followers": {
+    "threshold": 1.25,
+    "late event days": 164,
+    "late net per trade day (bps)": 30.4583,
+    "late 95% CI": [
+     -1.7813,
+     67.1543
+    ],
+    "passes": false
+   }
+  }
+ },
  "settings": {
   "STUDY_START": "2016-04-01",
   "Z_K": 1.0,
@@ -1896,5 +2760,5 @@
   "BOOT_BLOCK": 21,
   "SEED": 42
  },
- "runtime_seconds": 142
+ "runtime_seconds": 234
 }

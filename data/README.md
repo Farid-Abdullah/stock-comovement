@@ -15,6 +15,7 @@
 | `universe.csv` | ticker, market, group, home index, company name, approximate index weight |
 | `calendar_v2.csv` | for each US date t and Asian market: follower date (first local trading date after t), gap in days |
 | `download_log.json` | failed, dropped and late-listed tickers; cleaning counts per ticker |
+| `raw/hourly/<ticker>.csv`, `prices_hourly_v2.csv` | hourly bars (Open, Close, Volume) of the Asian stocks for the last ~730 days, local exchange time; not adjusted like the daily file, so only within-day ratios are used (bid-ask bounce check) |
 | `prices.csv` | the earlier 40-stock US file used by `final_project.ipynb` and `lag_rules_models_regimes.ipynb` |
 
 ## Which stocks, and why (selection rule per group)

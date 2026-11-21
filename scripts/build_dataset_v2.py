@@ -88,6 +88,36 @@ def download_all(tickers, refresh):
     return failed
 
 
+HOURLY_PERIOD = "730d"           # Yahoo keeps about two years of hourly bars
+
+
+def download_hourly(tickers, refresh):
+    """Hourly bars (Open, Close, Volume) for the Asian stocks, local exchange time, saved to data/raw/hourly/.
+
+    Used only for the bid-ask bounce check of the opening-gap reversal (Stage 3/4). Hourly prices are NOT adjusted
+    the same way as the daily file, so the notebook only uses ratios within one day of the hourly data.
+    """
+    folder = RAW / "hourly"
+    folder.mkdir(parents=True, exist_ok=True)
+    failed = []
+    for t in tickers:
+        path = folder / (t + ".csv")
+        if path.exists() and not refresh:
+            continue
+        for attempt in range(1, RETRIES + 1):
+            h = yf.download(t, period=HOURLY_PERIOD, interval="1h", auto_adjust=True, progress=False, threads=False)
+            if len(h):
+                h.columns = h.columns.get_level_values(0)
+                h.index = h.index.tz_localize(None)            # keep local exchange time, drop the time zone tag
+                h[["Open", "Close", "Volume"]].to_csv(path, index_label="Datetime")
+                break
+            time.sleep(PAUSE_SECONDS * 2 * attempt)
+        else:
+            failed.append(t)
+        time.sleep(PAUSE_SECONDS / 2)
+    return failed
+
+
 def load_raw(tickers):
     frames = {}
     for t in tickers:
@@ -215,6 +245,7 @@ README = """# Data for the overnight-transmission study
 | `universe.csv` | ticker, market, group, home index, company name, approximate index weight |
 | `calendar_v2.csv` | for each US date t and Asian market: follower date (first local trading date after t), gap in days |
 | `download_log.json` | failed, dropped and late-listed tickers; cleaning counts per ticker |
+| `raw/hourly/<ticker>.csv`, `prices_hourly_v2.csv` | hourly bars (Open, Close, Volume) of the Asian stocks for the last ~730 days, local exchange time; not adjusted like the daily file, so only within-day ratios are used (bid-ask bounce check) |
 | `prices.csv` | the earlier 40-stock US file used by `final_project.ipynb` and `lag_rules_models_regimes.ipynb` |
 
 ## Which stocks, and why (selection rule per group)
@@ -331,11 +362,28 @@ if __name__ == "__main__":
               f"{counts['dropped_no_follower']} (no follower date yet)")
     pd.concat(cal_rows).to_csv(DATA / "calendar_v2.csv", index=False)
 
-    # 5. log
+    # 5. hourly bars for the Asian stocks (bid-ask bounce check), tidy copy in data/prices_hourly_v2.csv
+    asian = [t for t in universe.index if universe.loc[t, "market"] in ("JP", "KR", "TW")
+             and universe.loc[t, "group"] != "Benchmark"]
+    hourly_failed = download_hourly(asian, args.refresh)
+    hourly = []
+    for t in asian:
+        path = RAW / "hourly" / (t + ".csv")
+        if path.exists():
+            h = pd.read_csv(path, parse_dates=["Datetime"])
+            hourly.append(h.assign(ticker=t))
+    hourly = pd.concat(hourly, ignore_index=True)
+    hourly.columns = [c.lower() for c in hourly.columns]
+    hourly.to_csv(DATA / "prices_hourly_v2.csv", index=False)
+    print(f"  hourly bars: {hourly['ticker'].nunique()} Asian stocks, {hourly['datetime'].min()} to "
+          f"{hourly['datetime'].max()}, failed: {hourly_failed or 'none'}")
+
+    # 6. log
     first_us = pd.Timestamp(START) + pd.Timedelta(days=7)
     late = {t: v["first_date"] for t, v in clean_log.items() if pd.Timestamp(v["first_date"]) > first_us}
     log = {"download_date": date.today().isoformat(), "start": START, "last_date": str(prices["date"].max().date()),
            "failed": failed, "dropped_too_short": too_short, "late_listed_kept": late,
+           "hourly_failed": hourly_failed, "hourly_first": str(hourly["datetime"].min()),
            "alignment": align_log, "per_ticker": clean_log}
     (DATA / "download_log.json").write_text(json.dumps(log, indent=1))
     write_readme(universe, log["last_date"])
@@ -343,7 +391,7 @@ if __name__ == "__main__":
     print(f"  cleaning: {sum(v['rows_off_calendar_dropped'] for v in clean_log.values())} off-calendar rows dropped, "
           f"{sum(v['stale_rows_set_missing'] for v in clean_log.values())} stale rows set missing")
 
-    # 6. sanity checks on the alignment: stop loudly if they fail
+    # 7. sanity checks on the alignment: stop loudly if they fail
     results, problems = sanity_checks(prices, calendars)
     (OUT / "sanity.json").write_text(json.dumps({"checks": results, "problems": problems}, indent=1))
     print("\nSanity checks (correlation of SPY on US date t with the Asian index):")
