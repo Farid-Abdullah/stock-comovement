@@ -1,0 +1,7 @@
+,estimate,95% CI: estimate +/- 1.96 SE (used),95% CI: bootstrap percentiles (biased low)
+excess(b),0.22901730712819007,"[+0.166, +0.292]","[+0.122, +0.243]"
+excess(c),0.22201784862729063,"[+0.138, +0.306]","[+0.093, +0.254]"
+excess(d),0.15193889541715633,"[+0.071, +0.233]","[+0.031, +0.190]"
+excess(b) - excess(c),0.006999458500899447,"[-0.096, +0.110]","[-0.088, +0.115]"
+excess(b) - excess(d),0.07707841171103375,"[-0.021, +0.175]","[-0.021, +0.172]"
+verdict,,market-wide transmission (not AI-specific),market-wide transmission (not AI-specific)

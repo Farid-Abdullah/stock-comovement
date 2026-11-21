@@ -1,0 +1,5 @@
+followers,days,event days,mean reversal (bps),95% CI,net of 20 bps round trip,break-even cost per unit (bps),share of event days positive
+Asian AI followers,all event days,636,22.907725693102783,"[+12.3, +34.5]",2.9077256931027833,11.453862846551392,0.5833333333333334
+Asian AI followers,without top 1% |gap|,635,19.421867193509026,"[+10.1, +30.0]",-0.5781328064909736,9.710933596754513,0.5779527559055118
+Asian non-AI controls,all event days,636,9.43215365231667,"[+3.1, +15.7]",-10.56784634768333,4.716076826158335,0.559748427672956
+Asian non-AI controls,without top 1% |gap|,636,6.764968083971527,"[+0.9, +12.4]",-13.235031916028472,3.3824840419857636,0.5440251572327044

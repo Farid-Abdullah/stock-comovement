@@ -53,6 +53,10 @@
     "excess percentile CI (biased, reference only)": [
      -0.0851,
      0.0475
+    ],
+    "direction right (real) 95% CI": [
+     0.4365,
+     0.5635
     ]
    },
    "(b) US AI -> Asian AI": {
@@ -75,6 +79,10 @@
     "excess percentile CI (biased, reference only)": [
      0.1223,
      0.2428
+    ],
+    "direction right (real) 95% CI": [
+     0.6705,
+     0.7752
     ]
    },
    "(c) US non-AI -> Asian non-AI": {
@@ -97,6 +105,10 @@
     "excess percentile CI (biased, reference only)": [
      0.093,
      0.254
+    ],
+    "direction right (real) 95% CI": [
+     0.6323,
+     0.7645
     ]
    },
    "(d) US AI -> Asian non-AI": {
@@ -119,6 +131,10 @@
     "excess percentile CI (biased, reference only)": [
      0.0307,
      0.1898
+    ],
+    "direction right (real) 95% CI": [
+     0.5388,
+     0.6786
     ]
    },
    "(e) US AI -> US AI infrastructure (next US day)": {
@@ -141,6 +157,10 @@
     "excess percentile CI (biased, reference only)": [
      -0.0733,
      0.1358
+    ],
+    "direction right (real) 95% CI": [
+     0.3503,
+     0.5321
     ]
    },
    "(f) US non-AI -> Asian AI": {
@@ -163,6 +183,10 @@
     "excess percentile CI (biased, reference only)": [
      0.0718,
      0.2258
+    ],
+    "direction right (real) 95% CI": [
+     0.5726,
+     0.7123
     ]
    }
   },
@@ -192,6 +216,12 @@
   }
  },
  "decision": {
+  "1: excess(b) > 0": true,
+  "2: b beats c": false,
+  "3: b beats d": false,
+  "verdict": "market-wide transmission (not AI-specific)"
+ },
+ "decision_percentile_intervals": {
   "1: excess(b) > 0": true,
   "2: b beats c": false,
   "3: b beats d": false,
@@ -783,6 +813,587 @@
    }
   ]
  },
+ "tradeability": {
+  "table": {
+   "(b) US AI -> Asian AI | close-to-close (Stage 2)": {
+    "scored rules": 700,
+    "direction right (real)": 0.7229,
+    "direction right (chance)": 0.4938,
+    "excess": 0.229,
+    "excess 95% CI": "[+0.166, +0.292]",
+    "median test lift (real)": 1.3947,
+    "median test lift (chance)": 1.0858
+   },
+   "(c) US non-AI -> Asian non-AI | close-to-close (Stage 2)": {
+    "scored rules": 126,
+    "direction right (real)": 0.6984,
+    "direction right (chance)": 0.4764,
+    "excess": 0.222,
+    "excess 95% CI": "[+0.138, +0.306]",
+    "median test lift (real)": 1.3307,
+    "median test lift (chance)": 1.0312
+   },
+   "(d) US AI -> Asian non-AI | close-to-close (Stage 2)": {
+    "scored rules": 138,
+    "direction right (real)": 0.6087,
+    "direction right (chance)": 0.4568,
+    "excess": 0.1519,
+    "excess 95% CI": "[+0.071, +0.233]",
+    "median test lift (real)": 1.1739,
+    "median test lift (chance)": 1.0036
+   },
+   "(f) US non-AI -> Asian AI | close-to-close (Stage 2)": {
+    "scored rules": 386,
+    "direction right (real)": 0.6425,
+    "direction right (chance)": 0.4348,
+    "excess": 0.2077,
+    "excess 95% CI": "[+0.129, +0.286]",
+    "median test lift (real)": 1.2621,
+    "median test lift (chance)": 1.0742
+   },
+   "(b) US AI -> Asian AI | gap: previous close -> open": {
+    "scored rules": 700,
+    "direction right (real)": 0.72,
+    "direction right (chance)": 0.501,
+    "excess": 0.219,
+    "excess 95% CI": "[+0.151, +0.287]",
+    "median test lift (real)": 1.4535,
+    "median test lift (chance)": 1.1388
+   },
+   "(c) US non-AI -> Asian non-AI | gap: previous close -> open": {
+    "scored rules": 126,
+    "direction right (real)": 0.7222,
+    "direction right (chance)": 0.4979,
+    "excess": 0.2244,
+    "excess 95% CI": "[+0.141, +0.308]",
+    "median test lift (real)": 1.375,
+    "median test lift (chance)": 1.0816
+   },
+   "(d) US AI -> Asian non-AI | gap: previous close -> open": {
+    "scored rules": 138,
+    "direction right (real)": 0.6884,
+    "direction right (chance)": 0.5351,
+    "excess": 0.1533,
+    "excess 95% CI": "[+0.075, +0.232]",
+    "median test lift (real)": 1.2892,
+    "median test lift (chance)": 1.0577
+   },
+   "(f) US non-AI -> Asian AI | gap: previous close -> open": {
+    "scored rules": 386,
+    "direction right (real)": 0.6658,
+    "direction right (chance)": 0.4487,
+    "excess": 0.2171,
+    "excess 95% CI": "[+0.135, +0.299]",
+    "median test lift (real)": 1.4392,
+    "median test lift (chance)": 1.1
+   },
+   "(b) US AI -> Asian AI | open -> close": {
+    "scored rules": 700,
+    "direction right (real)": 0.5657,
+    "direction right (chance)": 0.4815,
+    "excess": 0.0842,
+    "excess 95% CI": "[+0.037, +0.132]",
+    "median test lift (real)": 1.1252,
+    "median test lift (chance)": 1.045
+   },
+   "(c) US non-AI -> Asian non-AI | open -> close": {
+    "scored rules": 126,
+    "direction right (real)": 0.6508,
+    "direction right (chance)": 0.5064,
+    "excess": 0.1444,
+    "excess 95% CI": "[+0.051, +0.238]",
+    "median test lift (real)": 1.1615,
+    "median test lift (chance)": 1.0483
+   },
+   "(d) US AI -> Asian non-AI | open -> close": {
+    "scored rules": 138,
+    "direction right (real)": 0.4928,
+    "direction right (chance)": 0.473,
+    "excess": 0.0198,
+    "excess 95% CI": "[-0.063, +0.103]",
+    "median test lift (real)": 0.9699,
+    "median test lift (chance)": 0.9763
+   },
+   "(f) US non-AI -> Asian AI | open -> close": {
+    "scored rules": 386,
+    "direction right (real)": 0.544,
+    "direction right (chance)": 0.5113,
+    "excess": 0.0327,
+    "excess 95% CI": "[-0.037, +0.103]",
+    "median test lift (real)": 1.0902,
+    "median test lift (chance)": 1.0197
+   }
+  },
+  "survival": {
+   "b": {
+    "excess_cc": 0.229,
+    "excess_gap": 0.219,
+    "excess_oc": 0.0842,
+    "lift_excess_cc": 0.3089,
+    "lift_excess_oc": 0.0802
+   },
+   "c": {
+    "excess_cc": 0.222,
+    "excess_gap": 0.2244,
+    "excess_oc": 0.1444,
+    "lift_excess_cc": 0.2995,
+    "lift_excess_oc": 0.1132
+   },
+   "d": {
+    "excess_cc": 0.1519,
+    "excess_gap": 0.1533,
+    "excess_oc": 0.0198,
+    "lift_excess_cc": 0.1703,
+    "lift_excess_oc": -0.0064
+   },
+   "f": {
+    "excess_cc": 0.2077,
+    "excess_gap": 0.2171,
+    "excess_oc": 0.0327,
+    "lift_excess_cc": 0.1879,
+    "lift_excess_oc": 0.0705
+   }
+  }
+ },
+ "reversal_rules": {
+  "(r1) SPY -> Asian AI (oc)": {
+   "scored rules (real)": 70,
+   "scored rules (null, per copy)": 9.6,
+   "direction right (real)": 0.8,
+   "direction right (real) 95% CI": "[+0.681, +0.919]",
+   "direction right (null)": 0.7917,
+   "excess": 0.0083,
+   "excess 95% CI": "[-0.127, +0.144]",
+   "median test lift (real)": 1.4575,
+   "median test lift (null)": 1.5422
+  },
+  "(r2) SPY -> Asian non-AI (oc)": {
+   "scored rules (real)": 22,
+   "scored rules (null, per copy)": 3.6,
+   "direction right (real)": 0.6818,
+   "direction right (real) 95% CI": "[+0.488, +0.875]",
+   "direction right (null)": 0.6667,
+   "excess": 0.0152,
+   "excess 95% CI": "[-0.287, +0.317]",
+   "median test lift (real)": 1.346,
+   "median test lift (null)": 1.4118
+  },
+  "(r3) US AI -> Asian AI (oc)": {
+   "scored rules (real)": 126,
+   "scored rules (null, per copy)": 100.2,
+   "direction right (real)": 0.5159,
+   "direction right (real) 95% CI": "[+0.442, +0.590]",
+   "direction right (null)": 0.4671,
+   "excess": 0.0488,
+   "excess 95% CI": "[-0.029, +0.127]",
+   "median test lift (real)": 1.0723,
+   "median test lift (null)": 0.9842
+  },
+  "(r4) US non-AI -> Asian non-AI (oc)": {
+   "scored rules (real)": 39,
+   "scored rules (null, per copy)": 23.2,
+   "direction right (real)": 0.641,
+   "direction right (real) 95% CI": "[+0.531, +0.751]",
+   "direction right (null)": 0.4483,
+   "excess": 0.1927,
+   "excess 95% CI": "[+0.067, +0.319]",
+   "median test lift (real)": 1.233,
+   "median test lift (null)": 0.9986
+  }
+ },
+ "reversal_artefacts": {
+  "per_ticker": {
+   "2330.TW": {
+    "name": "TSMC",
+    "market": "TW",
+    "group": "AI",
+    "open = previous close": 0.0119,
+    "volume = 0": 0.0003,
+    "corr(SPY, oc) all days": -0.1171,
+    "without open = prev close": -0.1174,
+    "without top 1% |gap|": -0.0939,
+    "corr(SPY, gap)": 0.5381
+   },
+   "2317.TW": {
+    "name": "Hon Hai (Foxconn)",
+    "market": "TW",
+    "group": "AI",
+    "open = previous close": 0.0328,
+    "volume = 0": 0.0031,
+    "corr(SPY, oc) all days": -0.086,
+    "without open = prev close": -0.0867,
+    "without top 1% |gap|": -0.0633,
+    "corr(SPY, gap)": 0.4816
+   },
+   "2382.TW": {
+    "name": "Quanta",
+    "market": "TW",
+    "group": "AI",
+    "open = previous close": 0.0194,
+    "volume = 0": 0.0003,
+    "corr(SPY, oc) all days": -0.0929,
+    "without open = prev close": -0.093,
+    "without top 1% |gap|": -0.0878,
+    "corr(SPY, gap)": 0.4421
+   },
+   "3231.TW": {
+    "name": "Wistron",
+    "market": "TW",
+    "group": "AI",
+    "open = previous close": 0.0203,
+    "volume = 0": 0.0003,
+    "corr(SPY, oc) all days": -0.0855,
+    "without open = prev close": -0.0859,
+    "without top 1% |gap|": -0.0796,
+    "corr(SPY, gap)": 0.4473
+   },
+   "6669.TW": {
+    "name": "Wiwynn",
+    "market": "TW",
+    "group": "AI",
+    "open = previous close": 0.0052,
+    "volume = 0": 0.0009,
+    "corr(SPY, oc) all days": -0.1079,
+    "without open = prev close": -0.108,
+    "without top 1% |gap|": -0.1106,
+    "corr(SPY, gap)": 0.3537
+   },
+   "2308.TW": {
+    "name": "Delta Electronics",
+    "market": "TW",
+    "group": "AI",
+    "open = previous close": 0.023,
+    "volume = 0": 0.0003,
+    "corr(SPY, oc) all days": -0.0607,
+    "without open = prev close": -0.0608,
+    "without top 1% |gap|": -0.0412,
+    "corr(SPY, gap)": 0.4655
+   },
+   "2454.TW": {
+    "name": "MediaTek",
+    "market": "TW",
+    "group": "AI",
+    "open = previous close": 0.008,
+    "volume = 0": 0.0007,
+    "corr(SPY, oc) all days": -0.1215,
+    "without open = prev close": -0.1215,
+    "without top 1% |gap|": -0.0949,
+    "corr(SPY, gap)": 0.4671
+   },
+   "3711.TW": {
+    "name": "ASE Technology",
+    "market": "TW",
+    "group": "AI",
+    "open = previous close": 0.0164,
+    "volume = 0": 0.0038,
+    "corr(SPY, oc) all days": -0.0344,
+    "without open = prev close": -0.0343,
+    "without top 1% |gap|": -0.0243,
+    "corr(SPY, gap)": 0.4768
+   },
+   "005930.KS": {
+    "name": "Samsung Electronics",
+    "market": "KR",
+    "group": "AI",
+    "open = previous close": 0.0062,
+    "volume = 0": 0.0058,
+    "corr(SPY, oc) all days": -0.116,
+    "without open = prev close": -0.116,
+    "without top 1% |gap|": -0.1175,
+    "corr(SPY, gap)": 0.4569
+   },
+   "000660.KS": {
+    "name": "SK hynix",
+    "market": "KR",
+    "group": "AI",
+    "open = previous close": 0.0062,
+    "volume = 0": 0.0055,
+    "corr(SPY, oc) all days": -0.1664,
+    "without open = prev close": -0.1682,
+    "without top 1% |gap|": -0.1611,
+    "corr(SPY, gap)": 0.4884
+   },
+   "042700.KS": {
+    "name": "Hanmi Semiconductor",
+    "market": "KR",
+    "group": "AI",
+    "open = previous close": 0.0103,
+    "volume = 0": 0.0113,
+    "corr(SPY, oc) all days": -0.0969,
+    "without open = prev close": -0.0967,
+    "without top 1% |gap|": -0.0938,
+    "corr(SPY, gap)": 0.5197
+   },
+   "8035.T": {
+    "name": "Tokyo Electron",
+    "market": "JP",
+    "group": "AI",
+    "open = previous close": 0.0004,
+    "volume = 0": 0.0007,
+    "corr(SPY, oc) all days": -0.1759,
+    "without open = prev close": -0.1761,
+    "without top 1% |gap|": -0.1526,
+    "corr(SPY, gap)": 0.5379
+   },
+   "6857.T": {
+    "name": "Advantest",
+    "market": "JP",
+    "group": "AI",
+    "open = previous close": 0.0013,
+    "volume = 0": 0.0007,
+    "corr(SPY, oc) all days": -0.1502,
+    "without open = prev close": -0.1501,
+    "without top 1% |gap|": -0.1364,
+    "corr(SPY, gap)": 0.5139
+   },
+   "6146.T": {
+    "name": "Disco",
+    "market": "JP",
+    "group": "AI",
+    "open = previous close": 0.0013,
+    "volume = 0": 0.0007,
+    "corr(SPY, oc) all days": -0.1632,
+    "without open = prev close": -0.1632,
+    "without top 1% |gap|": -0.1432,
+    "corr(SPY, gap)": 0.5209
+   },
+   "6920.T": {
+    "name": "Lasertec",
+    "market": "JP",
+    "group": "AI",
+    "open = previous close": 0.0009,
+    "volume = 0": 0.0007,
+    "corr(SPY, oc) all days": -0.135,
+    "without open = prev close": -0.1351,
+    "without top 1% |gap|": -0.1258,
+    "corr(SPY, gap)": 0.5047
+   },
+   "9984.T": {
+    "name": "SoftBank Group",
+    "market": "JP",
+    "group": "AI",
+    "open = previous close": 0.0004,
+    "volume = 0": 0.0007,
+    "corr(SPY, oc) all days": -0.061,
+    "without open = prev close": -0.0615,
+    "without top 1% |gap|": -0.0543,
+    "corr(SPY, gap)": 0.4882
+   },
+   "7203.T": {
+    "name": "Toyota",
+    "market": "JP",
+    "group": "non-AI",
+    "open = previous close": 0.0013,
+    "volume = 0": 0.0007,
+    "corr(SPY, oc) all days": -0.1034,
+    "without open = prev close": -0.1032,
+    "without top 1% |gap|": -0.1198,
+    "corr(SPY, gap)": 0.4723
+   },
+   "8306.T": {
+    "name": "Mitsubishi UFJ",
+    "market": "JP",
+    "group": "non-AI",
+    "open = previous close": 0.0009,
+    "volume = 0": 0.0007,
+    "corr(SPY, oc) all days": -0.1284,
+    "without open = prev close": -0.1287,
+    "without top 1% |gap|": -0.0922,
+    "corr(SPY, gap)": 0.454
+   },
+   "4502.T": {
+    "name": "Takeda",
+    "market": "JP",
+    "group": "non-AI",
+    "open = previous close": 0.0022,
+    "volume = 0": 0.0007,
+    "corr(SPY, oc) all days": -0.0611,
+    "without open = prev close": -0.0613,
+    "without top 1% |gap|": -0.0429,
+    "corr(SPY, gap)": 0.3978
+   },
+   "005380.KS": {
+    "name": "Hyundai Motor",
+    "market": "KR",
+    "group": "non-AI",
+    "open = previous close": 0.0165,
+    "volume = 0": 0.0062,
+    "corr(SPY, oc) all days": -0.0991,
+    "without open = prev close": -0.0997,
+    "without top 1% |gap|": -0.0954,
+    "corr(SPY, gap)": 0.4849
+   },
+   "2412.TW": {
+    "name": "Chunghwa Telecom",
+    "market": "TW",
+    "group": "non-AI",
+    "open = previous close": 0.1837,
+    "volume = 0": 0.0003,
+    "corr(SPY, oc) all days": -0.0755,
+    "without open = prev close": -0.082,
+    "without top 1% |gap|": -0.0494,
+    "corr(SPY, gap)": 0.2684
+   },
+   "2882.TW": {
+    "name": "Cathay Financial",
+    "market": "TW",
+    "group": "non-AI",
+    "open = previous close": 0.0225,
+    "volume = 0": 0.0003,
+    "corr(SPY, oc) all days": 0.0144,
+    "without open = prev close": 0.0142,
+    "without top 1% |gap|": 0.0348,
+    "corr(SPY, gap)": 0.5045
+   }
+  },
+  "by_market": {
+   "JP | AI": {
+    "open = previous close": 0.0009,
+    "volume = 0": 0.0007,
+    "corr(SPY, oc) all days": -0.1371,
+    "without open = prev close": -0.1372,
+    "without top 1% |gap|": -0.1225,
+    "corr(SPY, gap)": 0.5131,
+    "stocks with negative corr(SPY, oc)": "5 of 5"
+   },
+   "JP | non-AI": {
+    "open = previous close": 0.0015,
+    "volume = 0": 0.0007,
+    "corr(SPY, oc) all days": -0.0976,
+    "without open = prev close": -0.0977,
+    "without top 1% |gap|": -0.0849,
+    "corr(SPY, gap)": 0.4414,
+    "stocks with negative corr(SPY, oc)": "3 of 3"
+   },
+   "KR | AI": {
+    "open = previous close": 0.0076,
+    "volume = 0": 0.0076,
+    "corr(SPY, oc) all days": -0.1264,
+    "without open = prev close": -0.1269,
+    "without top 1% |gap|": -0.1241,
+    "corr(SPY, gap)": 0.4883,
+    "stocks with negative corr(SPY, oc)": "3 of 3"
+   },
+   "KR | non-AI": {
+    "open = previous close": 0.0165,
+    "volume = 0": 0.0062,
+    "corr(SPY, oc) all days": -0.0991,
+    "without open = prev close": -0.0997,
+    "without top 1% |gap|": -0.0954,
+    "corr(SPY, gap)": 0.4849,
+    "stocks with negative corr(SPY, oc)": "1 of 1"
+   },
+   "TW | AI": {
+    "open = previous close": 0.0171,
+    "volume = 0": 0.0012,
+    "corr(SPY, oc) all days": -0.0883,
+    "without open = prev close": -0.0884,
+    "without top 1% |gap|": -0.0744,
+    "corr(SPY, gap)": 0.459,
+    "stocks with negative corr(SPY, oc)": "8 of 8"
+   },
+   "TW | non-AI": {
+    "open = previous close": 0.1031,
+    "volume = 0": 0.0003,
+    "corr(SPY, oc) all days": -0.0306,
+    "without open = prev close": -0.0339,
+    "without top 1% |gap|": -0.0073,
+    "corr(SPY, gap)": 0.3864,
+    "stocks with negative corr(SPY, oc)": "1 of 2"
+   }
+  }
+ },
+ "reversal_size": {
+  "Asian AI followers | all event days": {
+   "event days": 636,
+   "mean reversal (bps)": 22.908,
+   "95% CI": "[+12.3, +34.5]",
+   "net of 20 bps round trip": 2.908,
+   "break-even cost per unit (bps)": 11.454,
+   "share of event days positive": 0.583
+  },
+  "Asian AI followers | without top 1% |gap|": {
+   "event days": 635,
+   "mean reversal (bps)": 19.422,
+   "95% CI": "[+10.1, +30.0]",
+   "net of 20 bps round trip": -0.578,
+   "break-even cost per unit (bps)": 9.711,
+   "share of event days positive": 0.578
+  },
+  "Asian non-AI controls | all event days": {
+   "event days": 636,
+   "mean reversal (bps)": 9.432,
+   "95% CI": "[+3.1, +15.7]",
+   "net of 20 bps round trip": -10.568,
+   "break-even cost per unit (bps)": 4.716,
+   "share of event days positive": 0.56
+  },
+  "Asian non-AI controls | without top 1% |gap|": {
+   "event days": 636,
+   "mean reversal (bps)": 6.765,
+   "95% CI": "[+0.9, +12.4]",
+   "net of 20 bps round trip": -13.235,
+   "break-even cost per unit (bps)": 3.382,
+   "share of event days positive": 0.544
+  }
+ },
+ "reversal_by_year_bps": {
+  "2016": {
+   "Asian AI followers": 14.8,
+   "Asian non-AI controls": 23.3,
+   "event days": 32
+  },
+  "2017": {
+   "Asian AI followers": 13.1,
+   "Asian non-AI controls": 4.4,
+   "event days": 51
+  },
+  "2018": {
+   "Asian AI followers": 18.3,
+   "Asian non-AI controls": 11.6,
+   "event days": 78
+  },
+  "2019": {
+   "Asian AI followers": 16.6,
+   "Asian non-AI controls": 18.6,
+   "event days": 46
+  },
+  "2020": {
+   "Asian AI followers": 43.9,
+   "Asian non-AI controls": 29.0,
+   "event days": 54
+  },
+  "2021": {
+   "Asian AI followers": 31.3,
+   "Asian non-AI controls": 0.7,
+   "event days": 72
+  },
+  "2022": {
+   "Asian AI followers": 17.3,
+   "Asian non-AI controls": 4.2,
+   "event days": 65
+  },
+  "2023": {
+   "Asian AI followers": 20.7,
+   "Asian non-AI controls": -2.3,
+   "event days": 65
+  },
+  "2024": {
+   "Asian AI followers": -2.4,
+   "Asian non-AI controls": -3.0,
+   "event days": 65
+  },
+  "2025": {
+   "Asian AI followers": 27.9,
+   "Asian non-AI controls": 19.5,
+   "event days": 51
+  },
+  "2026": {
+   "Asian AI followers": 50.3,
+   "Asian non-AI controls": 12.8,
+   "event days": 57
+  }
+ },
  "settings": {
   "STUDY_START": "2016-04-01",
   "Z_K": 1.0,
@@ -800,5 +1411,5 @@
   "BOOT_BLOCK": 21,
   "SEED": 42
  },
- "runtime_seconds": 351
+ "runtime_seconds": 27
 }
