@@ -1,0 +1,59 @@
+{
+ "checks": {
+  "^N225": {
+   "corr_follower_cc": 0.4401,
+   "corr_follower_oc": 0.1372,
+   "corr_same_calendar_day_cc": 0.1874,
+   "pairs": {
+    "us_dates": 2990,
+    "kept": 2804,
+    "dropped_gap": 35,
+    "dropped_clash": 150,
+    "dropped_no_follower": 1
+   },
+   "stocks": {
+    "mean_corr_cc": 0.282,
+    "mean_corr_oc": -0.1047,
+    "mean_corr_overnight_gap": 0.4881,
+    "n_stocks": 8.0
+   }
+  },
+  "^KS11": {
+   "corr_follower_cc": 0.3107,
+   "corr_follower_oc": -0.0569,
+   "corr_same_calendar_day_cc": 0.1699,
+   "pairs": {
+    "us_dates": 2990,
+    "kept": 2821,
+    "dropped_gap": 43,
+    "dropped_clash": 125,
+    "dropped_no_follower": 1
+   },
+   "stocks": {
+    "mean_corr_cc": 0.2075,
+    "mean_corr_oc": -0.1148,
+    "mean_corr_overnight_gap": 0.4799,
+    "n_stocks": 4.0
+   }
+  },
+  "^TWII": {
+   "corr_follower_cc": 0.4212,
+   "corr_follower_oc": 0.2065,
+   "corr_same_calendar_day_cc": 0.1647,
+   "pairs": {
+    "us_dates": 2990,
+    "kept": 2795,
+    "dropped_gap": 94,
+    "dropped_clash": 100,
+    "dropped_no_follower": 1
+   },
+   "stocks": {
+    "mean_corr_cc": 0.2441,
+    "mean_corr_oc": -0.0676,
+    "mean_corr_overnight_gap": 0.4383,
+    "n_stocks": 10.0
+   }
+  }
+ },
+ "problems": []
+}

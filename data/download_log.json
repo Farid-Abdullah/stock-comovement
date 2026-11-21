@@ -1,0 +1,395 @@
+{
+ "download_date": "2026-11-21",
+ "start": "2015-01-01",
+ "last_date": "2026-11-20",
+ "failed": [],
+ "dropped_too_short": {},
+ "late_listed_kept": {
+  "VRT": "2018-08-02",
+  "VST": "2016-10-05",
+  "DELL": "2016-08-17",
+  "6669.TW": "2017-11-13"
+ },
+ "alignment": {
+  "JP": {
+   "us_dates": 2990,
+   "kept": 2804,
+   "dropped_gap": 35,
+   "dropped_clash": 150,
+   "dropped_no_follower": 1
+  },
+  "KR": {
+   "us_dates": 2990,
+   "kept": 2821,
+   "dropped_gap": 43,
+   "dropped_clash": 125,
+   "dropped_no_follower": 1
+  },
+  "TW": {
+   "us_dates": 2990,
+   "kept": 2795,
+   "dropped_gap": 94,
+   "dropped_clash": 100,
+   "dropped_no_follower": 1
+  }
+ },
+ "per_ticker": {
+  "NVDA": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "AMD": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "AVGO": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "MU": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "MSFT": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "GOOGL": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "META": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "AMZN": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "ORCL": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "SMCI": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "VRT": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 12,
+   "missing_days_after_listing": 12,
+   "first_date": "2018-08-02",
+   "trading_days": 2076
+  },
+  "ANET": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "MRVL": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "COHR": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "CLS": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "VST": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 1,
+   "missing_days_after_listing": 1,
+   "first_date": "2016-10-05",
+   "trading_days": 2546
+  },
+  "DELL": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2016-08-17",
+   "trading_days": 2581
+  },
+  "JPM": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "XOM": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "PG": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "KO": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "WMT": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "JNJ": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "2330.TW": {
+   "rows_off_calendar_dropped": 6,
+   "stale_rows_set_missing": 1,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2883
+  },
+  "2317.TW": {
+   "rows_off_calendar_dropped": 6,
+   "stale_rows_set_missing": 9,
+   "missing_days_after_listing": 10,
+   "first_date": "2015-01-05",
+   "trading_days": 2875
+  },
+  "2382.TW": {
+   "rows_off_calendar_dropped": 6,
+   "stale_rows_set_missing": 1,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2883
+  },
+  "3231.TW": {
+   "rows_off_calendar_dropped": 6,
+   "stale_rows_set_missing": 1,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2883
+  },
+  "6669.TW": {
+   "rows_off_calendar_dropped": 1,
+   "stale_rows_set_missing": 2,
+   "missing_days_after_listing": 3,
+   "first_date": "2017-11-13",
+   "trading_days": 2189
+  },
+  "2308.TW": {
+   "rows_off_calendar_dropped": 6,
+   "stale_rows_set_missing": 1,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2883
+  },
+  "2454.TW": {
+   "rows_off_calendar_dropped": 6,
+   "stale_rows_set_missing": 2,
+   "missing_days_after_listing": 3,
+   "first_date": "2015-01-05",
+   "trading_days": 2882
+  },
+  "3711.TW": {
+   "rows_off_calendar_dropped": 6,
+   "stale_rows_set_missing": 11,
+   "missing_days_after_listing": 12,
+   "first_date": "2015-01-05",
+   "trading_days": 2873
+  },
+  "005930.KS": {
+   "rows_off_calendar_dropped": 1,
+   "stale_rows_set_missing": 17,
+   "missing_days_after_listing": 18,
+   "first_date": "2015-01-02",
+   "trading_days": 2895
+  },
+  "000660.KS": {
+   "rows_off_calendar_dropped": 1,
+   "stale_rows_set_missing": 16,
+   "missing_days_after_listing": 17,
+   "first_date": "2015-01-02",
+   "trading_days": 2896
+  },
+  "042700.KS": {
+   "rows_off_calendar_dropped": 1,
+   "stale_rows_set_missing": 33,
+   "missing_days_after_listing": 34,
+   "first_date": "2015-01-02",
+   "trading_days": 2879
+  },
+  "8035.T": {
+   "rows_off_calendar_dropped": 22,
+   "stale_rows_set_missing": 2,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2900
+  },
+  "6857.T": {
+   "rows_off_calendar_dropped": 22,
+   "stale_rows_set_missing": 2,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2900
+  },
+  "6146.T": {
+   "rows_off_calendar_dropped": 22,
+   "stale_rows_set_missing": 2,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2900
+  },
+  "6920.T": {
+   "rows_off_calendar_dropped": 22,
+   "stale_rows_set_missing": 2,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2900
+  },
+  "9984.T": {
+   "rows_off_calendar_dropped": 22,
+   "stale_rows_set_missing": 2,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2900
+  },
+  "7203.T": {
+   "rows_off_calendar_dropped": 22,
+   "stale_rows_set_missing": 2,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2900
+  },
+  "8306.T": {
+   "rows_off_calendar_dropped": 22,
+   "stale_rows_set_missing": 2,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2900
+  },
+  "4502.T": {
+   "rows_off_calendar_dropped": 22,
+   "stale_rows_set_missing": 2,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2900
+  },
+  "005380.KS": {
+   "rows_off_calendar_dropped": 1,
+   "stale_rows_set_missing": 18,
+   "missing_days_after_listing": 19,
+   "first_date": "2015-01-02",
+   "trading_days": 2894
+  },
+  "2412.TW": {
+   "rows_off_calendar_dropped": 6,
+   "stale_rows_set_missing": 1,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2883
+  },
+  "2882.TW": {
+   "rows_off_calendar_dropped": 6,
+   "stale_rows_set_missing": 1,
+   "missing_days_after_listing": 2,
+   "first_date": "2015-01-05",
+   "trading_days": 2883
+  },
+  "SPY": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "^N225": {
+   "rows_off_calendar_dropped": 1,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-05",
+   "trading_days": 2902
+  },
+  "^KS11": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2913
+  },
+  "^TWII": {
+   "rows_off_calendar_dropped": 1,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-05",
+   "trading_days": 2885
+  },
+  "^VIX": {
+   "rows_off_calendar_dropped": 2,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  },
+  "SMH": {
+   "rows_off_calendar_dropped": 0,
+   "stale_rows_set_missing": 0,
+   "missing_days_after_listing": 0,
+   "first_date": "2015-01-02",
+   "trading_days": 2990
+  }
+ }
+}

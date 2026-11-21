@@ -50,3 +50,14 @@ Prices: Yahoo Finance through the open-source [`yfinance`](https://github.com/ra
 ## Acknowledgement
 
 The code and drafts in this repository were written with the help of an AI assistant (Claude, Anthropic) and reviewed by the group.
+
+## Overnight transmission (US AI leaders -> Asian AI supply chain), branch `overnight-transmission`
+
+```bash
+pip install -r requirements.txt
+python scripts/build_dataset_v2.py      # download (cached in data/raw), clean, align calendars, sanity checks
+python -m pytest tests                  # unit tests for the calendar alignment and no-look-ahead rules
+```
+
+The dataset script stops with an error if the alignment sanity checks fail (`outputs/v2/sanity.json`).
+Data sources, the selection rule for every stock group, and the cleaning steps are in [data/README.md](data/README.md).

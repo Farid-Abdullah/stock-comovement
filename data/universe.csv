@@ -1,0 +1,52 @@
+ticker,market,group,home_index,name,index_weight
+NVDA,US,US AI leaders,SPY,Nvidia,
+AMD,US,US AI leaders,SPY,AMD,
+AVGO,US,US AI leaders,SPY,Broadcom,
+MU,US,US AI leaders,SPY,Micron,
+MSFT,US,US AI leaders,SPY,Microsoft,
+GOOGL,US,US AI leaders,SPY,Alphabet,
+META,US,US AI leaders,SPY,Meta,
+AMZN,US,US AI leaders,SPY,Amazon,
+ORCL,US,US AI leaders,SPY,Oracle,
+SMCI,US,US AI infrastructure,SPY,Super Micro,
+VRT,US,US AI infrastructure,SPY,Vertiv,
+ANET,US,US AI infrastructure,SPY,Arista,
+MRVL,US,US AI infrastructure,SPY,Marvell,
+COHR,US,US AI infrastructure,SPY,Coherent,
+CLS,US,US AI infrastructure,SPY,Celestica,
+VST,US,US AI infrastructure,SPY,Vistra,
+DELL,US,US AI infrastructure,SPY,Dell,
+JPM,US,US non-AI controls,SPY,JPMorgan,
+XOM,US,US non-AI controls,SPY,Exxon Mobil,
+PG,US,US non-AI controls,SPY,Procter & Gamble,
+KO,US,US non-AI controls,SPY,Coca-Cola,
+WMT,US,US non-AI controls,SPY,Walmart,
+JNJ,US,US non-AI controls,SPY,Johnson & Johnson,
+2330.TW,TW,Asian AI followers,^TWII,TSMC,0.35
+2317.TW,TW,Asian AI followers,^TWII,Hon Hai (Foxconn),0.03
+2382.TW,TW,Asian AI followers,^TWII,Quanta,0.01
+3231.TW,TW,Asian AI followers,^TWII,Wistron,0.005
+6669.TW,TW,Asian AI followers,^TWII,Wiwynn,0.005
+2308.TW,TW,Asian AI followers,^TWII,Delta Electronics,0.02
+2454.TW,TW,Asian AI followers,^TWII,MediaTek,0.04
+3711.TW,TW,Asian AI followers,^TWII,ASE Technology,0.01
+005930.KS,KR,Asian AI followers,^KS11,Samsung Electronics,0.2
+000660.KS,KR,Asian AI followers,^KS11,SK hynix,0.08
+042700.KS,KR,Asian AI followers,^KS11,Hanmi Semiconductor,0.003
+8035.T,JP,Asian AI followers,^N225,Tokyo Electron,0.08
+6857.T,JP,Asian AI followers,^N225,Advantest,0.05
+6146.T,JP,Asian AI followers,^N225,Disco,0.015
+6920.T,JP,Asian AI followers,^N225,Lasertec,0.01
+9984.T,JP,Asian AI followers,^N225,SoftBank Group,0.05
+7203.T,JP,Asian non-AI controls,^N225,Toyota,0.01
+8306.T,JP,Asian non-AI controls,^N225,Mitsubishi UFJ,0.005
+4502.T,JP,Asian non-AI controls,^N225,Takeda,0.01
+005380.KS,KR,Asian non-AI controls,^KS11,Hyundai Motor,0.02
+2412.TW,TW,Asian non-AI controls,^TWII,Chunghwa Telecom,0.01
+2882.TW,TW,Asian non-AI controls,^TWII,Cathay Financial,0.01
+SPY,US,Benchmark,,SPY,
+^N225,JP,Benchmark,,^N225,
+^KS11,KR,Benchmark,,^KS11,
+^TWII,TW,Benchmark,,^TWII,
+^VIX,US,Benchmark,,^VIX,
+SMH,US,Benchmark,,SMH,
