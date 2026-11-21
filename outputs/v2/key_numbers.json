@@ -2743,6 +2743,24 @@
    }
   }
  },
+ "chatgpt": {
+  "1.0": {
+   "date": "2022-12-01",
+   "statistic": 0.1416,
+   "percentile (one-sided, increase)": 0.798,
+   "percentile by size (two-sided)": 0.3737,
+   "candidate dates": 99,
+   "unusual (>= 90th percentile)": false
+  },
+  "1.5": {
+   "date": "2022-12-01",
+   "statistic": 0.3674,
+   "percentile (one-sided, increase)": 0.7778,
+   "percentile by size (two-sided)": 0.3333,
+   "candidate dates": 99,
+   "unusual (>= 90th percentile)": false
+  }
+ },
  "settings": {
   "STUDY_START": "2016-04-01",
   "Z_K": 1.0,
@@ -2760,5 +2778,5 @@
   "BOOT_BLOCK": 21,
   "SEED": 42
  },
- "runtime_seconds": 234
+ "runtime_seconds": 120
 }
