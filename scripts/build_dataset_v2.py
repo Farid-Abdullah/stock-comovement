@@ -253,6 +253,30 @@ index-provider factsheets (TWSE for ^TWII, KRX for ^KS11, Nikkei for the price-w
 over the sample, although real weights drift (TSMC's share of ^TWII rose from about 30% to over 40%). They are
 approximate and should be checked against the factsheets before being quoted. ^TOPX (TOPIX) is not available on
 Yahoo Finance, so Japan uses ^N225 ex-stock.
+
+## Trading-cost assumptions (code: `src/costs.py`)
+
+All trades in the notebook are intraday round trips: in at the Asian open, out at the close of the same session.
+Cost per round trip = securities transaction tax on the sale + assumed fees and half-spreads.
+
+| market | tax on the sale | fees + spread (assumed) | round trip |
+|---|---|---|---|
+| Japan | none | 10 bps | 10 bps |
+| Taiwan | 0.30% until 27 Apr 2017; 0.15% day-trade rate (same-session buy and sell) from 28 Apr 2017 | 5 bps | 35 bps, then 20 bps |
+| Korea (KOSPI) | securities transaction tax + 0.15% special tax for rural development: 0.30% until 29 May 2019, 0.25% from 30 May 2019, 0.23% 2021-2022, 0.20% 2023 (*), 0.18% 2024, 0.15% 2025, 0.20% from 2026 | 5 bps | 23-35 bps by year |
+
+The rate in force on the trade date is used. Sources:
+* Korea: EY Tax News, "Korea proposes reduced securities transaction tax rates" (18 Apr 2019,
+  https://taxnews.ey.com/news/2019-0797); Asia Economy, "Securities transaction tax cut... KOSPI 0.1% -> 0.08%"
+  (28 Dec 2020, https://www.asiae.co.kr/en/article/2020122807581924586); PwC Worldwide Tax Summaries, Korea, other
+  taxes (0.18% in 2024, 0.15% in 2025, 0.20% from 2026 including the rural tax,
+  https://taxsummaries.pwc.com/Republic-of-Korea/Corporate/Other-taxes); Asia Economy, "Securities transaction tax
+  to rise from January" (1 Dec 2025, https://asiae.co.kr/en/article/2025120109040485489).
+  (*) The 2023 rate of 0.20% (0.05% + 0.15%) could not be confirmed against a source and should be checked.
+* Taiwan: Taipei Times / Focus Taiwan on the day-trading tax cut (0.15% instead of 0.30% from 28 Apr 2017,
+  extended in 2018, 2021 and in Dec 2024 to 2027): https://focustaiwan.tw/business/202412310013,
+  https://www.taipeitimes.com/News/taiwan/archives/2021/12/22/2003770006
+* Japan: no securities transaction tax; 10 bps for fees and spread is our assumption for large, liquid stocks.
 """
 
 

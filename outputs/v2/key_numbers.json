@@ -1304,37 +1304,85 @@
   }
  },
  "reversal_size": {
-  "Asian AI followers | all event days": {
-   "event days": 636,
-   "mean reversal (bps)": 22.908,
-   "95% CI": "[+12.3, +34.5]",
-   "net of 20 bps round trip": 2.908,
-   "break-even cost per unit (bps)": 11.454,
-   "share of event days positive": 0.583
-  },
-  "Asian AI followers | without top 1% |gap|": {
+  "AI | JP": {
+   "stocks": 5,
    "event days": 635,
-   "mean reversal (bps)": 19.422,
-   "95% CI": "[+10.1, +30.0]",
-   "net of 20 bps round trip": -0.578,
-   "break-even cost per unit (bps)": 9.711,
-   "share of event days positive": 0.578
+   "mean reversal, gross (bps)": 33.091,
+   "mean round-trip cost (bps)": 10.0,
+   "net (bps)": 23.091,
+   "net 95% CI": "[+9.3, +37.1]",
+   "net without top 1% |gap| (bps)": 17.859,
+   "share of event days with net > 0": 0.532
   },
-  "Asian non-AI controls | all event days": {
-   "event days": 636,
-   "mean reversal (bps)": 9.432,
-   "95% CI": "[+3.1, +15.7]",
-   "net of 20 bps round trip": -10.568,
-   "break-even cost per unit (bps)": 4.716,
-   "share of event days positive": 0.56
+  "AI | KR": {
+   "stocks": 3,
+   "event days": 633,
+   "mean reversal, gross (bps)": 31.578,
+   "mean round-trip cost (bps)": 28.454,
+   "net (bps)": 3.103,
+   "net 95% CI": "[-14.2, +20.4]",
+   "net without top 1% |gap| (bps)": 0.505,
+   "share of event days with net > 0": 0.52
   },
-  "Asian non-AI controls | without top 1% |gap|": {
+  "AI | TW": {
+   "stocks": 8,
    "event days": 636,
-   "mean reversal (bps)": 6.765,
-   "95% CI": "[+0.9, +12.4]",
-   "net of 20 bps round trip": -13.235,
-   "break-even cost per unit (bps)": 3.382,
-   "share of event days positive": 0.544
+   "mean reversal, gross (bps)": 13.577,
+   "mean round-trip cost (bps)": 21.047,
+   "net (bps)": -7.602,
+   "net 95% CI": "[-17.0, +2.4]",
+   "net without top 1% |gap| (bps)": -10.272,
+   "share of event days with net > 0": 0.443
+  },
+  "AI | all": {
+   "stocks": 16,
+   "event days": 636,
+   "mean reversal, gross (bps)": 22.908,
+   "mean round-trip cost (bps)": 18.953,
+   "net (bps)": 3.906,
+   "net 95% CI": "[-6.8, +15.7]",
+   "net without top 1% |gap| (bps)": 0.423,
+   "share of event days with net > 0": 0.492
+  },
+  "non-AI | JP": {
+   "stocks": 3,
+   "event days": 635,
+   "mean reversal, gross (bps)": 12.402,
+   "mean round-trip cost (bps)": 10.0,
+   "net (bps)": 2.402,
+   "net 95% CI": "[-8.0, +12.0]",
+   "net without top 1% |gap| (bps)": 1.399,
+   "share of event days with net > 0": 0.51
+  },
+  "non-AI | KR": {
+   "stocks": 1,
+   "event days": 630,
+   "mean reversal, gross (bps)": 31.0,
+   "mean round-trip cost (bps)": 28.475,
+   "net (bps)": 2.526,
+   "net 95% CI": "[-13.9, +19.1]",
+   "net without top 1% |gap| (bps)": 0.859,
+   "share of event days with net > 0": 0.489
+  },
+  "non-AI | TW": {
+   "stocks": 2,
+   "event days": 636,
+   "mean reversal, gross (bps)": -4.87,
+   "mean round-trip cost (bps)": 21.179,
+   "net (bps)": -26.049,
+   "net 95% CI": "[-31.9, -19.8]",
+   "net without top 1% |gap| (bps)": -26.327,
+   "share of event days with net > 0": 0.336
+  },
+  "non-AI | all": {
+   "stocks": 6,
+   "event days": 636,
+   "mean reversal, gross (bps)": 9.432,
+   "mean round-trip cost (bps)": 16.792,
+   "net (bps)": -7.37,
+   "net 95% CI": "[-13.6, -1.1]",
+   "net without top 1% |gap| (bps)": -8.39,
+   "share of event days with net > 0": 0.473
   }
  },
  "reversal_by_year_bps": {
@@ -1394,6 +1442,443 @@
    "event days": 57
   }
  },
+ "auc": {
+  "cc | boosting | A": {
+   "2021": 0.4846,
+   "2022": 0.4882,
+   "2023": 0.512,
+   "2024": 0.4983,
+   "2025": 0.5252,
+   "2026": 0.5256,
+   "pooled": 0.5026
+  },
+  "cc | boosting | A+US": {
+   "2021": 0.5316,
+   "2022": 0.5401,
+   "2023": 0.5496,
+   "2024": 0.5646,
+   "2025": 0.5419,
+   "2026": 0.5474,
+   "pooled": 0.5435
+  },
+  "cc | boosting | B": {
+   "2021": 0.5334,
+   "2022": 0.5449,
+   "2023": 0.541,
+   "2024": 0.5646,
+   "2025": 0.5429,
+   "2026": 0.5448,
+   "pooled": 0.542
+  },
+  "cc | logistic | A": {
+   "2021": 0.4994,
+   "2022": 0.4966,
+   "2023": 0.526,
+   "2024": 0.5043,
+   "2025": 0.5222,
+   "2026": 0.5398,
+   "pooled": 0.5135
+  },
+  "cc | logistic | A+US": {
+   "2021": 0.5366,
+   "2022": 0.5336,
+   "2023": 0.5353,
+   "2024": 0.5558,
+   "2025": 0.543,
+   "2026": 0.5474,
+   "pooled": 0.5411
+  },
+  "cc | logistic | B": {
+   "2021": 0.5478,
+   "2022": 0.5315,
+   "2023": 0.5461,
+   "2024": 0.562,
+   "2025": 0.5441,
+   "2026": 0.5517,
+   "pooled": 0.5464
+  },
+  "cc | rule benchmark | drift": {
+   "2021": 0.5457,
+   "2022": 0.5237,
+   "2023": 0.5444,
+   "2024": 0.5263,
+   "2025": 0.5178,
+   "2026": 0.5434,
+   "pooled": 0.5331
+  },
+  "cc | rule benchmark | fade": {
+   "2021": 0.493,
+   "2022": 0.494,
+   "2023": 0.4959,
+   "2024": 0.4844,
+   "2025": 0.4845,
+   "2026": 0.4903,
+   "pooled": 0.4903
+  },
+  "oc | boosting | A": {
+   "2021": 0.4984,
+   "2022": 0.5146,
+   "2023": 0.5518,
+   "2024": 0.5177,
+   "2025": 0.526,
+   "2026": 0.5374,
+   "pooled": 0.5213
+  },
+  "oc | boosting | A+US": {
+   "2021": 0.5092,
+   "2022": 0.5256,
+   "2023": 0.5456,
+   "2024": 0.5211,
+   "2025": 0.5281,
+   "2026": 0.5343,
+   "pooled": 0.5233
+  },
+  "oc | boosting | B": {
+   "2021": 0.519,
+   "2022": 0.5202,
+   "2023": 0.5413,
+   "2024": 0.5253,
+   "2025": 0.5282,
+   "2026": 0.5368,
+   "pooled": 0.5263
+  },
+  "oc | logistic | A": {
+   "2021": 0.5162,
+   "2022": 0.5197,
+   "2023": 0.5422,
+   "2024": 0.5316,
+   "2025": 0.509,
+   "2026": 0.5319,
+   "pooled": 0.5267
+  },
+  "oc | logistic | A+US": {
+   "2021": 0.5207,
+   "2022": 0.5205,
+   "2023": 0.5395,
+   "2024": 0.5304,
+   "2025": 0.5038,
+   "2026": 0.5231,
+   "pooled": 0.5238
+  },
+  "oc | logistic | B": {
+   "2021": 0.5271,
+   "2022": 0.5261,
+   "2023": 0.5386,
+   "2024": 0.5314,
+   "2025": 0.505,
+   "2026": 0.5211,
+   "pooled": 0.5256
+  },
+  "oc | rule benchmark | drift": {
+   "2021": 0.5111,
+   "2022": 0.5061,
+   "2023": 0.5068,
+   "2024": 0.4983,
+   "2025": 0.4991,
+   "2026": 0.4969,
+   "pooled": 0.5028
+  },
+  "oc | rule benchmark | fade": {
+   "2021": 0.4996,
+   "2022": 0.506,
+   "2023": 0.5005,
+   "2024": 0.4971,
+   "2025": 0.4968,
+   "2026": 0.5033,
+   "pooled": 0.5005
+  }
+ },
+ "model_comparisons": [
+  {
+   "target": "oc",
+   "model": "logistic",
+   "comparison": "A+US - A",
+   "AUC difference": -0.0029,
+   "95% CI": "[-0.007, +0.001]",
+   "years better": 2,
+   "of years": 6
+  },
+  {
+   "target": "oc",
+   "model": "logistic",
+   "comparison": "B - A+US",
+   "AUC difference": 0.0018,
+   "95% CI": "[-0.001, +0.005]",
+   "years better": 4,
+   "of years": 6
+  },
+  {
+   "target": "oc",
+   "model": "logistic",
+   "comparison": "B - drift benchmark",
+   "AUC difference": 0.0227,
+   "95% CI": "[+0.014, +0.032]",
+   "years better": 6,
+   "of years": 6
+  },
+  {
+   "target": "oc",
+   "model": "boosting",
+   "comparison": "A+US - A",
+   "AUC difference": 0.002,
+   "95% CI": "[-0.003, +0.007]",
+   "years better": 4,
+   "of years": 6
+  },
+  {
+   "target": "oc",
+   "model": "boosting",
+   "comparison": "B - A+US",
+   "AUC difference": 0.0029,
+   "95% CI": "[-0.002, +0.008]",
+   "years better": 4,
+   "of years": 6
+  },
+  {
+   "target": "oc",
+   "model": "boosting",
+   "comparison": "B - drift benchmark",
+   "AUC difference": 0.0235,
+   "95% CI": "[+0.012, +0.034]",
+   "years better": 6,
+   "of years": 6
+  },
+  {
+   "target": "cc",
+   "model": "logistic",
+   "comparison": "A+US - A",
+   "AUC difference": 0.0276,
+   "95% CI": "[+0.019, +0.036]",
+   "years better": 6,
+   "of years": 6
+  },
+  {
+   "target": "cc",
+   "model": "logistic",
+   "comparison": "B - A+US",
+   "AUC difference": 0.0053,
+   "95% CI": "[+0.002, +0.009]",
+   "years better": 5,
+   "of years": 6
+  },
+  {
+   "target": "cc",
+   "model": "logistic",
+   "comparison": "B - drift benchmark",
+   "AUC difference": 0.0134,
+   "95% CI": "[+0.007, +0.020]",
+   "years better": 6,
+   "of years": 6
+  },
+  {
+   "target": "cc",
+   "model": "boosting",
+   "comparison": "A+US - A",
+   "AUC difference": 0.041,
+   "95% CI": "[+0.031, +0.051]",
+   "years better": 6,
+   "of years": 6
+  },
+  {
+   "target": "cc",
+   "model": "boosting",
+   "comparison": "B - A+US",
+   "AUC difference": -0.0016,
+   "95% CI": "[-0.007, +0.004]",
+   "years better": 4,
+   "of years": 6
+  },
+  {
+   "target": "cc",
+   "model": "boosting",
+   "comparison": "B - drift benchmark",
+   "AUC difference": 0.0089,
+   "95% CI": "[-0.001, +0.019]",
+   "years better": 4,
+   "of years": 6
+  }
+ ],
+ "trading": {
+  "logistic, A": {
+   "trading days": 1251,
+   "gross per trading day (bps)": 14.816,
+   "cost per trading day (bps)": 16.849,
+   "net per trading day (bps)": -2.033,
+   "net % per year": -5.124,
+   "net Sharpe (annualised)": -0.33,
+   "gross / cost": 0.879
+  },
+  "logistic, A+US": {
+   "trading days": 1251,
+   "gross per trading day (bps)": 14.506,
+   "cost per trading day (bps)": 16.999,
+   "net per trading day (bps)": -2.492,
+   "net % per year": -6.281,
+   "net Sharpe (annualised)": -0.405,
+   "gross / cost": 0.853
+  },
+  "logistic, B": {
+   "trading days": 1251,
+   "gross per trading day (bps)": 16.803,
+   "cost per trading day (bps)": 16.911,
+   "net per trading day (bps)": -0.108,
+   "net % per year": -0.273,
+   "net Sharpe (annualised)": -0.017,
+   "gross / cost": 0.994
+  },
+  "boosting, A": {
+   "trading days": 1251,
+   "gross per trading day (bps)": 12.043,
+   "cost per trading day (bps)": 17.217,
+   "net per trading day (bps)": -5.174,
+   "net % per year": -13.039,
+   "net Sharpe (annualised)": -0.922,
+   "gross / cost": 0.699
+  },
+  "boosting, A+US": {
+   "trading days": 1251,
+   "gross per trading day (bps)": 12.447,
+   "cost per trading day (bps)": 17.168,
+   "net per trading day (bps)": -4.721,
+   "net % per year": -11.897,
+   "net Sharpe (annualised)": -0.813,
+   "gross / cost": 0.725
+  },
+  "boosting, B": {
+   "trading days": 1251,
+   "gross per trading day (bps)": 13.735,
+   "cost per trading day (bps)": 17.145,
+   "net per trading day (bps)": -3.41,
+   "net % per year": -8.594,
+   "net Sharpe (annualised)": -0.576,
+   "gross / cost": 0.801
+  },
+  "drift benchmark (Stage 2 rules)": {
+   "trading days": 1055,
+   "gross per trading day (bps)": 3.42,
+   "cost per trading day (bps)": 15.43,
+   "net per trading day (bps)": -12.01,
+   "net % per year": -25.524,
+   "net Sharpe (annualised)": -1.329,
+   "gross / cost": 0.222
+  },
+  "fade benchmark (SPY 2+ moves)": {
+   "trading days": 74,
+   "gross per trading day (bps)": 54.669,
+   "cost per trading day (bps)": 17.703,
+   "net per trading day (bps)": 36.965,
+   "net % per year": 5.51,
+   "net Sharpe (annualised)": 0.786,
+   "gross / cost": 3.088
+  }
+ },
+ "logistic_coefficients_oc_B": {
+  "gap_today": {
+   "mean coefficient": -0.1058,
+   "years positive": 0,
+   "of years": 6
+  },
+  "res_5d": {
+   "mean coefficient": -0.0757,
+   "years positive": 0,
+   "of years": 6
+  },
+  "res_z_prev": {
+   "mean coefficient": -0.0725,
+   "years positive": 0,
+   "of years": 6
+  },
+  "res_20d": {
+   "mean coefficient": 0.0563,
+   "years positive": 6,
+   "of years": 6
+  },
+  "lag_n": {
+   "mean coefficient": 0.0502,
+   "years positive": 6,
+   "of years": 6
+  },
+  "spy_ret": {
+   "mean coefficient": 0.0487,
+   "years positive": 6,
+   "of years": 6
+  },
+  "index_1d": {
+   "mean coefficient": -0.042,
+   "years positive": 0,
+   "of years": 6
+  },
+  "us_MU": {
+   "mean coefficient": 0.0372,
+   "years positive": 6,
+   "of years": 6
+  },
+  "lag_down": {
+   "mean coefficient": -0.0336,
+   "years positive": 0,
+   "of years": 6
+  },
+  "us_AMD": {
+   "mean coefficient": 0.0314,
+   "years positive": 6,
+   "of years": 6
+  },
+  "lag_net": {
+   "mean coefficient": 0.024,
+   "years positive": 6,
+   "of years": 6
+  },
+  "us_META": {
+   "mean coefficient": -0.0225,
+   "years positive": 0,
+   "of years": 6
+  },
+  "vol_20d": {
+   "mean coefficient": -0.0194,
+   "years positive": 2,
+   "of years": 6
+  },
+  "us_AMZN": {
+   "mean coefficient": 0.0155,
+   "years positive": 5,
+   "of years": 6
+  },
+  "us_ORCL": {
+   "mean coefficient": -0.0144,
+   "years positive": 2,
+   "of years": 6
+  },
+  "index_5d": {
+   "mean coefficient": 0.0117,
+   "years positive": 5,
+   "of years": 6
+  },
+  "us_NVDA": {
+   "mean coefficient": -0.0037,
+   "years positive": 1,
+   "of years": 6
+  },
+  "us_AVGO": {
+   "mean coefficient": -0.0034,
+   "years positive": 2,
+   "of years": 6
+  },
+  "us_MSFT": {
+   "mean coefficient": 0.0032,
+   "years positive": 3,
+   "of years": 6
+  },
+  "us_GOOGL": {
+   "mean coefficient": -0.0029,
+   "years positive": 1,
+   "of years": 6
+  },
+  "lag_up": {
+   "mean coefficient": 0.0019,
+   "years positive": 4,
+   "of years": 6
+  }
+ },
  "settings": {
   "STUDY_START": "2016-04-01",
   "Z_K": 1.0,
@@ -1411,5 +1896,5 @@
   "BOOT_BLOCK": 21,
   "SEED": 42
  },
- "runtime_seconds": 27
+ "runtime_seconds": 142
 }

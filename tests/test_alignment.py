@@ -121,3 +121,11 @@ def test_local_returns_ignore_other_markets_dates():
     assert np.isclose(cc.loc["2024-05-01", "ASIA"], 0.10)
     assert np.isclose(gap.loc["2024-05-01", "ASIA"], 0.05)
     assert np.isclose(oc.loc["2024-05-01", "ASIA"], 110 / 105 - 1)
+
+
+def test_round_trip_costs():
+    from src.costs import round_trip_bps
+    assert round_trip_bps("JP", "2024-05-01") == 10
+    assert round_trip_bps("TW", "2017-04-27") == 35 and round_trip_bps("TW", "2017-04-28") == 20
+    assert round_trip_bps("KR", "2025-06-01") == 20 and round_trip_bps("KR", "2026-02-01") == 25
+    assert round_trip_bps("KR", "2019-05-29") == 35 and round_trip_bps("KR", "2019-05-30") == 30
