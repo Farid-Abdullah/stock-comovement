@@ -1,0 +1,1444 @@
+{
+ "data": {
+  "days_total": 3134,
+  "first_day": "2014-06-02",
+  "last_day": "2026-11-13",
+  "n_stocks": 100,
+  "n_sectors": 11
+ },
+ "baskets": {
+  "raw": {
+   "items per day (mean)": 25.212,
+   "items per day (99th pct)": 83.0,
+   "days with 50+ items": 249.0,
+   "share of days with no items": 0.003
+  },
+  "excess": {
+   "items per day (mean)": 24.283,
+   "items per day (99th pct)": 63.0,
+   "days with 50+ items": 113.0,
+   "share of days with no items": 0.001
+  },
+  "residual": {
+   "items per day (mean)": 23.76,
+   "items per day (99th pct)": 61.68,
+   "days with 50+ items": 81.0,
+   "share of days with no items": 0.001
+  }
+ },
+ "rolling": {
+  "n_windows": 120,
+  "pair_rules_median": {
+   "excess": 779.0,
+   "raw": 2461.0,
+   "residual": 421.0
+  },
+  "pair_rules_max": {
+   "excess": 2085,
+   "raw": 11842,
+   "residual": 945
+  },
+  "spearman_rules_vs_spy_vol": {
+   "excess": 0.49,
+   "raw": 0.74,
+   "residual": 0.42
+  },
+  "main_rules_median": 899.0,
+  "main_rules_max": 3101
+ },
+ "fp_vs_apriori": {
+  "residual, up to 2 items": {
+   "window_end": "2026-11-10",
+   "itemsets": 2035,
+   "identical": true,
+   "fpgrowth_s": 0.091,
+   "apriori_s": 0.021
+  },
+  "residual, up to 3 items": {
+   "window_end": "2026-11-10",
+   "itemsets": 2739,
+   "identical": true,
+   "fpgrowth_s": 0.095,
+   "apriori_s": 0.044
+  },
+  "residual, up to 4 items": {
+   "window_end": "2026-11-10",
+   "itemsets": 2872,
+   "identical": true,
+   "fpgrowth_s": 0.096,
+   "apriori_s": 0.048
+  }
+ },
+ "chance": {
+  "n_possible_rules": 7801200,
+  "real_rules_total": 131594,
+  "shuffled_rules_total": 337.3,
+  "chance_ratio_overall": 0.0026,
+  "significant_share": 0.765
+ },
+ "latest_window": {
+  "end": "2026-11-13",
+  "rules": 2767,
+  "same_sector_share": 0.473
+ },
+ "structure_snapshot": {
+  "2016-12-30 00:00:00": {
+   "same sector": 2.03,
+   "different sectors": 1.18,
+   "semis - semis": 2.54,
+   "semis - other tech": 1.68,
+   "semis - non-tech": 1.19
+  },
+  "2022-12-02 00:00:00": {
+   "same sector": 1.86,
+   "different sectors": 1.11,
+   "semis - semis": 2.77,
+   "semis - other tech": 1.37,
+   "semis - non-tech": 0.91
+  },
+  "2026-11-13 00:00:00": {
+   "same sector": 1.85,
+   "different sectors": 1.24,
+   "semis - semis": 1.87,
+   "semis - other tech": 0.98,
+   "semis - non-tech": 0.78
+  }
+ },
+ "semi_affinity_change": {
+  "risers": [
+   "ORCL",
+   "CAT",
+   "MRK"
+  ],
+  "fallers": [
+   "TXN",
+   "ADBE",
+   "NVDA",
+   "QCOM",
+   "NOW",
+   "AVGO",
+   "INTU",
+   "NFLX",
+   "MU",
+   "AAPL",
+   "AMAT",
+   "BKNG",
+   "GOOGL",
+   "MA",
+   "V",
+   "MSFT",
+   "PANW"
+  ],
+  "table": {
+   "TXN": {
+    "sector": "Information Technology",
+    "before": 2.92,
+    "latest": 1.71,
+    "change": -1.21,
+    "ci_low": -1.71,
+    "ci_high": -0.8,
+    "significant": true
+   },
+   "ADBE": {
+    "sector": "Information Technology",
+    "before": 1.79,
+    "latest": 0.68,
+    "change": -1.1,
+    "ci_low": -1.47,
+    "ci_high": -0.69,
+    "significant": true
+   },
+   "NVDA": {
+    "sector": "Information Technology",
+    "before": 2.45,
+    "latest": 1.43,
+    "change": -1.02,
+    "ci_low": -1.42,
+    "ci_high": -0.55,
+    "significant": true
+   },
+   "QCOM": {
+    "sector": "Information Technology",
+    "before": 2.71,
+    "latest": 1.76,
+    "change": -0.95,
+    "ci_low": -1.47,
+    "ci_high": -0.52,
+    "significant": true
+   },
+   "NOW": {
+    "sector": "Information Technology",
+    "before": 1.6,
+    "latest": 0.74,
+    "change": -0.86,
+    "ci_low": -1.24,
+    "ci_high": -0.47,
+    "significant": true
+   },
+   "AVGO": {
+    "sector": "Information Technology",
+    "before": 2.67,
+    "latest": 1.83,
+    "change": -0.84,
+    "ci_low": -1.32,
+    "ci_high": -0.44,
+    "significant": true
+   },
+   "INTU": {
+    "sector": "Information Technology",
+    "before": 1.55,
+    "latest": 0.76,
+    "change": -0.79,
+    "ci_low": -1.16,
+    "ci_high": -0.42,
+    "significant": true
+   },
+   "NFLX": {
+    "sector": "Communication Services",
+    "before": 1.49,
+    "latest": 0.8,
+    "change": -0.7,
+    "ci_low": -1.12,
+    "ci_high": -0.26,
+    "significant": true
+   },
+   "META": {
+    "sector": "Communication Services",
+    "before": 1.67,
+    "latest": 1.01,
+    "change": -0.66,
+    "ci_low": -1.08,
+    "ci_high": -0.17,
+    "significant": false
+   },
+   "MU": {
+    "sector": "Information Technology",
+    "before": 2.66,
+    "latest": 2.02,
+    "change": -0.64,
+    "ci_low": -1.06,
+    "ci_high": -0.3,
+    "significant": true
+   },
+   "AAPL": {
+    "sector": "Information Technology",
+    "before": 1.39,
+    "latest": 0.79,
+    "change": -0.6,
+    "ci_low": -1.05,
+    "ci_high": -0.31,
+    "significant": true
+   },
+   "INTC": {
+    "sector": "Information Technology",
+    "before": 2.38,
+    "latest": 1.79,
+    "change": -0.58,
+    "ci_low": -1.23,
+    "ci_high": -0.04,
+    "significant": false
+   },
+   "AMAT": {
+    "sector": "Information Technology",
+    "before": 3.07,
+    "latest": 2.5,
+    "change": -0.58,
+    "ci_low": -0.97,
+    "ci_high": -0.15,
+    "significant": true
+   },
+   "LRCX": {
+    "sector": "Information Technology",
+    "before": 3.1,
+    "latest": 2.53,
+    "change": -0.57,
+    "ci_low": -1.07,
+    "ci_high": -0.17,
+    "significant": false
+   },
+   "BKNG": {
+    "sector": "Consumer Discretionary",
+    "before": 1.11,
+    "latest": 0.55,
+    "change": -0.57,
+    "ci_low": -0.88,
+    "ci_high": -0.27,
+    "significant": true
+   },
+   "GOOGL": {
+    "sector": "Communication Services",
+    "before": 1.69,
+    "latest": 1.13,
+    "change": -0.56,
+    "ci_low": -0.95,
+    "ci_high": -0.21,
+    "significant": true
+   },
+   "MA": {
+    "sector": "Financials",
+    "before": 1.07,
+    "latest": 0.53,
+    "change": -0.54,
+    "ci_low": -0.86,
+    "ci_high": -0.21,
+    "significant": true
+   },
+   "V": {
+    "sector": "Financials",
+    "before": 1.04,
+    "latest": 0.5,
+    "change": -0.54,
+    "ci_low": -0.82,
+    "ci_high": -0.17,
+    "significant": true
+   },
+   "AMD": {
+    "sector": "Information Technology",
+    "before": 2.51,
+    "latest": 2.03,
+    "change": -0.49,
+    "ci_low": -0.9,
+    "ci_high": -0.08,
+    "significant": false
+   },
+   "PLTR": {
+    "sector": "Information Technology",
+    "before": 1.62,
+    "latest": 1.14,
+    "change": -0.48,
+    "ci_low": -0.99,
+    "ci_high": -0.02,
+    "significant": false
+   },
+   "MSFT": {
+    "sector": "Information Technology",
+    "before": 1.43,
+    "latest": 0.95,
+    "change": -0.48,
+    "ci_low": -0.92,
+    "ci_high": -0.11,
+    "significant": true
+   },
+   "PANW": {
+    "sector": "Information Technology",
+    "before": 1.39,
+    "latest": 0.94,
+    "change": -0.45,
+    "ci_low": -0.78,
+    "ci_high": -0.11,
+    "significant": true
+   },
+   "AMZN": {
+    "sector": "Consumer Discretionary",
+    "before": 1.48,
+    "latest": 1.04,
+    "change": -0.44,
+    "ci_low": -0.87,
+    "ci_high": 0.02,
+    "significant": false
+   },
+   "CRM": {
+    "sector": "Information Technology",
+    "before": 1.29,
+    "latest": 0.86,
+    "change": -0.43,
+    "ci_low": -0.78,
+    "ci_high": 0.02,
+    "significant": false
+   },
+   "UBER": {
+    "sector": "Industrials",
+    "before": 1.36,
+    "latest": 0.95,
+    "change": -0.41,
+    "ci_low": -0.75,
+    "ci_high": -0.02,
+    "significant": false
+   },
+   "GM": {
+    "sector": "Consumer Discretionary",
+    "before": 1.21,
+    "latest": 0.86,
+    "change": -0.35,
+    "ci_low": -0.73,
+    "ci_high": 0.04,
+    "significant": false
+   },
+   "COST": {
+    "sector": "Consumer Staples",
+    "before": 1.03,
+    "latest": 0.69,
+    "change": -0.33,
+    "ci_low": -0.75,
+    "ci_high": -0.05,
+    "significant": false
+   },
+   "BLK": {
+    "sector": "Financials",
+    "before": 1.07,
+    "latest": 0.74,
+    "change": -0.33,
+    "ci_low": -0.64,
+    "ci_high": -0.01,
+    "significant": false
+   },
+   "DHR": {
+    "sector": "Health Care",
+    "before": 1.21,
+    "latest": 0.88,
+    "change": -0.33,
+    "ci_low": -0.74,
+    "ci_high": 0.04,
+    "significant": false
+   },
+   "ISRG": {
+    "sector": "Health Care",
+    "before": 1.19,
+    "latest": 0.87,
+    "change": -0.32,
+    "ci_low": -0.62,
+    "ci_high": 0.11,
+    "significant": false
+   },
+   "FDX": {
+    "sector": "Industrials",
+    "before": 1.29,
+    "latest": 0.98,
+    "change": -0.31,
+    "ci_low": -0.72,
+    "ci_high": 0.11,
+    "significant": false
+   },
+   "LIN": {
+    "sector": "Materials",
+    "before": 1.1,
+    "latest": 0.8,
+    "change": -0.31,
+    "ci_low": -0.67,
+    "ci_high": 0.04,
+    "significant": false
+   },
+   "ACN": {
+    "sector": "Information Technology",
+    "before": 0.98,
+    "latest": 0.68,
+    "change": -0.3,
+    "ci_low": -0.58,
+    "ci_high": 0.02,
+    "significant": false
+   },
+   "TMO": {
+    "sector": "Health Care",
+    "before": 1.28,
+    "latest": 1.01,
+    "change": -0.27,
+    "ci_low": -0.68,
+    "ci_high": 0.13,
+    "significant": false
+   },
+   "TSLA": {
+    "sector": "Consumer Discretionary",
+    "before": 1.47,
+    "latest": 1.22,
+    "change": -0.25,
+    "ci_low": -0.68,
+    "ci_high": 0.12,
+    "significant": false
+   },
+   "ABT": {
+    "sector": "Health Care",
+    "before": 0.85,
+    "latest": 0.61,
+    "change": -0.24,
+    "ci_low": -0.57,
+    "ci_high": 0.08,
+    "significant": false
+   },
+   "HD": {
+    "sector": "Consumer Discretionary",
+    "before": 0.97,
+    "latest": 0.74,
+    "change": -0.23,
+    "ci_low": -0.57,
+    "ci_high": 0.06,
+    "significant": false
+   },
+   "BA": {
+    "sector": "Industrials",
+    "before": 1.11,
+    "latest": 0.9,
+    "change": -0.22,
+    "ci_low": -0.55,
+    "ci_high": 0.1,
+    "significant": false
+   },
+   "AXP": {
+    "sector": "Financials",
+    "before": 0.78,
+    "latest": 0.57,
+    "change": -0.21,
+    "ci_low": -0.59,
+    "ci_high": 0.13,
+    "significant": false
+   },
+   "SBUX": {
+    "sector": "Consumer Discretionary",
+    "before": 1.11,
+    "latest": 0.94,
+    "change": -0.17,
+    "ci_low": -0.48,
+    "ci_high": 0.2,
+    "significant": false
+   },
+   "MO": {
+    "sector": "Consumer Staples",
+    "before": 0.79,
+    "latest": 0.64,
+    "change": -0.16,
+    "ci_low": -0.45,
+    "ci_high": 0.12,
+    "significant": false
+   },
+   "DIS": {
+    "sector": "Communication Services",
+    "before": 0.76,
+    "latest": 0.62,
+    "change": -0.14,
+    "ci_low": -0.41,
+    "ci_high": 0.12,
+    "significant": false
+   },
+   "UPS": {
+    "sector": "Industrials",
+    "before": 1.04,
+    "latest": 0.9,
+    "change": -0.14,
+    "ci_low": -0.55,
+    "ci_high": 0.28,
+    "significant": false
+   },
+   "WMT": {
+    "sector": "Consumer Staples",
+    "before": 0.66,
+    "latest": 0.53,
+    "change": -0.13,
+    "ci_low": -0.37,
+    "ci_high": 0.09,
+    "significant": false
+   },
+   "TMUS": {
+    "sector": "Communication Services",
+    "before": 0.81,
+    "latest": 0.68,
+    "change": -0.13,
+    "ci_low": -0.42,
+    "ci_high": 0.17,
+    "significant": false
+   },
+   "COF": {
+    "sector": "Financials",
+    "before": 0.96,
+    "latest": 0.84,
+    "change": -0.12,
+    "ci_low": -0.47,
+    "ci_high": 0.27,
+    "significant": false
+   },
+   "MCD": {
+    "sector": "Consumer Discretionary",
+    "before": 0.68,
+    "latest": 0.61,
+    "change": -0.08,
+    "ci_low": -0.35,
+    "ci_high": 0.18,
+    "significant": false
+   },
+   "MDLZ": {
+    "sector": "Consumer Staples",
+    "before": 0.71,
+    "latest": 0.63,
+    "change": -0.08,
+    "ci_low": -0.31,
+    "ci_high": 0.18,
+    "significant": false
+   },
+   "PM": {
+    "sector": "Consumer Staples",
+    "before": 0.83,
+    "latest": 0.77,
+    "change": -0.05,
+    "ci_low": -0.33,
+    "ci_high": 0.25,
+    "significant": false
+   },
+   "LOW": {
+    "sector": "Consumer Discretionary",
+    "before": 0.96,
+    "latest": 0.91,
+    "change": -0.05,
+    "ci_low": -0.44,
+    "ci_high": 0.28,
+    "significant": false
+   },
+   "BRK-B": {
+    "sector": "Financials",
+    "before": 0.61,
+    "latest": 0.6,
+    "change": -0.01,
+    "ci_low": -0.31,
+    "ci_high": 0.24,
+    "significant": false
+   },
+   "T": {
+    "sector": "Communication Services",
+    "before": 0.63,
+    "latest": 0.62,
+    "change": -0.01,
+    "ci_low": -0.23,
+    "ci_high": 0.25,
+    "significant": false
+   },
+   "AMT": {
+    "sector": "Real Estate",
+    "before": 0.7,
+    "latest": 0.71,
+    "change": 0.01,
+    "ci_low": -0.27,
+    "ci_high": 0.23,
+    "significant": false
+   },
+   "CVX": {
+    "sector": "Energy",
+    "before": 0.83,
+    "latest": 0.83,
+    "change": 0.01,
+    "ci_low": -0.24,
+    "ci_high": 0.34,
+    "significant": false
+   },
+   "PG": {
+    "sector": "Consumer Staples",
+    "before": 0.72,
+    "latest": 0.75,
+    "change": 0.02,
+    "ci_low": -0.27,
+    "ci_high": 0.29,
+    "significant": false
+   },
+   "KO": {
+    "sector": "Consumer Staples",
+    "before": 0.66,
+    "latest": 0.7,
+    "change": 0.03,
+    "ci_low": -0.18,
+    "ci_high": 0.34,
+    "significant": false
+   },
+   "PEP": {
+    "sector": "Consumer Staples",
+    "before": 0.69,
+    "latest": 0.72,
+    "change": 0.04,
+    "ci_low": -0.22,
+    "ci_high": 0.3,
+    "significant": false
+   },
+   "BNY": {
+    "sector": "Financials",
+    "before": 0.75,
+    "latest": 0.79,
+    "change": 0.04,
+    "ci_low": -0.24,
+    "ci_high": 0.34,
+    "significant": false
+   },
+   "CMCSA": {
+    "sector": "Communication Services",
+    "before": 0.82,
+    "latest": 0.87,
+    "change": 0.05,
+    "ci_low": -0.25,
+    "ci_high": 0.4,
+    "significant": false
+   },
+   "BMY": {
+    "sector": "Health Care",
+    "before": 0.81,
+    "latest": 0.86,
+    "change": 0.05,
+    "ci_low": -0.26,
+    "ci_high": 0.39,
+    "significant": false
+   },
+   "NEE": {
+    "sector": "Utilities",
+    "before": 0.85,
+    "latest": 0.91,
+    "change": 0.05,
+    "ci_low": -0.24,
+    "ci_high": 0.34,
+    "significant": false
+   },
+   "DE": {
+    "sector": "Industrials",
+    "before": 0.85,
+    "latest": 0.91,
+    "change": 0.06,
+    "ci_low": -0.25,
+    "ci_high": 0.33,
+    "significant": false
+   },
+   "MMM": {
+    "sector": "Industrials",
+    "before": 0.78,
+    "latest": 0.84,
+    "change": 0.06,
+    "ci_low": -0.26,
+    "ci_high": 0.33,
+    "significant": false
+   },
+   "GE": {
+    "sector": "Industrials",
+    "before": 1.05,
+    "latest": 1.12,
+    "change": 0.07,
+    "ci_low": -0.33,
+    "ci_high": 0.46,
+    "significant": false
+   },
+   "ABBV": {
+    "sector": "Health Care",
+    "before": 0.72,
+    "latest": 0.8,
+    "change": 0.08,
+    "ci_low": -0.22,
+    "ci_high": 0.32,
+    "significant": false
+   },
+   "IBM": {
+    "sector": "Information Technology",
+    "before": 0.82,
+    "latest": 0.9,
+    "change": 0.08,
+    "ci_low": -0.21,
+    "ci_high": 0.46,
+    "significant": false
+   },
+   "COP": {
+    "sector": "Energy",
+    "before": 0.93,
+    "latest": 1.0,
+    "change": 0.08,
+    "ci_low": -0.23,
+    "ci_high": 0.41,
+    "significant": false
+   },
+   "ANET": {
+    "sector": "Information Technology",
+    "before": 1.57,
+    "latest": 1.65,
+    "change": 0.08,
+    "ci_low": -0.37,
+    "ci_high": 0.49,
+    "significant": false
+   },
+   "SCHW": {
+    "sector": "Financials",
+    "before": 0.75,
+    "latest": 0.85,
+    "change": 0.1,
+    "ci_low": -0.19,
+    "ci_high": 0.41,
+    "significant": false
+   },
+   "GILD": {
+    "sector": "Health Care",
+    "before": 0.86,
+    "latest": 0.97,
+    "change": 0.11,
+    "ci_low": -0.21,
+    "ci_high": 0.41,
+    "significant": false
+   },
+   "RTX": {
+    "sector": "Industrials",
+    "before": 0.81,
+    "latest": 0.92,
+    "change": 0.11,
+    "ci_low": -0.21,
+    "ci_high": 0.46,
+    "significant": false
+   },
+   "USB": {
+    "sector": "Financials",
+    "before": 0.75,
+    "latest": 0.86,
+    "change": 0.12,
+    "ci_low": -0.19,
+    "ci_high": 0.46,
+    "significant": false
+   },
+   "AMGN": {
+    "sector": "Health Care",
+    "before": 0.92,
+    "latest": 1.04,
+    "change": 0.12,
+    "ci_low": -0.23,
+    "ci_high": 0.41,
+    "significant": false
+   },
+   "VZ": {
+    "sector": "Communication Services",
+    "before": 0.6,
+    "latest": 0.72,
+    "change": 0.12,
+    "ci_low": -0.11,
+    "ci_high": 0.38,
+    "significant": false
+   },
+   "GD": {
+    "sector": "Industrials",
+    "before": 0.63,
+    "latest": 0.76,
+    "change": 0.13,
+    "ci_low": -0.17,
+    "ci_high": 0.4,
+    "significant": false
+   },
+   "MDT": {
+    "sector": "Health Care",
+    "before": 0.6,
+    "latest": 0.74,
+    "change": 0.14,
+    "ci_low": -0.14,
+    "ci_high": 0.44,
+    "significant": false
+   },
+   "WFC": {
+    "sector": "Financials",
+    "before": 0.69,
+    "latest": 0.86,
+    "change": 0.16,
+    "ci_low": -0.13,
+    "ci_high": 0.5,
+    "significant": false
+   },
+   "PFE": {
+    "sector": "Health Care",
+    "before": 0.68,
+    "latest": 0.85,
+    "change": 0.16,
+    "ci_low": -0.15,
+    "ci_high": 0.44,
+    "significant": false
+   },
+   "BAC": {
+    "sector": "Financials",
+    "before": 0.65,
+    "latest": 0.82,
+    "change": 0.17,
+    "ci_low": -0.08,
+    "ci_high": 0.46,
+    "significant": false
+   },
+   "JPM": {
+    "sector": "Financials",
+    "before": 0.77,
+    "latest": 0.94,
+    "change": 0.17,
+    "ci_low": -0.17,
+    "ci_high": 0.54,
+    "significant": false
+   },
+   "C": {
+    "sector": "Financials",
+    "before": 0.87,
+    "latest": 1.04,
+    "change": 0.17,
+    "ci_low": -0.2,
+    "ci_high": 0.58,
+    "significant": false
+   },
+   "SO": {
+    "sector": "Utilities",
+    "before": 0.45,
+    "latest": 0.62,
+    "change": 0.17,
+    "ci_low": -0.05,
+    "ci_high": 0.4,
+    "significant": false
+   },
+   "EMR": {
+    "sector": "Industrials",
+    "before": 1.0,
+    "latest": 1.18,
+    "change": 0.18,
+    "ci_low": -0.18,
+    "ci_high": 0.58,
+    "significant": false
+   },
+   "DUK": {
+    "sector": "Utilities",
+    "before": 0.42,
+    "latest": 0.62,
+    "change": 0.2,
+    "ci_low": 0.01,
+    "ci_high": 0.38,
+    "significant": false
+   },
+   "XOM": {
+    "sector": "Energy",
+    "before": 0.87,
+    "latest": 1.07,
+    "change": 0.2,
+    "ci_low": -0.14,
+    "ci_high": 0.53,
+    "significant": false
+   },
+   "MS": {
+    "sector": "Financials",
+    "before": 0.76,
+    "latest": 0.97,
+    "change": 0.21,
+    "ci_low": -0.06,
+    "ci_high": 0.52,
+    "significant": false
+   },
+   "DELL": {
+    "sector": "Information Technology",
+    "before": 1.57,
+    "latest": 1.78,
+    "change": 0.21,
+    "ci_low": -0.23,
+    "ci_high": 0.72,
+    "significant": false
+   },
+   "JNJ": {
+    "sector": "Health Care",
+    "before": 0.58,
+    "latest": 0.83,
+    "change": 0.24,
+    "ci_low": -0.06,
+    "ci_high": 0.52,
+    "significant": false
+   },
+   "UNP": {
+    "sector": "Industrials",
+    "before": 0.63,
+    "latest": 0.88,
+    "change": 0.25,
+    "ci_low": -0.07,
+    "ci_high": 0.56,
+    "significant": false
+   },
+   "UNH": {
+    "sector": "Health Care",
+    "before": 0.68,
+    "latest": 0.95,
+    "change": 0.27,
+    "ci_low": -0.01,
+    "ci_high": 0.61,
+    "significant": false
+   },
+   "CSCO": {
+    "sector": "Information Technology",
+    "before": 0.89,
+    "latest": 1.17,
+    "change": 0.28,
+    "ci_low": -0.05,
+    "ci_high": 0.64,
+    "significant": false
+   },
+   "GS": {
+    "sector": "Financials",
+    "before": 0.75,
+    "latest": 1.03,
+    "change": 0.28,
+    "ci_low": 0.02,
+    "ci_high": 0.65,
+    "significant": false
+   },
+   "CVS": {
+    "sector": "Health Care",
+    "before": 0.79,
+    "latest": 1.08,
+    "change": 0.3,
+    "ci_low": -0.05,
+    "ci_high": 0.66,
+    "significant": false
+   },
+   "LMT": {
+    "sector": "Industrials",
+    "before": 0.66,
+    "latest": 0.99,
+    "change": 0.32,
+    "ci_low": -0.04,
+    "ci_high": 0.64,
+    "significant": false
+   },
+   "LLY": {
+    "sector": "Health Care",
+    "before": 0.54,
+    "latest": 0.89,
+    "change": 0.35,
+    "ci_low": 0.02,
+    "ci_high": 0.68,
+    "significant": false
+   },
+   "MRK": {
+    "sector": "Health Care",
+    "before": 0.47,
+    "latest": 0.86,
+    "change": 0.4,
+    "ci_low": 0.1,
+    "ci_high": 0.63,
+    "significant": true
+   },
+   "CAT": {
+    "sector": "Industrials",
+    "before": 0.99,
+    "latest": 1.75,
+    "change": 0.76,
+    "ci_low": 0.42,
+    "ci_high": 1.19,
+    "significant": true
+   },
+   "ORCL": {
+    "sector": "Information Technology",
+    "before": 0.65,
+    "latest": 1.55,
+    "change": 0.9,
+    "ci_low": 0.56,
+    "ci_high": 1.26,
+    "significant": true
+   }
+  }
+ },
+ "survival_data": {
+  "rules_total": 131594,
+  "labelled": 118241,
+  "train": 81643,
+  "test": 29256,
+  "base_rate_train": 0.245,
+  "base_rate_test": 0.276,
+  "unique_rules": 17992
+ },
+ "survival_descriptive": {
+  "by_age": {
+   "new (0)": {
+    "mean": 0.142,
+    "size": 29381
+   },
+   "1-2": {
+    "mean": 0.163,
+    "size": 32043
+   },
+   "3-5": {
+    "mean": 0.236,
+    "size": 22463
+   },
+   "6-11": {
+    "mean": 0.307,
+    "size": 18686
+   },
+   "12+": {
+    "mean": 0.578,
+    "size": 15668
+   }
+  },
+  "by_burstiness": {
+   "spread out\n(<25%)": {
+    "mean": 0.306,
+    "size": 62108
+   },
+   "25-35%": {
+    "mean": 0.205,
+    "size": 40352
+   },
+   "35-50%": {
+    "mean": 0.138,
+    "size": 15366
+   },
+   "one episode\n(>50%)": {
+    "mean": 0.092,
+    "size": 415
+   }
+  },
+  "by_group_link": {
+   "links sectors": {
+    "mean": 0.077,
+    "size": 51412
+   },
+   "one sector": {
+    "mean": 0.382,
+    "size": 66829
+   }
+  }
+ },
+ "survival_models": {
+  "logistic regression": {
+   "ROC-AUC": 0.79,
+   "PR-AUC": 0.627,
+   "precision@20%": 0.642,
+   "Brier": 0.154
+  },
+  "random forest": {
+   "ROC-AUC": 0.794,
+   "PR-AUC": 0.64,
+   "precision@20%": 0.648,
+   "Brier": 0.151
+  },
+  "gradient boosting": {
+   "ROC-AUC": 0.799,
+   "PR-AUC": 0.646,
+   "precision@20%": 0.659,
+   "Brier": 0.149
+  },
+  "baseline: rank by lift": {
+   "ROC-AUC": 0.52,
+   "PR-AUC": 0.269,
+   "precision@20%": 0.229,
+   "Brier": null
+  },
+  "baseline: rank by support": {
+   "ROC-AUC": 0.693,
+   "PR-AUC": 0.503,
+   "precision@20%": 0.542,
+   "Brier": null
+  },
+  "baseline: rank by confidence": {
+   "ROC-AUC": 0.506,
+   "PR-AUC": 0.26,
+   "precision@20%": 0.184,
+   "Brier": null
+  },
+  "baseline: rank by age": {
+   "ROC-AUC": 0.703,
+   "PR-AUC": 0.559,
+   "precision@20%": 0.585,
+   "Brier": null
+  },
+  "baseline: all rules survive": {
+   "ROC-AUC": 0.5,
+   "PR-AUC": 0.276,
+   "precision@20%": 0.276,
+   "Brier": null
+  }
+ },
+ "survival_importance": {
+  "model": "gradient boosting",
+  "top": {
+   "n_groups": 0.0845,
+   "n_items": 0.0441,
+   "seen_last_12": 0.021,
+   "spy_vol_recent": 0.0089,
+   "shock_share": 0.0082,
+   "spy_vol": 0.0037,
+   "leverage": 0.0035,
+   "lift": 0.0032
+  },
+  "logit_coef": {
+   "support": -0.24,
+   "confidence": 0.257,
+   "lift": 0.064,
+   "leverage": 0.467,
+   "conviction": -0.166,
+   "neg_log10_p": 0.039,
+   "n_items": -0.574,
+   "n_groups": -0.675,
+   "has_ai": -0.042,
+   "dir_up": 0.395,
+   "dir_down": 0.337,
+   "age": 0.015,
+   "seen_last_12": 0.369,
+   "recent_share": -0.062,
+   "burstiness": -0.075,
+   "shock_share": -0.25,
+   "spy_vol": 0.412,
+   "spy_vol_recent": -0.068,
+   "items_per_day": -0.191
+  }
+ },
+ "survival_rolling": {
+  "2019": {
+   "test rules": 7944,
+   "survival rate": 0.273,
+   "gradient boosting": 0.755,
+   "logistic regression": 0.779,
+   "rank by lift": 0.495,
+   "rank by age": 0.695
+  },
+  "2020": {
+   "test rules": 13934,
+   "survival rate": 0.247,
+   "gradient boosting": 0.809,
+   "logistic regression": 0.814,
+   "rank by lift": 0.552,
+   "rank by age": 0.665
+  },
+  "2021": {
+   "test rules": 24740,
+   "survival rate": 0.287,
+   "gradient boosting": 0.775,
+   "logistic regression": 0.795,
+   "rank by lift": 0.545,
+   "rank by age": 0.731
+  },
+  "2022": {
+   "test rules": 18196,
+   "survival rate": 0.158,
+   "gradient boosting": 0.819,
+   "logistic regression": 0.824,
+   "rank by lift": 0.489,
+   "rank by age": 0.738
+  },
+  "2023": {
+   "test rules": 5281,
+   "survival rate": 0.306,
+   "gradient boosting": 0.791,
+   "logistic regression": 0.794,
+   "rank by lift": 0.583,
+   "rank by age": 0.713
+  },
+  "2024": {
+   "test rules": 8179,
+   "survival rate": 0.287,
+   "gradient boosting": 0.788,
+   "logistic regression": 0.795,
+   "rank by lift": 0.48,
+   "rank by age": 0.738
+  },
+  "2025": {
+   "test rules": 10882,
+   "survival rate": 0.205,
+   "gradient boosting": 0.837,
+   "logistic regression": 0.835,
+   "rank by lift": 0.528,
+   "rank by age": 0.705
+  },
+  "2026": {
+   "test rules": 3992,
+   "survival rate": 0.428,
+   "gradient boosting": 0.767,
+   "logistic regression": 0.766,
+   "rank by lift": 0.541,
+   "rank by age": 0.67
+  }
+ },
+ "latest_rules": {
+  "window_end": "2026-11-13",
+  "n_rules": 2767,
+  "durable": [
+   {
+    "rule": "CVX_DOWN -> COP_DOWN",
+    "lift": 6.818,
+    "confidence": 0.893,
+    "age": 114,
+    "burstiness": 0.16,
+    "p_survive": 0.991
+   },
+   {
+    "rule": "LRCX_DOWN -> AMAT_DOWN",
+    "lift": 5.208,
+    "confidence": 0.703,
+    "age": 113,
+    "burstiness": 0.192,
+    "p_survive": 0.987
+   },
+   {
+    "rule": "AMAT_DOWN -> LRCX_DOWN",
+    "lift": 5.208,
+    "confidence": 0.765,
+    "age": 113,
+    "burstiness": 0.192,
+    "p_survive": 0.985
+   },
+   {
+    "rule": "LRCX_UP -> AMAT_UP",
+    "lift": 4.151,
+    "confidence": 0.708,
+    "age": 112,
+    "burstiness": 0.206,
+    "p_survive": 0.98
+   },
+   {
+    "rule": "AMAT_UP -> LRCX_UP",
+    "lift": 4.151,
+    "confidence": 0.791,
+    "age": 102,
+    "burstiness": 0.206,
+    "p_survive": 0.978
+   },
+   {
+    "rule": "V_DOWN -> MA_DOWN",
+    "lift": 5.4,
+    "confidence": 0.75,
+    "age": 114,
+    "burstiness": 0.19,
+    "p_survive": 0.976
+   },
+   {
+    "rule": "MA_DOWN -> V_DOWN",
+    "lift": 5.4,
+    "confidence": 0.6,
+    "age": 114,
+    "burstiness": 0.19,
+    "p_survive": 0.975
+   },
+   {
+    "rule": "CVX_DOWN -> XOM_DOWN",
+    "lift": 6.3,
+    "confidence": 0.75,
+    "age": 114,
+    "burstiness": 0.19,
+    "p_survive": 0.974
+   },
+   {
+    "rule": "COP_DOWN -> CVX_DOWN",
+    "lift": 6.818,
+    "confidence": 0.758,
+    "age": 81,
+    "burstiness": 0.16,
+    "p_survive": 0.969
+   },
+   {
+    "rule": "SO_DOWN -> DUK_DOWN",
+    "lift": 5.093,
+    "confidence": 0.829,
+    "age": 119,
+    "burstiness": 0.138,
+    "p_survive": 0.965
+   }
+  ],
+  "fragile": [
+   {
+    "rule": "ADBE_UP, MA_UP -> CAT_DOWN",
+    "lift": 5.414,
+    "confidence": 0.688,
+    "age": 1,
+    "burstiness": 0.273,
+    "p_survive": 0.004
+   },
+   {
+    "rule": "ADBE_UP, BRK-B_UP -> CAT_DOWN",
+    "lift": 5.775,
+    "confidence": 0.733,
+    "age": 1,
+    "burstiness": 0.273,
+    "p_survive": 0.005
+   },
+   {
+    "rule": "BRK-B_UP, CAT_DOWN -> ADBE_UP",
+    "lift": 6.243,
+    "confidence": 0.917,
+    "age": 1,
+    "burstiness": 0.273,
+    "p_survive": 0.005
+   },
+   {
+    "rule": "CAT_DOWN, MA_UP -> AMAT_DOWN",
+    "lift": 5.929,
+    "confidence": 0.8,
+    "age": 1,
+    "burstiness": 0.25,
+    "p_survive": 0.006
+   },
+   {
+    "rule": "AMAT_DOWN, V_UP -> CAT_DOWN",
+    "lift": 6.188,
+    "confidence": 0.786,
+    "age": 1,
+    "burstiness": 0.273,
+    "p_survive": 0.007
+   },
+   {
+    "rule": "CAT_DOWN, V_UP -> AMAT_DOWN",
+    "lift": 5.824,
+    "confidence": 0.786,
+    "age": 1,
+    "burstiness": 0.273,
+    "p_survive": 0.007
+   },
+   {
+    "rule": "AMAT_DOWN, MA_UP -> CAT_DOWN",
+    "lift": 7.269,
+    "confidence": 0.923,
+    "age": 1,
+    "burstiness": 0.25,
+    "p_survive": 0.007
+   },
+   {
+    "rule": "LIN_UP, PG_UP -> DUK_UP",
+    "lift": 5.331,
+    "confidence": 0.846,
+    "age": 1,
+    "burstiness": 0.182,
+    "p_survive": 0.013
+   },
+   {
+    "rule": "CMCSA_UP, DUK_UP -> PG_UP",
+    "lift": 5.372,
+    "confidence": 0.917,
+    "age": 1,
+    "burstiness": 0.364,
+    "p_survive": 0.014
+   },
+   {
+    "rule": "PG_UP, USB_UP -> MCD_UP",
+    "lift": 5.25,
+    "confidence": 0.688,
+    "age": 1,
+    "burstiness": 0.273,
+    "p_survive": 0.014
+   }
+  ]
+ },
+ "anomaly": {
+  "n_top_days": 27,
+  "jaccard_if_vs_basket_size_top1pct": 0.742,
+  "top_days": {
+   "2020-11-09": "BKNG +10.0, AXP +10.0, LOW -8.6, MA +8.1, COST -7.9, DIS +7.9",
+   "2020-03-19": "AVGO +7.9, KO -5.9, SBUX +5.5, ACN +5.3, FDX +5.2, MDT +5.2",
+   "2016-11-10": "PEP -6.6, BRK-B +6.4, WFC +6.4, GOOGL -5.6, JPM +5.5, KO -5.5",
+   "2026-11-04": "CVS -7.6, MMM +5.8, MCD +4.9, BRK-B +4.6, GEV -4.6, ISRG +4.4",
+   "2020-03-18": "CVX -10.0, CSCO +7.0, FDX +6.5, GM -6.1, ANET +6.0, LMT +5.9",
+   "2016-11-09": "PFE +10.0, GD +8.8, AMT -7.0, CAT +6.9, LLY +6.7, PM -6.3",
+   "2024-11-06": "GS +8.9, JPM +8.2, COF +7.7, MS +7.2, WFC +6.8, CVS +6.3",
+   "2025-04-04": "RTX -5.8, T -4.7, V -4.5, ABBV -4.5, PG -4.3, VZ -4.2",
+   "2020-03-13": "ORCL +9.8, ADBE +9.0, AXP +8.5, GS +8.1, JPM +6.4, BRK-B +6.2",
+   "2020-11-04": "LLY +7.5, CAT -6.5, UNH +6.2, BMY +4.9, UBER +4.8, MMM -4.4",
+   "2020-03-17": "C -10.0, SO +8.1, PEP +6.8, GM -6.6, COF -6.6, TXN +6.1",
+   "2020-03-09": "COP -10.0, CVX -9.8, EMR -9.2, USB -7.2, C -5.7, ORCL +5.4",
+   "2020-02-28": "JNJ -5.5, JPM -5.3, DELL -5.2, NVDA +4.8, COST -4.8, PEP -4.5",
+   "2025-01-27": "ANET -9.6, CSCO -6.4, ORCL -6.4, NVDA -6.2, T +4.9, COST +4.2",
+   "2020-03-23": "HD +5.9, NFLX +5.4, AMAT +5.4, ADBE +5.4, INTC +5.2, V -4.6",
+   "2017-06-09": "PFE +6.7, CRM -6.0, AMAT -5.5, ANET -5.3, META -5.1, BRK-B +5.0",
+   "2020-03-16": "LOW -10.0, HD -9.8, COF -7.3, MCD -6.6, AVGO -5.2, AMT -4.8",
+   "2017-12-04": "ISRG -7.2, DELL -6.1, DIS +5.9, NOW -5.8, MA -4.9, TMO -4.8",
+   "2020-03-02": "COST +7.3, WMT +6.8, NEE +5.1, VZ +4.8, UNP -4.6, DUK +4.2",
+   "2020-03-24": "INTU +7.1, ADBE -6.6, ISRG +5.2, MA +4.9, CMCSA -4.6, MCD +4.6",
+   "2023-12-14": "ADBE -5.6, GS +5.0, WFC +4.7, CAT +4.4, BLK +4.3, MS +4.3",
+   "2017-11-29": "DELL -8.4, LRCX -5.9, AMAT -5.3, MA -5.0, V -4.9, UPS +4.9",
+   "2020-03-04": "LLY +4.8, SCHW -4.8, JNJ +4.6, DUK +4.2, UNH +4.2, NEE +4.1",
+   "2020-03-12": "TMO +6.3, PEP -5.9, NEE -5.8, UPS +5.5, RTX +5.4, DUK -5.1",
+   "2026-10-22": "PG +5.2, NEE +5.1, LMT +4.4, DUK +3.6, SO +3.6, HD +3.5",
+   "2020-03-20": "PEP -4.4, T -3.8, BLK -3.8, KO -3.7, PANW +3.3, COP +3.2",
+   "2020-02-27": "SCHW +6.5, PG -4.7, NEE -4.7, SO -4.4, MMM +4.2, BKNG +4.0"
+  }
+ },
+ "settings": {
+  "MAIN_MODE": "residual",
+  "Z_K": 1.0,
+  "VOL_WINDOW": 60,
+  "BETA_WINDOW": 252,
+  "WINDOW": 252,
+  "STEP": 21,
+  "MIN_SUPPORT": 0.04,
+  "MIN_CONFIDENCE": 0.4,
+  "MIN_LIFT": 1.5,
+  "MAX_LEN": 3,
+  "FUTURE_DAYS": 126,
+  "SPLIT": "2022-12-01",
+  "SEED": 42
+ }
+}
