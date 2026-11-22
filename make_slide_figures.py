@@ -7,9 +7,9 @@ readable on a slide or in a two-column report:
     affinity.png  significant changes in AI affinity, with bootstrap intervals
     groups.png    mean pair lift inside and between groups over time
 
-Run after final_project.ipynb (it reads the CSV files that the notebook writes to outputs/final/):
+Run after final_project.ipynb and events.ipynb (it reads their saved outputs):
     python make_slide_figures.py
-Writes outputs/final/slides/*.png and refreshes the six figures in report/figures/.
+Writes outputs/final/slides/*.png and refreshes report/figures/ with the six figures the report uses.
 No new analysis happens here.
 """
 from pathlib import Path
@@ -105,10 +105,14 @@ ax.set_xticks([pd.Timestamp(f"{y}-01-01") for y in range(2018, 2027, 2)], [str(y
 ax.grid(axis="y")
 ax.set_title("Mean pair lift inside and between groups (one-year windows)")
 fig.savefig(SLIDES / "groups.png")
-# Refresh report/figures/: three of the large-font figures plus three notebook figures used as they are.
+# Refresh report/figures/ with exactly the six figures report/main.tex includes (run events.ipynb first).
 REPORT_FIGURES = Path("report/figures")
-for name in ["placebo.png", "groups.png", "affinity.png"]:
-    shutil.copy(SLIDES / name, REPORT_FIGURES / name)
-for name in ["4_1_rules_per_window_by_mode.png", "7_1_survival_by_feature.png", "8_1_anomaly_timeline.png"]:
-    shutil.copy(OUT / name, REPORT_FIGURES / name)
-print("wrote", sorted(p.name for p in SLIDES.glob("*.png")), "and refreshed report/figures/")
+REPORT_FIGURES.mkdir(exist_ok=True)
+for old in REPORT_FIGURES.glob("*.png"):
+    old.unlink()
+sources = [SLIDES / "affinity.png", OUT / "4_1_rules_per_window_by_mode.png"] + [
+    Path("outputs/events") / f"{name}.png" for name in
+    ["3_1_unusual_days_shift_test", "4_2_move_ratio_by_group", "6_1_local_breaks_and_shocks", "7_2_recovery_curves_four_events"]]
+for src in sources:
+    shutil.copy(src, REPORT_FIGURES / src.name)
+print("wrote", sorted(p.name for p in SLIDES.glob("*.png")), "and refreshed report/figures/ with", len(sources), "figures")
