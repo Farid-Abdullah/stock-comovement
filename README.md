@@ -1,92 +1,88 @@
 # Which events change how stocks move together, and do the changes last? (DSAI4102 final project)
 
-Stocks rise and fall together in habits: chip makers move with chip makers, consumer staples with consumer staples.
-We mine those habits as association rules on the daily major moves of 40 US stocks (AI chip makers, Big Tech,
-traditional software and a non-tech control group), 2016 to November 2026, with the market removed first. Then we
-test 368 dated events (Fed rate decisions, CPI and jobs reports, 19 one-off shocks) and company earnings against
-chance, and follow the co-movement structure for two years after each shock.
+Stocks move together in habits: chip makers with chip makers, banks with banks. We mine those habits as
+**association rules** on the daily major moves of the **S&P 100** (100 companies, 11 sectors), January 2016 to
+13 November 2026, after removing the market from every return. We then test **368 dated events** (Federal Reserve
+rate decisions, inflation and jobs reports, 19 one-off shocks) and **company earnings** against chance, and follow
+the co-movement structure for two years after each shock.
 
-The analysis runs in four steps:
+Questions:
 
-1. **Learn the normal pattern.** Market-model residuals, major moves as items, FP-Growth on 120 rolling one-year
-   windows, checked with a shuffle test and Fisher tests with Benjamini–Hochberg (`final_project.ipynb`, sections 3–4).
-2. **Find the unusual moments without labels.** Isolation Forest on daily residual z-scores (`final_project.ipynb`,
-   section 8) and a weekly structure-break score (`events.ipynb`, section 6).
-3. **Match them to events.** Event-date shift test, event-type comparisons, events as items, earnings spillover
-   (`events.ipynb`, sections 3–5).
-4. **Do the breaks last?** Recovery curves after each shock (`events.ipynb`, section 7).
-
-Supporting results used in the story: the ChatGPT placebo test and AI affinity (`final_project.ipynb`, sections
-5–6), and the prediction task, which predicts whether a mined rule is found again in the next six months
-(`final_project.ipynb`, section 7). `lag_rules_models_regimes.ipynb` shows why we predict rules and not prices:
-next-day price direction is not predictable from these features (ROC-AUC 0.49–0.51).
+* **Q0** Are the mined rules real co-movement, or just the market moving? (`comovement_rules.ipynb`)
+* **Q1** Do events explain the strangest days? (`events.ipynb`, Section 4)
+* **Q2** Who reacts to scheduled news, and to company earnings? (`events.ipynb`, Section 5)
+* **Q3** When events change co-movement, does the change last? (`events.ipynb`, Section 6)
+* **Prediction** Which mined rules last? (`comovement_rules.ipynb`, Section 6)
 
 Group: Farid Abdul Rehman (60304642), Muzayyan Parkar (60305825), Mohamad Zain (60306080). Instructor: Moshiur Rahman Farazi.
 
-## How to run (in this order, from the repo root)
+## How to run
+
+From the repo root, run the three notebooks **in this order** (Run All in Jupyter, or the commands below). The
+first run needs internet access to Yahoo Finance; later runs read the saved files in `data/`.
 
 ```bash
 pip install -r requirements.txt
-jupyter nbconvert --to notebook --execute --inplace final_project.ipynb   # about 5 minutes
-jupyter nbconvert --to notebook --execute --inplace events.ipynb          # about 30 seconds; needs final_project's outputs
-python make_slide_figures.py                                             # a few seconds; needs final_project's outputs
+jupyter nbconvert --to notebook --execute --inplace stocks.ipynb             # 1. about 1-2 minutes (price download)
+jupyter nbconvert --to notebook --execute --inplace comovement_rules.ipynb   # 2. about 10-30 minutes
+jupyter nbconvert --to notebook --execute --inplace events.ipynb             # 3. about 5 minutes (earnings download)
 ```
 
-Opening each notebook in Jupyter and choosing Run All does the same. The data files are included, so nothing needs
-internet access. Optional:
+Each notebook reads only files written by the notebooks before it, and writes only to its own output folder.
+To start completely fresh, delete `data/` and `outputs/` and run all three again.
 
-```bash
-jupyter nbconvert --to notebook --execute --inplace lag_rules_models_regimes.ipynb   # 10-15 minutes, supporting only
-jupyter nbconvert --to notebook --execute --inplace comovement_association_rules.ipynb   # step 1, kept for reference
-python build_events.py              # rebuilds data/events.csv (no internet needed)
-python build_events.py --earnings   # also re-downloads data/earnings_dates.csv from Yahoo Finance
-```
+## What each notebook does and produces
 
-Every notebook writes only to its own output folder, and every number quoted in the slides and the report is
-saved in a key-numbers file: `outputs/final/key_numbers.json` and `outputs/events/key_numbers_events.json`.
+| # | Notebook | What it does | Reads | Writes |
+|---|---|---|---|---|
+| 1 | `stocks.ipynb` | Explains what the S&P 100 is and why we use it (a list chosen by S&P with a published rule, not by us), lists the 100 companies with their GICS sectors, downloads adjusted daily prices, checks the data (gaps, late listings, extreme moves) and explores how the sectors performed | internet (Yahoo Finance) | `data/prices.csv`, `data/stocks.csv`, `outputs/stocks/` |
+| 2 | `comovement_rules.ipynb` | Removes the market from every return (market model), turns each day into a basket of major moves, mines rules with FP-Growth on 120 rolling one-year windows, compares raw / excess / residual returns, tests the rules against shuffled data and with Fisher tests, tracks co-movement inside and between sectors and with the semiconductor stocks, predicts which rules last, and finds the unusual days with an Isolation Forest | `data/prices.csv`, `data/stocks.csv` | `outputs/rules/` (figures, tables, `key_numbers.json`) |
+| 3 | `events.ipynb` | Builds the event calendar and explains why each kind of event is in the test, downloads earnings dates, then answers Q1-Q3: unusual days vs a shifted calendar, which sectors react on Fed / CPI / jobs days, earnings spillover, structure breaks and recovery curves, plus a robustness check | `data/prices.csv`, `data/stocks.csv`, `outputs/rules/top_anomalous_days.csv`, internet (Yahoo Finance, earnings) | `data/events.csv`, `data/earnings_dates.csv`, `outputs/events/` (figures, tables, `key_numbers_events.json`) |
 
-## Files
+Every number quoted in the slides is in `outputs/rules/key_numbers.json` or `outputs/events/key_numbers_events.json`.
 
-| File | What it is |
+## Main outputs
+
+| File | What it shows |
 |---|---|
-| `final_project.ipynb` | **Baseline and supporting analyses** (sections 1–9): items, rolling-window rules, chance tests, ChatGPT placebo test, AI affinity and clustering, rule-survival prediction, Isolation Forest. Writes `outputs/final/` |
-| `events.ipynb` | **The event analysis** (sections 1–9): which events line up with unusual days and structure breaks, who reacts to rate news, earnings spillover, and whether breaks last. Writes `outputs/events/`. Details in [EVENTS.md](EVENTS.md) |
-| `build_events.py` | Builds `data/events.csv` (FOMC, CPI, jobs reports, shocks, each with a source link) and, with `--earnings`, `data/earnings_dates.csv` |
-| `make_slide_figures.py` | Redraws four `final_project` figures with large fonts (`outputs/final/slides/`) and refreshes `report/figures/`. It does not build a PowerPoint |
-| `lag_rules_models_regimes.ipynb` | Supporting: next-day rules, price-direction prediction (fails, ROC-AUC about 0.50) and market regimes. Writes `outputs/lag/` |
-| `comovement_association_rules.ipynb` | Step 1: yearly rules on raw returns (kept for reference; superseded). Writes `outputs/step1/` |
-| `data/prices.csv` | Adjusted closing prices, 2 Jun 2014 to 13 Nov 2026, 40 stocks + SPY, from Yahoo Finance via `yfinance` (`auto_adjust=True`). Built by the step 1 notebook's `load_prices` |
-| `data/events.csv`, `data/earnings_dates.csv` | Event calendar and earnings dates used by `events.ipynb` |
-| `outputs/final/`, `outputs/events/`, `outputs/lag/`, `outputs/step1/` | Figures (PNG) and tables (CSV) from each notebook |
-| `report/` | IEEE two-column report source (`main.tex`, `refs.bib`, `figures/`). Upload the folder to Overleaf and compile |
-| `docs/reading_list.md` | Background reading and papers |
+| `outputs/stocks/3_1_companies_per_sector.png` | S&P 100 companies per sector |
+| `outputs/stocks/6_2_sector_returns_by_year.png` | Each sector's cumulative return, year by year, with SPY |
+| `outputs/rules/4_1_rules_per_window_by_mode.png` | Rules per window under raw, excess and residual returns (Q0) |
+| `outputs/rules/4_3_chance_test.png` | Real rules, significant rules and rules found in shuffled data (Q0) |
+| `outputs/rules/5_1_structure_over_time.png` | Mean pair lift inside sectors, between sectors and around the semiconductor stocks |
+| `outputs/rules/5_2_semi_affinity_change.png` | Stocks whose co-movement with the semiconductor stocks changed beyond noise |
+| `outputs/rules/6_2_survival_models.png` | Rule-survival models against one-feature baselines |
+| `outputs/rules/7_1_anomaly_timeline.png` | Isolation Forest anomaly score per day; the top 1% are the unusual days |
+| `outputs/events/3_1_events_on_spy.png` | The S&P 500 (SPY) with the one-off shocks and scheduled releases marked |
+| `outputs/events/4_1_unusual_days_shift_test.png` | Unusual days matched to events, real vs 1,000 shifted calendars (Q1) |
+| `outputs/events/top_unusual_days_labelled.csv` | The 27 unusual days with their events and a category |
+| `outputs/events/5_2_move_ratio_by_sector.png` | Which sectors move more than usual on Fed, CPI and jobs days (Q2) |
+| `outputs/events/5_4_earnings_spillover.png` | How much an earnings move pulls the company's own sector (Q2) |
+| `outputs/events/6_1_local_breaks_and_shocks.png` | Weekly structure-break score with the shocks (Q3) |
+| `outputs/events/6_3_recovery_curves_four_events.png` | Recovery curves for four shocks (Q3) |
 
-## Main settings
+## Folders
 
-| Setting | Value | Meaning |
-|---|---|---|
-| `MAIN_MODE` | `residual` | return minus beta × SPY return (beta from the previous 252 days) |
-| `Z_K`, `VOL_WINDOW` | 1.0, 60 | a major move is at least 1 × the stock's own 60-day residual volatility |
-| `WINDOW`, `STEP` | 252, 21 | one-year rolling windows moved one month at a time (120 windows) |
-| `MIN_SUPPORT`, `MIN_CONFIDENCE`, `MIN_LIFT`, `MAX_LEN` | 0.04, 0.4, 1.5, 3 | mining thresholds |
-| `TOP_SHARE` | 0.01 | an "unusual day" is in the top 1% of Isolation Forest scores (27 days) |
-| `N_SHIFTS`, `MIN_SHIFT` | 1,000, 21 | random calendar shifts of at least a month for the event-date test |
-| `SPAN` | 126 | half-year windows before and after a date for the break score and recovery curves |
-| `CHATGPT_DATE` | 2022-12-01 | first trading day after ChatGPT's release |
-| `FUTURE_DAYS` | 126 | a rule "survives" if it is mined again from the next 126 baskets |
+| Folder | Contents |
+|---|---|
+| `data/` | Inputs built by the notebooks: prices, the company list, the event calendar, earnings dates |
+| `outputs/stocks/`, `outputs/rules/`, `outputs/events/` | Figures (PNG), tables (CSV) and key numbers (JSON) of each notebook |
+| `docs/` | `reading_list.md` (background reading) |
+| `report/` | Report source (IEEE two-column LaTeX); still describes the earlier 40-stock version and will be updated |
+| `DETAILS.md` | Our own notes: the story, the concepts and how they map to the course |
 
 ## Data sources
 
-Prices: Yahoo Finance through the open-source [`yfinance`](https://github.com/ranaroussi/yfinance) library, downloaded
-once and saved to `data/prices.csv` so everyone works from the same data. Event dates: Federal Reserve and BLS
-calendars, plus a source link for every one-off shock (see `EVENTS.md`). Earnings dates: Yahoo Finance via `yfinance`.
+* **Prices and earnings dates:** Yahoo Finance through the open-source [`yfinance`](https://github.com/ranaroussi/yfinance) library (adjusted closes, `auto_adjust=True`).
+* **S&P 100 constituents and sectors:** [Wikipedia, S&P 100](https://en.wikipedia.org/wiki/S%26P_100), read on 22 Nov 2026; index description from [S&P Dow Jones Indices](https://www.spglobal.com/spdji/en/indices/equity/sp-100).
+* **Fed decisions:** [Federal Reserve meeting calendars](https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm). **CPI and jobs reports:** BLS release archives ([CPI](https://www.bls.gov/bls/news-release/cpi.htm), [Employment Situation](https://www.bls.gov/bls/news-release/empsit.htm)).
+* **One-off shocks:** each row of `data/events.csv` links a news report or official release confirming the date.
 
 ## Acknowledgement
 
 The code and drafts in this repository were written with the help of an AI assistant (Claude, Anthropic) and reviewed by the group.
 
-## Other branches
+## Other branches and tags
 
-* `overnight-transmission`: does AI news travel overnight from the US to Japan, Taiwan and Korea? (lagged rules, trading test, prediction)
-* `final-project`, `event-analysis`, `lag-baseline`: the earlier lines of work, all contained in `main`
-* tag `archive/main-2026-11-22`: `main` exactly as it was before the event analysis became `main`
+* tag `presentation-40-stocks`: the earlier version with 40 hand-picked stocks in four groups.
+* `final-project`, `event-analysis`, `lag-baseline`, `overnight-transmission`: earlier lines of work.
