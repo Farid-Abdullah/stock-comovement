@@ -8,7 +8,7 @@ This adds the event part of the project on top of `final_project.ipynb`. Nothing
 |---|---|
 | `build_events.py` | Builds the event calendar. Run once. `--earnings` also downloads earnings dates. |
 | `data/events.csv` | 368 events, 2016 to Nov 2026: 89 FOMC rate decisions, 130 CPI releases, 130 jobs reports, 19 one-off shocks. Each row has its source. |
-| `data/earnings_dates.csv` | Created by `python build_events.py --earnings` (needs internet access to Yahoo Finance). Not included yet. |
+| `data/earnings_dates.csv` | Earnings dates for the 40 stocks, created by `python build_events.py --earnings` (needs internet access to Yahoo Finance). Included. |
 | `events.ipynb` | The analysis, sections 1 to 9, with a "Results at a glance" table at the top. Runs in about 30 seconds. |
 | `outputs/events/` | Every table (CSV) and figure (PNG) from the notebook, plus `key_numbers_events.json`. |
 
@@ -21,9 +21,8 @@ jupyter notebook events.ipynb         # Run All
 ```
 
 Run it from the repo root: the notebook reads `data/prices.csv` and `outputs/final/placebo_break_test.csv`.
-Without the earnings file, Section 5 (earnings spillover) is skipped and everything else runs.
-**After adding earnings, re-run the notebook and update the "Results at a glance" table**, because the earnings
-days will change the H1c result.
+The earnings file is included, so `python build_events.py` is only needed to rebuild the inputs. Without the
+earnings file, Section 5 (earnings spillover) is skipped and everything else runs.
 
 ## Where the event dates come from
 

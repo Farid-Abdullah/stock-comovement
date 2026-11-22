@@ -11,3 +11,6 @@ CLAUDE.md
 venv/
 env/
 .env
+
+# overnight-transmission cache (never commit)
+outputs/v2/

@@ -6,6 +6,7 @@ Association rule mining on the daily major moves of 40 US stocks (AI chip makers
 2. Which stocks does the market treat as "AI stocks"? (AI affinity with bootstrap intervals, hierarchical vs spectral clustering)
 3. Which mined rules last? (predicting whether a rule is mined again in the next six months)
 4. Which days are unusual once the market is removed? (Isolation Forest)
+5. Which events (rate decisions, CPI and jobs reports, earnings, one-off shocks) line up with the unusual days and structure breaks, and do the breaks last? (`events.ipynb`, see [EVENTS.md](EVENTS.md))
 
 Group: Farid Abdul Rehman (60304642), Muzayyan Parkar (60305825), Mohamad Zain (60306080). Instructor: Moshiur Rahman Farazi.
 
@@ -14,22 +15,25 @@ Group: Farid Abdul Rehman (60304642), Muzayyan Parkar (60305825), Mohamad Zain (
 ```bash
 pip install -r requirements.txt
 jupyter notebook final_project.ipynb      # Run All, about 3 minutes
-python make_slide_figures.py              # optional: bigger-font figures for the slides
+jupyter notebook events.ipynb             # Run All after final_project, about 30 seconds
 ```
 
-The notebook reads `data/prices.csv` and writes every figure and table to `outputs/final/`, including `key_numbers.json`, which holds every number quoted in the slides and the report.
+`final_project.ipynb` reads `data/prices.csv` and writes every figure and table to `outputs/final/`, including `key_numbers.json`, which holds every number quoted in the slides and the report. `events.ipynb` also reads `data/events.csv`, `data/earnings_dates.csv` and two tables from `outputs/final/`, and writes to `outputs/events/` (numbers in `key_numbers_events.json`). Each notebook writes only to its own folder.
 
 ## Files
 
 | File | What it is |
 |---|---|
 | `final_project.ipynb` | **The final analysis**, top to bottom (sections 1–9) |
-| `make_slide_figures.py` | Redraws four figures with larger fonts for the slides (no new analysis) |
-| `comovement_association_rules.ipynb` | Step 1: yearly rules on raw returns (kept for reference; superseded) |
+| `events.ipynb` | **The event layer**: which events break co-movement and whether the breaks last (sections 1–9; details in `EVENTS.md`) |
+| `build_events.py` | Builds `data/events.csv` (FOMC, CPI, jobs reports, shocks) and, with `--earnings`, `data/earnings_dates.csv` |
+| `data/events.csv`, `data/earnings_dates.csv` | Event calendar and earnings dates used by `events.ipynb` |
+| `comovement_association_rules.ipynb` | Step 1: yearly rules on raw returns (kept for reference; superseded). Writes to `outputs/step1/` |
 | `data/prices.csv` | Adjusted closing prices, 2 Jun 2014 to 13 Nov 2026, 40 stocks + SPY, from Yahoo Finance via `yfinance` (`auto_adjust=True`). Built by the step 1 notebook's `load_prices` |
-| `outputs/final/` | All figures (PNG) and tables (CSV) from the final notebook |
+| `outputs/final/` | All figures (PNG) and tables (CSV) from the final notebook (`slides/` holds larger-font copies of four figures) |
+| `outputs/events/` | All figures and tables from the event notebook |
+| `outputs/step1/` | Figures and tables from the step 1 notebook |
 | `report/` | IEEE two-column report source (`main.tex`, `refs.bib`, `figures/`). Upload the folder to Overleaf and compile |
-| `docs/STUDY_GUIDE.md` | Walkthrough of every concept, function and figure, plus likely oral-exam questions |
 | `docs/reading_list.md` | Background reading and papers |
 
 ## Main settings (first code cell)
@@ -50,3 +54,9 @@ Prices: Yahoo Finance through the open-source [`yfinance`](https://github.com/ra
 ## Acknowledgement
 
 The code and drafts in this repository were written with the help of an AI assistant (Claude, Anthropic) and reviewed by the group.
+
+## Other branches
+
+* `overnight-transmission`: does AI news travel overnight from the US to Japan, Taiwan and Korea? (lagged rules, trading test, prediction)
+* `lag-baseline`: the lag-rules, models and regimes notebook (`lag_rules_models_regimes.ipynb`, `outputs/lag/`)
+* tag `archive/main-2026-11-22`: `main` exactly as it was before the event layer became `main`
