@@ -1,6 +1,0 @@
-date,event,anomaly percentile,items in basket,largest residual moves (z),AI net up,BigTech net up,Software net up,Baseline net up
-2022-11-30,"ChatGPT released (same day: Powell speech, S&P 500 +3.1%)",0.6838638858397366,13,"WDAY +5.8, MSFT +1.8, QCOM +1.7, AVGO +1.5, UNH +1.5, WMT -1.4",2,3,2,0
-2023-03-14,GPT-4 announced,0.48518111964873767,10,"ORCL -1.9, HD -1.6, IBM -1.6, META +1.4, AMD +1.4, ACN -1.4",2,-1,-2,-1
-2023-05-25,Nvidia's AI revenue guidance,0.9934138309549945,24,"NVDA +10.0, TSM +7.6, AVGO +5.6, ORCL +5.6, ADBE +4.2, AMD +3.5",7,0,0,-7
-2025-01-27,DeepSeek sell-off,0.9963410171972191,29,"CSCO -6.4, ORCL -6.4, NVDA -6.2, TSM -4.6, JNJ +4.2, AAPL +3.8",-6,1,6,8
-2025-09-10,Oracle's $455bn cloud backlog,0.9703622392974753,18,"ORCL +10.0, AVGO +4.8, SAP -3.1, AAPL -2.9, CRM -2.6, AMZN -2.4",4,-3,-6,-1
