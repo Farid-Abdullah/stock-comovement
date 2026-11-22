@@ -16,7 +16,21 @@
   "p_macro": 0.695,
   "share_matched_shock": 0.37,
   "null_mean_shock": 0.019,
-  "p_shock": 0.0
+  "p_shock": 0.0,
+  "categories": {
+   "one-off shock": 10,
+   "scheduled release": 1,
+   "earnings reaction": 5,
+   "market stress": 5,
+   "earnings day, reporter quiet": 2,
+   "unexplained": 4
+  },
+  "unexplained_days": [
+   "2017-06-09",
+   "2016-12-01",
+   "2020-11-04",
+   "2026-01-02"
+  ]
  },
  "h1d_anomaly_percentile": {
   "ChatGPT released": 0.684,

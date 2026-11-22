@@ -1,13 +1,14 @@
 # Event layer: which events break co-movement, and do the breaks last?
 
-This adds the event part of the project on top of `final_project.ipynb`. Nothing in the existing notebooks changes.
+`events.ipynb` is the main analysis of the project. It builds on `final_project.ipynb`, which supplies the
+baseline (market-adjusted items, rolling-window rules, the Isolation Forest scores and the ChatGPT placebo table).
 
 ## Files
 
 | File | What it is |
 |---|---|
 | `build_events.py` | Builds the event calendar. Run once. `--earnings` also downloads earnings dates. |
-| `data/events.csv` | 368 events, 2016 to Nov 2026: 89 FOMC rate decisions, 130 CPI releases, 130 jobs reports, 19 one-off shocks. Each row has its source. |
+| `data/events.csv` | 368 events: 89 FOMC rate decisions, 130 CPI releases, 130 jobs reports, 19 one-off shocks. Each row has its source link. The last FOMC row (9 Dec 2026) is after the data ends, so the notebook uses 88. |
 | `data/earnings_dates.csv` | Earnings dates for the 40 stocks, created by `python build_events.py --earnings` (needs internet access to Yahoo Finance). Included. |
 | `events.ipynb` | The analysis, sections 1 to 9, with a "Results at a glance" table at the top. Runs in about 30 seconds. |
 | `outputs/events/` | Every table (CSV) and figure (PNG) from the notebook, plus `key_numbers_events.json`. |
@@ -16,13 +17,14 @@ This adds the event part of the project on top of `final_project.ipynb`. Nothing
 
 ```bash
 pip install -r requirements.txt
-python build_events.py --earnings     # writes data/events.csv and data/earnings_dates.csv
-jupyter notebook events.ipynb         # Run All
+jupyter nbconvert --to notebook --execute --inplace final_project.ipynb   # first: events.ipynb reads two of its tables
+jupyter nbconvert --to notebook --execute --inplace events.ipynb
 ```
 
-Run it from the repo root: the notebook reads `data/prices.csv` and `outputs/final/placebo_break_test.csv`.
-The earnings file is included, so `python build_events.py` is only needed to rebuild the inputs. Without the
-earnings file, Section 5 (earnings spillover) is skipped and everything else runs.
+Run from the repo root. The notebook reads `data/prices.csv`, `data/events.csv`, `data/earnings_dates.csv`,
+`outputs/final/placebo_break_test.csv` and `outputs/final/top_anomalous_days.csv`. Both data files are included,
+so `python build_events.py` is only needed to rebuild them. Without the earnings file, Section 5 (earnings
+spillover) and the earnings categories are skipped and everything else runs.
 
 ## Where the event dates come from
 
@@ -31,9 +33,9 @@ earnings file, Section 5 (earnings spillover) is skipped and everything else run
   included; notation votes are not.
 * **CPI and jobs reports**: the BLS news-release archives; the release date is in each file name. The 2025
   government shutdown is reflected: no October 2025 CPI or jobs report, and delayed releases in Oct–Dec 2025.
-* **Shocks**: 19 hand-picked events. Rows with `checked = True` were checked against the linked source; the
-  others are well-known dates that still need a source link before the report. The list is a biased sample
-  (chosen because the market moved), so the scheduled events are the fair test.
+* **Shocks**: 19 hand-picked events, each linked to a news report or an official release (OpenAI, Nvidia,
+  Oracle, USTR, Pfizer) that confirms the date. The list is a biased sample (chosen because the market moved),
+  so the scheduled events are the fair test.
 
 ## Main design choices
 
@@ -41,6 +43,8 @@ earnings file, Section 5 (earnings spillover) is skipped and everything else run
   that its top-12 unusual days match the final notebook's table.
 * **Event-date shift test**: the whole calendar moves by a random number of trading days (1,000 times), which
   keeps its rhythm and breaks only the link between events and market days.
+* **A category for every unusual day**: shock, scheduled release, earnings reaction, market stress, earnings day
+  with a quiet reporter, or unexplained (first rule that applies; Section 3). Descriptive, not a test.
 * **Local break score**: 1 − correlation of the 780 pair lifts in the half-year before vs after each week.
 * **Recovery curves (H2)**: similarity of post-event half-years to the pre-event half-year, measured against
   normal drift. The classification rule is written in Section 7 before the results.
@@ -51,5 +55,6 @@ earnings file, Section 5 (earnings spillover) is skipped and everything else run
 
 * Half-year windows cannot see breaks that last only a few weeks.
 * The local break score is noisier in the first and last half-year of the sample.
-* Shocks after mid-2025 have less than a year of data after them, so H2 marks them "too recent".
+* Shocks after mid-2025 have less than a year of data after them, so H2 marks them "too recent". DeepSeek
+  (Jan 2025) is classified from only four second-year points, the minimum the rule allows.
 * H2 counts change with the settings (Section 8), so treat them as suggestive.

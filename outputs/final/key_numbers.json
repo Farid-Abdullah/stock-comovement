@@ -49,24 +49,24 @@
    "items_per_day": 10.9,
    "itemsets": 977,
    "identical": true,
-   "fpgrowth_ms": 25.7,
-   "apriori_ms": 8.5
+   "fpgrowth_ms": 47.3,
+   "apriori_ms": 6.0
   },
   "raw, up to 3 items": {
    "window_end": "2020-05-05",
    "items_per_day": 12.2,
    "itemsets": 14018,
    "identical": true,
-   "fpgrowth_ms": 507.7,
-   "apriori_ms": 103.9
+   "fpgrowth_ms": 601.3,
+   "apriori_ms": 122.6
   },
   "raw, up to 5 items": {
    "window_end": "2020-05-05",
    "items_per_day": 12.2,
    "itemsets": 301323,
    "identical": true,
-   "fpgrowth_ms": 3881.1,
-   "apriori_ms": 13100.9
+   "fpgrowth_ms": 5681.7,
+   "apriori_ms": 23217.5
   }
  },
  "chance": {
@@ -754,10 +754,10 @@
    "Brier": 0.218
   },
   "random forest": {
-   "ROC-AUC": 0.658,
-   "PR-AUC": 0.584,
-   "precision@20%": 0.623,
-   "Brier": 0.208
+   "ROC-AUC": 0.663,
+   "PR-AUC": 0.587,
+   "precision@20%": 0.627,
+   "Brier": 0.206
   },
   "gradient boosting": {
    "ROC-AUC": 0.637,
@@ -774,7 +774,7 @@
   "baseline: rank by support": {
    "ROC-AUC": 0.61,
    "PR-AUC": 0.493,
-   "precision@20%": 0.523,
+   "precision@20%": 0.529,
    "Brier": null
   },
   "baseline: rank by confidence": {
@@ -786,7 +786,7 @@
   "baseline: rank by age": {
    "ROC-AUC": 0.627,
    "PR-AUC": 0.57,
-   "precision@20%": 0.618,
+   "precision@20%": 0.617,
    "Brier": null
   },
   "baseline: all rules survive": {
@@ -799,14 +799,14 @@
  "survival_importance": {
   "model": "random forest",
   "top": {
-   "n_groups": 0.0468,
-   "n_items": 0.0077,
-   "seen_last_12": 0.0068,
-   "items_per_day": 0.0067,
-   "neg_log10_p": 0.0053,
-   "leverage": 0.0052,
-   "lift": 0.0028,
-   "burstiness": 0.0025
+   "n_groups": 0.0457,
+   "items_per_day": 0.0103,
+   "n_items": 0.009,
+   "seen_last_12": 0.0066,
+   "neg_log10_p": 0.0045,
+   "leverage": 0.0043,
+   "burstiness": 0.0031,
+   "lift": 0.0026
   },
   "logit_coef": {
    "support": -0.219,
@@ -883,7 +883,7 @@
   "2025": {
    "test rules": 1177,
    "survival rate": 0.329,
-   "gradient boosting": 0.79,
+   "gradient boosting": 0.794,
    "logistic regression": 0.783,
    "rank by lift": 0.641,
    "rank by age": 0.723
@@ -891,7 +891,7 @@
   "2026": {
    "test rules": 1582,
    "survival rate": 0.482,
-   "gradient boosting": 0.637,
+   "gradient boosting": 0.632,
    "logistic regression": 0.674,
    "rank by lift": 0.535,
    "rank by age": 0.562
@@ -918,20 +918,20 @@
     "p_survive": 0.999
    },
    {
-    "rule": "LRCX_UP -> AMAT_UP",
-    "lift": 4.151,
-    "confidence": 0.708,
-    "age": 112,
-    "burstiness": 0.206,
-    "p_survive": 0.998
-   },
-   {
     "rule": "AMAT_UP -> LRCX_UP",
     "lift": 4.151,
     "confidence": 0.791,
     "age": 102,
     "burstiness": 0.206,
-    "p_survive": 0.998
+    "p_survive": 0.999
+   },
+   {
+    "rule": "LRCX_UP -> AMAT_UP",
+    "lift": 4.151,
+    "confidence": 0.708,
+    "age": 112,
+    "burstiness": 0.206,
+    "p_survive": 0.999
    },
    {
     "rule": "ASML_DOWN -> LRCX_DOWN",
@@ -939,15 +939,7 @@
     "confidence": 0.611,
     "age": 53,
     "burstiness": 0.182,
-    "p_survive": 0.986
-   },
-   {
-    "rule": "ASML_UP -> AMAT_UP",
-    "lift": 3.767,
-    "confidence": 0.643,
-    "age": 46,
-    "burstiness": 0.185,
-    "p_survive": 0.974
+    "p_survive": 0.99
    },
    {
     "rule": "ACN_DOWN -> CTSH_DOWN",
@@ -955,7 +947,7 @@
     "confidence": 0.725,
     "age": 24,
     "burstiness": 0.138,
-    "p_survive": 0.973
+    "p_survive": 0.955
    },
    {
     "rule": "CTSH_DOWN -> ACN_DOWN",
@@ -963,23 +955,31 @@
     "confidence": 0.725,
     "age": 24,
     "burstiness": 0.138,
-    "p_survive": 0.973
+    "p_survive": 0.955
    },
    {
-    "rule": "ACN_UP -> CTSH_UP",
-    "lift": 5.572,
-    "confidence": 0.73,
-    "age": 12,
-    "burstiness": 0.148,
-    "p_survive": 0.97
+    "rule": "LRCX_UP -> ASML_UP",
+    "lift": 3.625,
+    "confidence": 0.604,
+    "age": 44,
+    "burstiness": 0.207,
+    "p_survive": 0.937
    },
    {
-    "rule": "CTSH_UP -> ACN_UP",
-    "lift": 5.572,
-    "confidence": 0.818,
-    "age": 12,
-    "burstiness": 0.148,
-    "p_survive": 0.97
+    "rule": "ASML_UP -> LRCX_UP",
+    "lift": 3.625,
+    "confidence": 0.69,
+    "age": 44,
+    "burstiness": 0.207,
+    "p_survive": 0.937
+   },
+   {
+    "rule": "AMAT_UP -> ASML_UP",
+    "lift": 3.767,
+    "confidence": 0.628,
+    "age": 42,
+    "burstiness": 0.185,
+    "p_survive": 0.935
    }
   ],
   "fragile": [
@@ -989,7 +989,7 @@
     "confidence": 0.786,
     "age": 5,
     "burstiness": 0.273,
-    "p_survive": 0.004
+    "p_survive": 0.003
    },
    {
     "rule": "MSFT_DOWN, SAP_DOWN -> CAT_UP",
@@ -997,13 +997,37 @@
     "confidence": 0.733,
     "age": 5,
     "burstiness": 0.273,
-    "p_survive": 0.004
+    "p_survive": 0.003
    },
    {
     "rule": "CAT_UP, SAP_DOWN -> MSFT_DOWN",
     "lift": 7.219,
     "confidence": 0.917,
     "age": 5,
+    "burstiness": 0.273,
+    "p_survive": 0.003
+   },
+   {
+    "rule": "ADSK_UP, NFLX_UP -> AMAT_DOWN",
+    "lift": 6.271,
+    "confidence": 0.846,
+    "age": 1,
+    "burstiness": 0.273,
+    "p_survive": 0.005
+   },
+   {
+    "rule": "ADSK_UP, AMAT_DOWN -> NFLX_UP",
+    "lift": 6.417,
+    "confidence": 0.611,
+    "age": 1,
+    "burstiness": 0.273,
+    "p_survive": 0.005
+   },
+   {
+    "rule": "NFLX_UP -> ADSK_UP, AMAT_DOWN",
+    "lift": 6.417,
+    "confidence": 0.458,
+    "age": 1,
     "burstiness": 0.273,
     "p_survive": 0.005
    },
@@ -1013,7 +1037,15 @@
     "confidence": 1.0,
     "age": 1,
     "burstiness": 0.273,
-    "p_survive": 0.007
+    "p_survive": 0.006
+   },
+   {
+    "rule": "ADSK_UP, AMAT_DOWN -> CAT_DOWN",
+    "lift": 5.688,
+    "confidence": 0.722,
+    "age": 1,
+    "burstiness": 0.231,
+    "p_survive": 0.006
    },
    {
     "rule": "ADSK_UP, CAT_DOWN -> AMAT_DOWN",
@@ -1021,47 +1053,15 @@
     "confidence": 0.812,
     "age": 1,
     "burstiness": 0.231,
-    "p_survive": 0.008
+    "p_survive": 0.006
    },
    {
-    "rule": "ADSK_UP, NFLX_UP -> AMAT_DOWN",
-    "lift": 6.271,
-    "confidence": 0.846,
-    "age": 1,
-    "burstiness": 0.273,
-    "p_survive": 0.008
-   },
-   {
-    "rule": "ADSK_UP, AMAT_DOWN -> NFLX_UP",
-    "lift": 6.417,
-    "confidence": 0.611,
-    "age": 1,
-    "burstiness": 0.273,
-    "p_survive": 0.008
-   },
-   {
-    "rule": "NFLX_UP -> ADSK_UP, AMAT_DOWN",
-    "lift": 6.417,
-    "confidence": 0.458,
-    "age": 1,
-    "burstiness": 0.273,
-    "p_survive": 0.008
-   },
-   {
-    "rule": "CAT_DOWN -> ADSK_UP, AMAT_DOWN",
-    "lift": 5.688,
-    "confidence": 0.406,
+    "rule": "AMAT_DOWN, CAT_DOWN -> ADSK_UP",
+    "lift": 5.668,
+    "confidence": 0.765,
     "age": 1,
     "burstiness": 0.231,
-    "p_survive": 0.009
-   },
-   {
-    "rule": "LRCX_UP, MSFT_DOWN -> SAP_DOWN",
-    "lift": 5.824,
-    "confidence": 0.786,
-    "age": 1,
-    "burstiness": 0.273,
-    "p_survive": 0.009
+    "p_survive": 0.006
    }
   ]
  },

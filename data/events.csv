@@ -15,7 +15,7 @@ announced,event_type,name,category,source,checked
 2016-06-03,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2016-06-15,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomchistorical2016.htm,True
 2016-06-16,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
-2016-06-24,SHOCK,Brexit referendum result,geopolitical,,False
+2016-06-24,SHOCK,Brexit referendum result,geopolitical,https://www.fox5ny.com/news/global-stocks-tumble-after-brexit-vote,True
 2016-07-08,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2016-07-15,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2016-07-27,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomchistorical2016.htm,True
@@ -28,7 +28,7 @@ announced,event_type,name,category,source,checked
 2016-10-18,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2016-11-02,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomchistorical2016.htm,True
 2016-11-04,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
-2016-11-09,SHOCK,US election result (Trump),policy,,False
+2016-11-09,SHOCK,US election result (Trump),policy,https://www.npr.org/sections/thetwo-way/2016/11/09/501511849/wall-street-rebounds-after-donald-trumps-victory,True
 2016-11-17,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2016-12-02,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2016-12-14,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomchistorical2016.htm,True
@@ -74,7 +74,7 @@ announced,event_type,name,category,source,checked
 2018-03-09,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2018-03-13,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2018-03-21,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomchistorical2018.htm,True
-2018-03-22,SHOCK,US announces tariffs on Chinese imports (Section 301),policy,,False
+2018-03-22,SHOCK,US announces tariffs on Chinese imports (Section 301),policy,https://ustr.gov/about-us/policy-offices/press-office/press-releases/2018/march/president-trump-announces-strong,True
 2018-04-06,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2018-04-11,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2018-05-02,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomchistorical2018.htm,True
@@ -137,12 +137,12 @@ announced,event_type,name,category,source,checked
 2020-01-29,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomchistorical2020.htm,True
 2020-02-07,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2020-02-13,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
-2020-02-24,SHOCK,COVID-19 sell-off begins (outbreak in Italy),health,,False
+2020-02-24,SHOCK,COVID-19 sell-off begins (outbreak in Italy),health,https://www.npr.org/2020/02/24/808811280/stocks-fall-sharply-on-coronavirus-fears,True
 2020-03-03,FOMC,FOMC rate decision emergency cut (unscheduled),macro,https://www.federalreserve.gov/monetarypolicy/fomchistorical2020.htm,True
 2020-03-06,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2020-03-11,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2020-03-15,FOMC,FOMC rate decision emergency cut on a Sunday (unscheduled),macro,https://www.federalreserve.gov/monetarypolicy/fomchistorical2020.htm,True
-2020-03-16,SHOCK,COVID crash day after the Fed's Sunday emergency cut,health,,False
+2020-03-16,SHOCK,COVID crash day after the Fed's Sunday emergency cut,health,https://www.pbs.org/newshour/economy/dow-dives-2997-points-on-fears-pandemic-will-cause-recession,True
 2020-04-03,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2020-04-10,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2020-04-29,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomchistorical2020.htm,True
@@ -163,7 +163,7 @@ announced,event_type,name,category,source,checked
 2020-10-13,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2020-11-05,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomchistorical2020.htm,True
 2020-11-06,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
-2020-11-09,SHOCK,Pfizer vaccine efficacy result,health,,False
+2020-11-09,SHOCK,Pfizer vaccine efficacy result,health,https://www.pfizer.com/news/press-release/press-release-detail/pfizer-and-biontech-announce-vaccine-candidate-against,True
 2020-11-12,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2020-12-04,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2020-12-10,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
@@ -205,7 +205,7 @@ announced,event_type,name,category,source,checked
 2022-01-26,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm,True
 2022-02-04,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2022-02-10,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
-2022-02-24,SHOCK,Russia invades Ukraine,geopolitical,,False
+2022-02-24,SHOCK,Russia invades Ukraine,geopolitical,https://www.npr.org/2022/02/24/1075861943/stocks-sink-nasdaq-bear-market-russia-ukraine-invasion,True
 2022-03-04,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2022-03-10,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2022-03-16,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm,True
@@ -230,7 +230,7 @@ announced,event_type,name,category,source,checked
 2022-11-02,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm,True
 2022-11-04,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2022-11-10,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
-2022-11-30,SHOCK,ChatGPT released,ai_launch,final_project.ipynb AI_EVENTS,True
+2022-11-30,SHOCK,ChatGPT released,ai_launch,https://openai.com/index/chatgpt/,True
 2022-12-02,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2022-12-13,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2022-12-14,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm,True
@@ -240,16 +240,16 @@ announced,event_type,name,category,source,checked
 2023-02-03,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2023-02-14,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2023-03-10,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
-2023-03-10,SHOCK,Silicon Valley Bank collapse,market,,False
+2023-03-10,SHOCK,Silicon Valley Bank collapse,market,https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html,True
 2023-03-14,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
-2023-03-14,SHOCK,GPT-4 announced,ai_launch,final_project.ipynb AI_EVENTS,True
+2023-03-14,SHOCK,GPT-4 announced,ai_launch,https://openai.com/index/gpt-4/,True
 2023-03-22,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm,True
 2023-04-07,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2023-04-12,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2023-05-03,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm,True
 2023-05-05,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2023-05-10,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
-2023-05-25,SHOCK,Nvidia's AI revenue guidance,ai_business,final_project.ipynb AI_EVENTS,True
+2023-05-25,SHOCK,Nvidia's AI revenue guidance,ai_business,https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2024,True
 2023-06-02,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2023-06-13,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2023-06-14,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm,True
@@ -297,7 +297,7 @@ announced,event_type,name,category,source,checked
 2024-10-04,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2024-10-10,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2024-11-01,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
-2024-11-06,SHOCK,US election result (Trump),policy,,False
+2024-11-06,SHOCK,US election result (Trump),policy,https://www.npr.org/2024/11/06/nx-s1-5181315/stocks-bitcoin-crypto-truth-social-trump-election,True
 2024-11-07,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm,True
 2024-11-13,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2024-12-06,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
@@ -305,7 +305,7 @@ announced,event_type,name,category,source,checked
 2024-12-18,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm,True
 2025-01-10,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2025-01-15,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
-2025-01-27,SHOCK,DeepSeek sell-off,ai_business,final_project.ipynb AI_EVENTS,True
+2025-01-27,SHOCK,DeepSeek sell-off,ai_business,https://www.bloomberg.com/news/articles/2025-01-27/asml-sinks-as-china-ai-startup-triggers-panic-in-tech-stocks,True
 2025-01-29,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm,True
 2025-02-07,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2025-02-12,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
@@ -314,7 +314,7 @@ announced,event_type,name,category,source,checked
 2025-03-19,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm,True
 2025-04-03,SHOCK,'Liberation Day' tariffs announced (2 Apr after the close),policy,https://www.pbs.org/newshour/economy/u-s-stock-market-tumbles-the-day-after-trumps-major-tariff-announcement,True
 2025-04-04,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
-2025-04-09,SHOCK,90-day tariff pause rally,policy,,False
+2025-04-09,SHOCK,90-day tariff pause rally,policy,https://www.pbs.org/newshour/economy/u-s-stocks-shoot-to-historic-gains-after-trump-pauses-most-of-his-tariffs,True
 2025-04-10,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2025-05-02,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2025-05-07,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm,True
@@ -328,7 +328,7 @@ announced,event_type,name,category,source,checked
 2025-08-01,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
 2025-08-12,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2025-09-05,NFP,Jobs report (Employment Situation),macro,https://www.bls.gov/bls/news-release/empsit.htm,True
-2025-09-10,SHOCK,Oracle's $455bn cloud backlog,ai_business,final_project.ipynb AI_EVENTS,True
+2025-09-10,SHOCK,Oracle's $455bn cloud backlog,ai_business,https://investor.oracle.com/investor-news/news-details/2025/Oracle-Announces-Fiscal-Year-2026-First-Quarter-Financial-Results/,True
 2025-09-11,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True
 2025-09-17,FOMC,FOMC rate decision,macro,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm,True
 2025-10-24,CPI,CPI release,macro,https://www.bls.gov/bls/news-release/cpi.htm,True

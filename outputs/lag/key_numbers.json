@@ -1,0 +1,579 @@
+{
+ "data": {
+  "baskets": 2733,
+  "first_day": "2016-01-04",
+  "last_day": "2026-11-13",
+  "mean_item_frequency": 0.1194
+ },
+ "part1": {
+  "rules_per_window_real_median": 211.5,
+  "rules_per_window_null_median": 89.66666666666666,
+  "bh_significant_total_real": 1,
+  "bh_significant_total_null_mean": 0.0,
+  "pooled": {
+   "real rules": {
+    "n_scored": 2014.0,
+    "median_test_lift": 1.0495,
+    "share_test_lift_gt_1": 0.5377,
+    "share_direction_right": 0.4906,
+    "share_mirror_also_gt_1": 0.5581
+   },
+   "null rules": {
+    "n_scored": 2417.0,
+    "median_test_lift": 1.0546,
+    "share_test_lift_gt_1": 0.5499,
+    "share_direction_right": 0.477,
+    "share_mirror_also_gt_1": 0.5503
+   },
+   "real, BH significant only": {
+    "n_scored": 1.0,
+    "median_test_lift": 0.9158,
+    "share_test_lift_gt_1": 0.0,
+    "share_direction_right": 1.0,
+    "share_mirror_also_gt_1": 0.0
+   }
+  },
+  "outcomes": {
+   "real rules": {
+    "direction signal": 0.4067,
+    "volatility only": 0.1311,
+    "failed": 0.4623
+   },
+   "null rules": {
+    "direction signal": 0.3959,
+    "volatility only": 0.1539,
+    "failed": 0.4501
+   }
+  },
+  "pair_rules_scored": 35,
+  "share_pair_beats_best_single": 0.3143,
+  "median_pair_minus_single_lift": -0.1592,
+  "robustness": [
+   {
+    "Z_K": 1.0,
+    "min support": 0.02,
+    "min confidence": 0.2,
+    "rules/window real": 211.5,
+    "rules/window null": 89.6667,
+    "scored real": 2014,
+    "test lift real": 1.0495,
+    "test lift null": 1.0546,
+    "direction right real": 0.4906,
+    "direction right null": 0.477
+   },
+   {
+    "Z_K": 1.0,
+    "min support": 0.03,
+    "min confidence": 0.2,
+    "rules/window real": 20.0,
+    "rules/window null": 8.1667,
+    "scored real": 345,
+    "test lift real": 1.0603,
+    "test lift null": 1.0449,
+    "direction right real": 0.5159,
+    "direction right null": 0.4811
+   },
+   {
+    "Z_K": 1.0,
+    "min support": 0.015,
+    "min confidence": 0.15,
+    "rules/window real": 1219.0,
+    "rules/window null": 638.0,
+    "scored real": 10114,
+    "test lift real": 1.0767,
+    "test lift null": 1.0711,
+    "direction right real": 0.4931,
+    "direction right null": 0.4965
+   },
+   {
+    "Z_K": 1.5,
+    "min support": 0.008,
+    "min confidence": 0.12,
+    "rules/window real": 135.0,
+    "rules/window null": 41.5,
+    "scored real": 1496,
+    "test lift real": 1.1406,
+    "test lift null": 1.0,
+    "direction right real": 0.4171,
+    "direction right null": 0.4018
+   },
+   {
+    "Z_K": 1.5,
+    "min support": 0.005,
+    "min confidence": 0.1,
+    "rules/window real": 1343.0,
+    "rules/window null": 621.0,
+    "scored real": 10211,
+    "test lift real": 1.0381,
+    "test lift null": 1.0417,
+    "direction right real": 0.3946,
+    "direction right null": 0.3948
+   }
+  ],
+  "edges_2plus_years": 138,
+  "edges_in_network": 35,
+  "top_leaders": {
+   "NOW": 4,
+   "WMT": 4,
+   "ORCL": 3,
+   "AAPL": 3,
+   "QCOM": 2
+  },
+  "top_followers": {
+   "XOM": 5,
+   "AAPL": 4,
+   "JNJ": 4,
+   "KO": 4,
+   "AMAT": 3
+  },
+  "persistence": {
+   "rule_year_pairs": 673,
+   "p_works_next_if_worked": 0.4463,
+   "p_works_next_if_failed": 0.3622,
+   "fisher_p_one_sided": 0.0192
+  },
+  "excess_rules_by_year": {
+   "2016": 362.7,
+   "2017": 53.7,
+   "2018": 500.0,
+   "2019": 87.0,
+   "2020": 1497.3,
+   "2021": 642.0,
+   "2022": 294.7,
+   "2023": 219.0,
+   "2024": 195.7,
+   "2025": 359.7,
+   "2026": 1027.7
+  }
+ },
+ "part2": {
+  "comparison": [
+   {
+    "target": "y_residual",
+    "model": "logistic",
+    "AUC A (pooled)": 0.5054,
+    "AUC B (pooled)": 0.5036,
+    "B - A": -0.0017,
+    "95% CI low": -0.0045,
+    "95% CI high": 0.0011,
+    "years B > A": 3,
+    "of years": 6
+   },
+   {
+    "target": "y_residual",
+    "model": "boosting",
+    "AUC A (pooled)": 0.5058,
+    "AUC B (pooled)": 0.5055,
+    "B - A": -0.0003,
+    "95% CI low": -0.0047,
+    "95% CI high": 0.0038,
+    "years B > A": 3,
+    "of years": 6
+   },
+   {
+    "target": "y_raw",
+    "model": "logistic",
+    "AUC A (pooled)": 0.5038,
+    "AUC B (pooled)": 0.5025,
+    "B - A": -0.001,
+    "95% CI low": -0.0071,
+    "95% CI high": 0.0047,
+    "years B > A": 1,
+    "of years": 6
+   },
+   {
+    "target": "y_raw",
+    "model": "boosting",
+    "AUC A (pooled)": 0.5006,
+    "AUC B (pooled)": 0.5068,
+    "B - A": 0.0059,
+    "95% CI low": -0.0028,
+    "95% CI high": 0.0151,
+    "years B > A": 4,
+    "of years": 6
+   }
+  ],
+  "logistic_coefficients_B": {
+   "viol_net": {
+    "mean": 0.0007,
+    "min": -0.0053,
+    "max": 0.0061,
+    "same sign every year": false
+   },
+   "spy_ret_5": {
+    "mean": -0.0031,
+    "min": -0.0114,
+    "max": 0.0049,
+    "same sign every year": false
+   },
+   "z_today": {
+    "mean": -0.0042,
+    "min": -0.0206,
+    "max": 0.007,
+    "same sign every year": false
+   },
+   "vol_20": {
+    "mean": -0.0043,
+    "min": -0.0184,
+    "max": 0.0154,
+    "same sign every year": false
+   },
+   "lag_net": {
+    "mean": -0.0045,
+    "min": -0.0095,
+    "max": 0.0011,
+    "same sign every year": false
+   },
+   "lag_down": {
+    "mean": -0.0059,
+    "min": -0.0156,
+    "max": 0.0057,
+    "same sign every year": false
+   },
+   "viol_down": {
+    "mean": 0.0059,
+    "min": 0.0017,
+    "max": 0.0103,
+    "same sign every year": true
+   },
+   "coupling": {
+    "mean": 0.0077,
+    "min": -0.0085,
+    "max": 0.0144,
+    "same sign every year": false
+   },
+   "lag_n": {
+    "mean": 0.008,
+    "min": -0.0129,
+    "max": 0.0316,
+    "same sign every year": false
+   },
+   "resid_ret_20": {
+    "mean": -0.0082,
+    "min": -0.0125,
+    "max": -0.0041,
+    "same sign every year": true
+   },
+   "viol_up": {
+    "mean": 0.0088,
+    "min": 0.0051,
+    "max": 0.0124,
+    "same sign every year": true
+   },
+   "lag_up": {
+    "mean": -0.0095,
+    "min": -0.0216,
+    "max": 0.0001,
+    "same sign every year": false
+   },
+   "resid_ret_5": {
+    "mean": -0.0193,
+    "min": -0.0459,
+    "max": -0.0108,
+    "same sign every year": true
+   },
+   "spy_ret_1": {
+    "mean": -0.0532,
+    "min": -0.062,
+    "max": -0.0328,
+    "same sign every year": true
+   }
+  },
+  "trading": [
+   {
+    "target": "y_raw",
+    "model": "boosting",
+    "features": "A: price only",
+    "gross % per year": -5.2931,
+    "net % per year": -40.033,
+    "gross Sharpe": -0.2136,
+    "net Sharpe": -1.6171,
+    "hit rate": 0.4793,
+    "mean daily turnover": 2.7571,
+    "break-even cost (bps)": -0.7618
+   },
+   {
+    "target": "y_raw",
+    "model": "boosting",
+    "features": "B: price + rules",
+    "gross % per year": -2.7572,
+    "net % per year": -37.976,
+    "gross Sharpe": -0.1126,
+    "net Sharpe": -1.5503,
+    "hit rate": 0.4854,
+    "mean daily turnover": 2.7951,
+    "break-even cost (bps)": -0.3914
+   },
+   {
+    "target": "y_raw",
+    "model": "boosting",
+    "features": "R: rules only",
+    "gross % per year": -5.1435,
+    "net % per year": -39.447,
+    "gross Sharpe": -0.2555,
+    "net Sharpe": -1.9593,
+    "hit rate": 0.4881,
+    "mean daily turnover": 2.7225,
+    "break-even cost (bps)": -0.7497
+   },
+   {
+    "target": "y_raw",
+    "model": "logistic",
+    "features": "A: price only",
+    "gross % per year": -20.887,
+    "net % per year": -47.5048,
+    "gross Sharpe": -0.7331,
+    "net Sharpe": -1.6668,
+    "hit rate": 0.4644,
+    "mean daily turnover": 2.1125,
+    "break-even cost (bps)": -3.9235
+   },
+   {
+    "target": "y_raw",
+    "model": "logistic",
+    "features": "B: price + rules",
+    "gross % per year": -24.6948,
+    "net % per year": -50.3482,
+    "gross Sharpe": -0.8684,
+    "net Sharpe": -1.7698,
+    "hit rate": 0.4549,
+    "mean daily turnover": 2.036,
+    "break-even cost (bps)": -4.8132
+   },
+   {
+    "target": "y_raw",
+    "model": "logistic",
+    "features": "R: rules only",
+    "gross % per year": -13.3115,
+    "net % per year": -43.2033,
+    "gross Sharpe": -0.5982,
+    "net Sharpe": -1.9406,
+    "hit rate": 0.4705,
+    "mean daily turnover": 2.3724,
+    "break-even cost (bps)": -2.2266
+   },
+   {
+    "target": "y_residual",
+    "model": "boosting",
+    "features": "A: price only",
+    "gross % per year": 0.7462,
+    "net % per year": -32.9842,
+    "gross Sharpe": 0.03,
+    "net Sharpe": -1.326,
+    "hit rate": 0.4854,
+    "mean daily turnover": 2.677,
+    "break-even cost (bps)": 0.1106
+   },
+   {
+    "target": "y_residual",
+    "model": "boosting",
+    "features": "B: price + rules",
+    "gross % per year": -2.8813,
+    "net % per year": -37.2212,
+    "gross Sharpe": -0.1152,
+    "net Sharpe": -1.4873,
+    "hit rate": 0.4936,
+    "mean daily turnover": 2.7254,
+    "break-even cost (bps)": -0.4195
+   },
+   {
+    "target": "y_residual",
+    "model": "boosting",
+    "features": "R: rules only",
+    "gross % per year": -8.1466,
+    "net % per year": -40.7073,
+    "gross Sharpe": -0.4071,
+    "net Sharpe": -2.0323,
+    "hit rate": 0.4759,
+    "mean daily turnover": 2.5842,
+    "break-even cost (bps)": -1.251
+   },
+   {
+    "target": "y_residual",
+    "model": "logistic",
+    "features": "A: price only",
+    "gross % per year": -28.1183,
+    "net % per year": -45.5107,
+    "gross Sharpe": -0.8904,
+    "net Sharpe": -1.4407,
+    "hit rate": 0.4786,
+    "mean daily turnover": 1.3803,
+    "break-even cost (bps)": -8.0835
+   },
+   {
+    "target": "y_residual",
+    "model": "logistic",
+    "features": "B: price + rules",
+    "gross % per year": -32.457,
+    "net % per year": -53.7649,
+    "gross Sharpe": -1.1124,
+    "net Sharpe": -1.8421,
+    "hit rate": 0.4739,
+    "mean daily turnover": 1.6911,
+    "break-even cost (bps)": -7.6162
+   },
+   {
+    "target": "y_residual",
+    "model": "logistic",
+    "features": "R: rules only",
+    "gross % per year": -11.9964,
+    "net % per year": -41.9909,
+    "gross Sharpe": -0.617,
+    "net Sharpe": -2.1603,
+    "hit rate": 0.4596,
+    "mean daily turnover": 2.3805,
+    "break-even cost (bps)": -1.9998
+   }
+  ],
+  "reversal": {
+   "2016-2020": {
+    "gross_pct_per_year": 13.03,
+    "t_stat": 1.42
+   },
+   "2021-2026": {
+    "gross_pct_per_year": -14.27,
+    "t_stat": -1.13
+   }
+  }
+ },
+ "part3": {
+  "model_choice": {
+   "2": {
+    "k-means silhouette": 0.2431,
+    "GMM BIC": 31417.4427,
+    "ARI k-means vs GMM": 0.1964
+   },
+   "3": {
+    "k-means silhouette": 0.2649,
+    "GMM BIC": 30688.7338,
+    "ARI k-means vs GMM": 0.5882
+   },
+   "4": {
+    "k-means silhouette": 0.2811,
+    "GMM BIC": 30350.0803,
+    "ARI k-means vs GMM": 0.5605
+   },
+   "5": {
+    "k-means silhouette": 0.2421,
+    "GMM BIC": 29934.7555,
+    "ARI k-means vs GMM": 0.5777
+   },
+   "6": {
+    "k-means silhouette": 0.212,
+    "GMM BIC": 29388.3666,
+    "ARI k-means vs GMM": 0.3645
+   }
+  },
+  "profile": {
+   "Calm": {
+    "share_of_days": 0.4418,
+    "spy_vol_ann": 0.0938,
+    "avg_corr": 0.2894,
+    "items_per_day": 8.4267,
+    "spy_mean_daily_ret_pct": 0.0462
+   },
+   "Normal": {
+    "share_of_days": 0.2808,
+    "spy_vol_ann": 0.1298,
+    "avg_corr": 0.1915,
+    "items_per_day": 10.9039,
+    "spy_mean_daily_ret_pct": 0.0933
+   },
+   "Stress": {
+    "share_of_days": 0.2775,
+    "spy_vol_ann": 0.2503,
+    "avg_corr": 0.4961,
+    "items_per_day": 9.8945,
+    "spy_mean_daily_ret_pct": 0.058
+   }
+  },
+  "ari_kmeans_vs_gmm_k3": 0.5882,
+  "longest_stress_spells": [
+   "2022-02-11 to 2023-04-05 (288 days)",
+   "2020-02-24 to 2020-07-28 (109 days)",
+   "2018-10-16 to 2019-02-19 (85 days)",
+   "2018-02-05 to 2018-05-07 (64 days)",
+   "2025-04-03 to 2025-07-07 (64 days)",
+   "2016-02-01 to 2016-03-18 (34 days)",
+   "2020-09-08 to 2020-10-14 (27 days)",
+   "2019-08-08 to 2019-09-11 (24 days)"
+  ],
+  "ari_fit_2016_2021_vs_fit_all": 0.3182,
+  "rules_by_regime": {
+   "Calm": {
+    "train days": 810,
+    "test days": 557,
+    "rules (real)": 181,
+    "rules (null, mean)": 96.0,
+    "scored": 181,
+    "test lift median (real)": 1.0099,
+    "test lift median (null)": 1.0349,
+    "direction signal share (real)": 0.3757,
+    "direction signal share (null)": 0.4236,
+    "volatility-only share (real)": 0.1326
+   },
+   "Normal": {
+    "train days": 439,
+    "test days": 288,
+    "rules (real)": 129,
+    "rules (null, mean)": 84.3333,
+    "scored": 129,
+    "test lift median (real)": 1.0286,
+    "test lift median (null)": 1.0827,
+    "direction signal share (real)": 0.4031,
+    "direction signal share (null)": 0.4387,
+    "volatility-only share (real)": 0.1085
+   },
+   "Stress": {
+    "train days": 242,
+    "test days": 376,
+    "rules (real)": 9346,
+    "rules (null, mean)": 3289.0,
+    "scored": 8896,
+    "test lift median (real)": 1.119,
+    "test lift median (null)": 1.119,
+    "direction signal share (real)": 0.4242,
+    "direction signal share (null)": 0.4263,
+    "volatility-only share (real)": 0.1564
+   }
+  },
+  "final_auc": [
+   {
+    "target": "y_residual",
+    "model": "logistic",
+    "A: price only": 0.5054,
+    "B: price + rules": 0.5036,
+    "R: rules only": 0.4944,
+    "C: B + regime": 0.5056,
+    "C net Sharpe": -1.9518
+   },
+   {
+    "target": "y_residual",
+    "model": "boosting",
+    "A: price only": 0.5058,
+    "B: price + rules": 0.5055,
+    "R: rules only": 0.4944,
+    "C: B + regime": 0.5043,
+    "C net Sharpe": -1.5131
+   },
+   {
+    "target": "y_raw",
+    "model": "logistic",
+    "A: price only": 0.5038,
+    "B: price + rules": 0.5025,
+    "R: rules only": 0.49,
+    "C: B + regime": 0.4957,
+    "C net Sharpe": -1.8637
+   },
+   {
+    "target": "y_raw",
+    "model": "boosting",
+    "A: price only": 0.5006,
+    "B: price + rules": 0.5068,
+    "R: rules only": 0.4961,
+    "C: B + regime": 0.504,
+    "C net Sharpe": -1.1124
+   }
+  ]
+ }
+}

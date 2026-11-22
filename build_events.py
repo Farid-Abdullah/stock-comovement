@@ -4,8 +4,8 @@
     python build_events.py --earnings   # also downloads earnings dates with yfinance -> data/earnings_dates.csv
 
 data/events.csv has one row per event:
-    date        the trading day the market could first react (see REACTION DAY below)
-    announced   the calendar date of the announcement
+    announced   the calendar date of the announcement (the notebook moves it to the first trading
+                day the market could react, see REACTION DAY below)
     event_type  FOMC | CPI | NFP | SHOCK
     name        short description
     category    for SHOCK rows: ai_launch | ai_business | macro | policy | geopolitical | health | market
@@ -92,34 +92,49 @@ NFP = """
 # ---------------------------------------------------------------------------------------------
 # One-off shocks. These are chosen BECAUSE they were big market stories, so they are a biased
 # sample; the scheduled events above are the unbiased test. The AI rows are the five events
-# already used in final_project.ipynb (AI_EVENTS). `checked` = date verified against the source
-# while building this file; the others are well-known dates that still need a source link.
+# already used in final_project.ipynb (AI_EVENTS). Every row links a news report or official
+# release that confirms the date; `checked` = True means the date was verified against that link.
 # ---------------------------------------------------------------------------------------------
 SHOCKS = [
     # date (first trading reaction day), name, category, source, checked
-    ("2016-06-24", "Brexit referendum result", "geopolitical", "", False),
-    ("2016-11-09", "US election result (Trump)", "policy", "", False),
+    ("2016-06-24", "Brexit referendum result", "geopolitical",
+     "https://www.fox5ny.com/news/global-stocks-tumble-after-brexit-vote", True),
+    ("2016-11-09", "US election result (Trump)", "policy",
+     "https://www.npr.org/sections/thetwo-way/2016/11/09/501511849/wall-street-rebounds-after-donald-trumps-victory", True),
     ("2018-02-05", "Volatility spike ('Volmageddon'), Dow -1,175", "market",
      "https://money.cnn.com/2018/02/05/investing/vix-volatility-index-dow/index.html", True),
-    ("2018-03-22", "US announces tariffs on Chinese imports (Section 301)", "policy", "", False),
+    ("2018-03-22", "US announces tariffs on Chinese imports (Section 301)", "policy",
+     "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2018/march/president-trump-announces-strong", True),
     ("2019-08-05", "China lets the yuan fall below 7 per dollar; worst day of 2019", "policy",
      "https://www.npr.org/2019/08/05/748236662/stock-markets-take-another-hit-as-the-trade-war-with-china-heats-up", True),
-    ("2020-02-24", "COVID-19 sell-off begins (outbreak in Italy)", "health", "", False),
-    ("2020-03-16", "COVID crash day after the Fed's Sunday emergency cut", "health", "", False),
-    ("2020-11-09", "Pfizer vaccine efficacy result", "health", "", False),
-    ("2022-02-24", "Russia invades Ukraine", "geopolitical", "", False),
-    ("2022-11-30", "ChatGPT released", "ai_launch", "final_project.ipynb AI_EVENTS", True),
-    ("2023-03-10", "Silicon Valley Bank collapse", "market", "", False),
-    ("2023-03-14", "GPT-4 announced", "ai_launch", "final_project.ipynb AI_EVENTS", True),
-    ("2023-05-25", "Nvidia's AI revenue guidance", "ai_business", "final_project.ipynb AI_EVENTS", True),
+    ("2020-02-24", "COVID-19 sell-off begins (outbreak in Italy)", "health",
+     "https://www.npr.org/2020/02/24/808811280/stocks-fall-sharply-on-coronavirus-fears", True),
+    ("2020-03-16", "COVID crash day after the Fed's Sunday emergency cut", "health",
+     "https://www.pbs.org/newshour/economy/dow-dives-2997-points-on-fears-pandemic-will-cause-recession", True),
+    ("2020-11-09", "Pfizer vaccine efficacy result", "health",
+     "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-and-biontech-announce-vaccine-candidate-against", True),
+    ("2022-02-24", "Russia invades Ukraine", "geopolitical",
+     "https://www.npr.org/2022/02/24/1075861943/stocks-sink-nasdaq-bear-market-russia-ukraine-invasion", True),
+    ("2022-11-30", "ChatGPT released", "ai_launch", "https://openai.com/index/chatgpt/", True),
+    ("2023-03-10", "Silicon Valley Bank collapse", "market",
+     "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html", True),
+    ("2023-03-14", "GPT-4 announced", "ai_launch", "https://openai.com/index/gpt-4/", True),
+    # Nvidia reported after the close on 24 May 2023, so the first reaction day is 25 May.
+    ("2023-05-25", "Nvidia's AI revenue guidance", "ai_business",
+     "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2024", True),
     ("2024-08-05", "Global sell-off, yen carry-trade unwind", "market",
      "https://fortune.com/2024/08/05/5-reasons-stocks-down-global-stock-market-rout/", True),
-    ("2024-11-06", "US election result (Trump)", "policy", "", False),
-    ("2025-01-27", "DeepSeek sell-off", "ai_business", "final_project.ipynb AI_EVENTS", True),
+    ("2024-11-06", "US election result (Trump)", "policy",
+     "https://www.npr.org/2024/11/06/nx-s1-5181315/stocks-bitcoin-crypto-truth-social-trump-election", True),
+    ("2025-01-27", "DeepSeek sell-off", "ai_business",
+     "https://www.bloomberg.com/news/articles/2025-01-27/asml-sinks-as-china-ai-startup-triggers-panic-in-tech-stocks", True),
     ("2025-04-03", "'Liberation Day' tariffs announced (2 Apr after the close)", "policy",
      "https://www.pbs.org/newshour/economy/u-s-stock-market-tumbles-the-day-after-trumps-major-tariff-announcement", True),
-    ("2025-04-09", "90-day tariff pause rally", "policy", "", False),
-    ("2025-09-10", "Oracle's $455bn cloud backlog", "ai_business", "final_project.ipynb AI_EVENTS", True),
+    ("2025-04-09", "90-day tariff pause rally", "policy",
+     "https://www.pbs.org/newshour/economy/u-s-stocks-shoot-to-historic-gains-after-trump-pauses-most-of-his-tariffs", True),
+    # Oracle reported after the close on 9 Sep 2025, so the first reaction day is 10 Sep.
+    ("2025-09-10", "Oracle's $455bn cloud backlog", "ai_business",
+     "https://investor.oracle.com/investor-news/news-details/2025/Oracle-Announces-Fiscal-Year-2026-First-Quarter-Financial-Results/", True),
 ]
 
 

@@ -141,7 +141,7 @@ At the stock level (Fig.~\ref{fig:affinity}) two stocks significantly joined the
 \subsection{What makes a rule last}
 Of 14,339 labelled rules, 29\% survive the next half-year. Fig.~\ref{fig:survival} shows the two strongest patterns. Survival rises with age, from 21\% for new rules to 58\% for rules already seen in 12 or more earlier windows, and rules inside one group survive 37\% of the time against 10\% for rules linking groups. Rules concentrated in one burst of days survive less (19\% when 35--50\% of their days fall in one month, against 33\% when spread out).
 
-Table~\ref{tab:models} compares models trained before ChatGPT and tested after it. Ranking by lift, the usual way to sort rules, gives ROC-AUC 0.58. The random forest reaches 0.66 and logistic regression 0.65; the top 20\% of rules chosen by logistic regression survive 64\% of the time against a 36\% base rate. The honest reading is that ranking by age alone already reaches 0.63, so most of the skill is a rule's history. In the rolling-origin test the models beat the lift baseline in every year from 2020 to 2026 (ROC-AUC 0.64--0.80) but not in 2019, when little training data existed. Permutation importance ranks the number of groups a rule spans first. Rule strength measured inside a window says little about its future; history and scope say more.
+Table~\ref{tab:models} compares models trained before ChatGPT and tested after it. Ranking by lift, the usual way to sort rules, gives ROC-AUC 0.58. The random forest reaches 0.66 and logistic regression 0.65; the top 20\% of rules chosen by logistic regression survive 64\% of the time against a 36\% base rate. The honest reading is that ranking by age alone already reaches 0.63, so most of the skill is a rule's history. In the rolling-origin test the models beat the lift baseline in every year from 2020 to 2026 (ROC-AUC 0.63--0.80) but not in 2019, when little training data existed. Permutation importance ranks the number of groups a rule spans first. Rule strength measured inside a window says little about its future; history and scope say more.
 
 \begin{figure*}[t]
 \centering
@@ -160,11 +160,11 @@ Table~\ref{tab:models} compares models trained before ChatGPT and tested after i
 Method & ROC-AUC & PR-AUC & Prec@20\% \\
 \midrule
 Logistic regression & 0.65 & 0.58 & 0.64 \\
-Random forest & \textbf{0.66} & 0.58 & 0.62 \\
+Random forest & \textbf{0.66} & 0.59 & 0.63 \\
 Gradient boosting & 0.64 & 0.56 & 0.58 \\
 \midrule
 Rank by age & 0.63 & 0.57 & 0.62 \\
-Rank by support & 0.61 & 0.49 & 0.52 \\
+Rank by support & 0.61 & 0.49 & 0.53 \\
 Rank by lift & 0.58 & 0.40 & 0.39 \\
 Rank by confidence & 0.56 & 0.39 & 0.35 \\
 All rules survive & 0.50 & 0.36 & 0.36 \\
